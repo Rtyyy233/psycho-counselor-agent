@@ -7,11 +7,11 @@ from langchain_community.document_loaders import (
     CSVLoader,
     UnstructuredWordDocumentLoader,
 )
-from langchain_text_splitters import RecursiveCharacterTextSplitter
+
 from langchain_ollama import OllamaEmbeddings
-from langchain_ollama import ChatOllama
-from langchain_ollama.llms import OllamaLLM
-from langchain_core.vectorstores import InMemoryVectorStore
+
+
+
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_core.tools import tool
@@ -19,8 +19,8 @@ import re,asyncio
 from pathlib import Path
 from pydantic import BaseModel, Field
 from typing import List, Optional, Literal
-from datetime import date
-import uuid
+
+
 import hashlib
 from langchain_experimental.text_splitter import SemanticChunker
 
