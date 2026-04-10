@@ -9,9 +9,6 @@ from langchain_community.document_loaders import (
 )
 
 from langchain_ollama import OllamaEmbeddings
-
-
-
 from langchain_chroma import Chroma
 from langchain_core.documents import Document
 from langchain_core.tools import tool
@@ -19,10 +16,27 @@ import re,asyncio
 from pathlib import Path
 from pydantic import BaseModel, Field
 from typing import List, Optional, Literal
-
-
 import hashlib
 from langchain_experimental.text_splitter import SemanticChunker
+from dotenv import load_dotenv
+import os
+
+
+def find_project_root(start_path=Path(__file__).parent):
+    for parent in [start_path] + list(start_path.parents):
+        if (parent / ".env").exists():
+            return parent
+    return start_path
+
+PROJECT_ROOT = find_project_root()
+load_dotenv(PROJECT_ROOT / ".env")  # 显式指定 .env 路径
+
+# 获取相对路径字符串
+rel_data_dir = os.getenv("DATA_DIR", "data")
+# 转换为绝对路径
+abs_data_dir = PROJECT_ROOT / rel_data_dir
+
+data_path = PROJECT_ROOT / os.getenv("DATA_DIR", "data")
 
 
 class EmotionalState(BaseModel):
@@ -248,13 +262,13 @@ async def store_diary(file_path: str) -> str :
     original_diary = Chroma(
         collection_name = "original_diary",
         embedding_function=embeddings,
-        persist_directory=r"D:\Agent\psychoinsultant\Diary in vector" # notice the problem of hard coed path
+        persist_directory=str(data_path) # notice the problem of hard coed path
     )
 
     diary_annotation = Chroma(
         collection_name = "diary_annotation",
         embedding_function=embeddings,
-        persist_directory=r"D:\Agent\psychoinsultant\Diary in vector" # notice the problem of hard coed path
+        persist_directory=str(data_path) # notice the problem of hard coed path
     )
 
     #docs = load_file(file_path)
@@ -330,13 +344,6 @@ async def store_diary(file_path: str) -> str :
     
     return "Success"
 
-memory_manager = create_agent(
-    model = "deepseek-chat",
-    tools = [store_diary, read_file],
-    system_prompt = "你是记忆系统的管理员，负责管理用户的记忆。" \
-    "你需要判断你获得的文件类型，并调用对应的工具把文件存储到数据库中." \
-    "如果用户上传了多个文件，你需要多次调用工具来存储这些文件"
-)
 
 
 
