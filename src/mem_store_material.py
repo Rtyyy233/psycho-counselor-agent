@@ -18,9 +18,10 @@ from langchain_core.language_models import BaseChatModel
 from langchain_deepseek import ChatDeepSeek
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_ollama import OllamaEmbeddings
-from langchain_chroma import Chroma
-from pydantic import BaseModel, Field
+from mem_collections import material_store, parent_store
 from dotenv import load_dotenv
+from pydantic import BaseModel,Field
+
 
 # ---------- 环境配置 ----------
 PROJECT_ROOT = Path(__file__).parent.parent  # 根据实际项目结构调整
@@ -206,21 +207,57 @@ async def store_materials(file_path: str) -> List[str]:
     split_result = await splitter.split_documents(raw_docs)
     child_chunks = split_result["child_chunks"]
 
-    # 4. 准备子块元数据与 ID
+    # 4. 准备块元数据与 ID（同时存储父块和子块）
     store_date = datetime.now().strftime("%Y-%m-%d")
     id_gen = UniqueIDGenerator()
     child_ids = []
     docs_to_store = []
 
-    for idx, child in enumerate(child_chunks):
+    # 按parent_index分组收集子块
+    parent_index_to_children: Dict[int, List] = {}
+    for child in child_chunks:
+        p_idx = child.metadata.get("parent_index", 0)
+        if p_idx not in parent_index_to_children:
+            parent_index_to_children[p_idx] = []
+        parent_index_to_children[p_idx].append(child)
+
+    # 存储父块
+    parent_ids_list: List[str] = []
+    parent_id_by_index: Dict[int, str] = {}
+    for idx, parent in enumerate(split_result["parent_chunks"]):
+        parent_id = id_gen.generate(prefix="parent")
+        parent_ids_list.append(parent_id)
+        parent_id_by_index[idx] = parent_id
+        child_ids_for_this_parent = [c.id for c in parent_index_to_children.get(idx, [])]
+
+        docs_to_store.append(
+            Document(
+                id=parent_id,
+                page_content=parent.page_content,
+                metadata={
+                    "date": store_date,
+                    "text_type": material_type.value,
+                    "chunk_type": "parent",
+                    "parent_id": parent_id,
+                    "child_ids": child_ids_for_this_parent,
+                    "source_file": str(file_path),
+                },
+            )
+        )
+
+    # 存储子块（带parent_id链接）
+    for child in child_chunks:
         child_id = id_gen.generate(prefix="child")
         child_ids.append(child_id)
+        p_idx = child.metadata.get("parent_index", 0)
+        parent_id = parent_id_by_index.get(p_idx, "")
 
         child.metadata.update({
             "date": store_date,
             "text_type": material_type.value,
-            "source_file": str(file_path),
             "chunk_type": "child",
+            "parent_id": parent_id,
+            "source_file": str(file_path),
         })
 
         docs_to_store.append(
@@ -231,17 +268,20 @@ async def store_materials(file_path: str) -> List[str]:
             )
         )
 
-    # 5. 存入向量库（add_documents 是同步的，放入线程池）
-    embeddings = OllamaEmbeddings(model="qwen3-embedding:4b")
-    material_store = Chroma(
-        collection_name="child_chunks",
-        embedding_function=embeddings,
-        persist_directory=str(DATA_DIR),
-    )
+    # 5. 存入向量库 - 分离存储到两个集合
+    parent_docs_to_store = [doc for doc in docs_to_store if doc.metadata.get("chunk_type") == "parent"]
+    child_docs_to_store = [doc for doc in docs_to_store if doc.metadata.get("chunk_type") == "child"]
 
     loop = asyncio.get_running_loop()
+
+    # 存储父块到 parent_store
     await loop.run_in_executor(
-        None, material_store.add_documents, docs_to_store
+        None, parent_store.add_documents, parent_docs_to_store
+    )
+
+    # 存储子块到 child_store
+    await loop.run_in_executor(
+        None, material_store.add_documents, child_docs_to_store
     )
 
     return child_ids

@@ -45,6 +45,12 @@ material_store = Chroma(
         persist_directory=str(DATA_DIR),
     )
 
+parent_store = Chroma(
+        collection_name="parent_chunks",
+        embedding_function=embeddings,
+        persist_directory=str(DATA_DIR),
+    )
+
 conv_store = Chroma(
         collection_name="conv_outline",
         embedding_function=embeddings,
