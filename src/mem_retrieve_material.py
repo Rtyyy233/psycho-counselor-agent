@@ -11,6 +11,7 @@ from langchain_core.tools import tool
 
 class material_filter(BaseModel):
     """Filter for material search."""
+
     text_type: Optional[List[str]] = Field(None, description="材料类型")
     date_start: Optional[str] = Field(None, description="开始日期 YYYY-MM-DD")
     date_end: Optional[str] = Field(None, description="结束日期 YYYY-MM-DD")
@@ -19,7 +20,9 @@ class material_filter(BaseModel):
 
 class material_retrieve_step(BaseModel):
     step_id: int = Field(description="步骤编号，从1开始")
-    mode: Literal["semantic_search", "metadata_filter", "parent_lookup", "children_lookup"]
+    mode: Literal[
+        "semantic_search", "metadata_filter", "parent_lookup", "children_lookup"
+    ]
     target: Literal["children", "parents", "both"] = Field(description="检索目标")
     filter: Optional[material_filter] = Field(None, description="过滤条件")
     temp_query: Optional[str] = Field(None, description="语义搜索查询语句")
@@ -27,6 +30,7 @@ class material_retrieve_step(BaseModel):
 
 class MaterialResult(BaseModel):
     """Result from material retrieval."""
+
     step_id: int
     matched_children: List[Document]
     parent_contexts: List[Document]  # Full parent documents for matched children
@@ -73,7 +77,7 @@ async def semantic_search_children(state: material_state) -> material_state:
     results = await asyncio.get_running_loop().run_in_executor(None, _sync)
 
     child_docs = [r[0] for r in results]
-    state["matched_child_ids"].extend([d.id for d in child_docs]) #type:ignore
+    state["matched_child_ids"].extend([d.id for d in child_docs])  # type:ignore
 
     result = MaterialResult(
         step_id=step.step_id,
@@ -110,7 +114,7 @@ async def metadata_filter_node(state: material_state) -> material_state:
         )
     ]
 
-    state["matched_child_ids"].extend([d.id for d in docs]) #type:ignore
+    state["matched_child_ids"].extend([d.id for d in docs])  # type:ignore
 
     result = MaterialResult(
         step_id=step.step_id,
@@ -140,7 +144,9 @@ async def parent_lookup_node(state: material_state) -> material_state:
     def _sync_get_children():
         return material_store.get(ids=child_ids)
 
-    children_data = await asyncio.get_running_loop().run_in_executor(None, _sync_get_children)
+    children_data = await asyncio.get_running_loop().run_in_executor(
+        None, _sync_get_children
+    )
 
     # Collect unique parent IDs
     parent_ids = set()
@@ -155,7 +161,9 @@ async def parent_lookup_node(state: material_state) -> material_state:
     def _sync_get_parents():
         return parent_store.get(ids=list(parent_ids))
 
-    parents_data = await asyncio.get_running_loop().run_in_executor(None, _sync_get_parents)
+    parents_data = await asyncio.get_running_loop().run_in_executor(
+        None, _sync_get_parents
+    )
 
     parent_docs = [
         Document(page_content=pc, metadata=m, id=i)
@@ -166,7 +174,7 @@ async def parent_lookup_node(state: material_state) -> material_state:
         )
     ]
 
-    state["matched_parent_ids"].extend([d.id for d in parent_docs]) #type:ignore
+    state["matched_parent_ids"].extend([d.id for d in parent_docs])  # type:ignore
 
     # Update last result with parent contexts
     if state["results"]:
@@ -193,7 +201,9 @@ async def children_lookup_node(state: material_state) -> material_state:
     def _sync_get_parents():
         return parent_store.get(ids=list(parent_ids))
 
-    parents_data = await asyncio.get_running_loop().run_in_executor(None, _sync_get_parents)
+    parents_data = await asyncio.get_running_loop().run_in_executor(
+        None, _sync_get_parents
+    )
 
     # Collect all child IDs from parent documents
     all_child_ids = set()
@@ -209,7 +219,9 @@ async def children_lookup_node(state: material_state) -> material_state:
     def _sync_get_children():
         return material_store.get(ids=list(all_child_ids))
 
-    children_data = await asyncio.get_running_loop().run_in_executor(None, _sync_get_children)
+    children_data = await asyncio.get_running_loop().run_in_executor(
+        None, _sync_get_children
+    )
 
     child_docs = [
         Document(page_content=pc, metadata=m, id=i)
@@ -220,7 +232,7 @@ async def children_lookup_node(state: material_state) -> material_state:
         )
     ]
 
-    state["matched_child_ids"].extend([d.id for d in child_docs]) #type:ignore
+    state["matched_child_ids"].extend([d.id for d in child_docs])  # type:ignore
 
     result = MaterialResult(
         step_id=step.step_id,
@@ -255,16 +267,20 @@ async def plan_node(state: material_state) -> material_state:
 请生成1-2步的检索计划。"""
 
     try:
-        steps = await planner.ainvoke([
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"查询: {state['query']}"},
-        ])
+        steps = await planner.ainvoke(
+            [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"查询: {state['query']}"},
+            ]
+        )
         if isinstance(steps, material_retrieve_step):
             plan = [steps]
         elif isinstance(steps, list):
             plan = steps
         else:
-            plan = [material_retrieve_step(**s) if isinstance(s, dict) else s for s in steps] #type:ignore
+            plan = [
+                material_retrieve_step(**s) if isinstance(s, dict) else s for s in steps
+            ]  # type:ignore
     except Exception:
         # Default: semantic search on children then parent lookup
         plan = [
@@ -273,41 +289,81 @@ async def plan_node(state: material_state) -> material_state:
                 mode="semantic_search",
                 target="children",
                 temp_query=state["query"],
-            ),#type:ignore
+            ),  # type:ignore
             material_retrieve_step(
                 step_id=2,
                 mode="parent_lookup",
                 target="parents",
-            ),#type:ignore
+            ),  # type:ignore
         ]
 
     for i, step in enumerate(plan):
-        step.step_id = i + 1 #type:ignore
+        step.step_id = i + 1  # type:ignore
 
-    state["plan"] = plan #type:ignore
+    state["plan"] = plan  # type:ignore
     state["current_step_idx"] = 0
     return state
 
 
-def route_dispatch(state: material_state) -> Literal["semantic_search_children", "metadata_filter_node", "parent_lookup_node", "children_lookup_node", "__end__"]:
+def route_dispatch(
+    state: material_state,
+) -> Literal[
+    "semantic_search_children",
+    "metadata_filter_node",
+    "parent_lookup_node",
+    "children_lookup_node",
+    "__end__",
+]:
     """Route to appropriate node based on step mode."""
     if state["current_step_idx"] >= len(state["plan"]):
+        print(
+            f"DEBUG route_dispatch: current_step_idx {state['current_step_idx']} >= plan length {len(state['plan'])}, returning '__end__'"
+        )
         return "__end__"
     step = state["plan"][state["current_step_idx"]]
-    return {
+    result = {
         "semantic_search": "semantic_search_children",
         "metadata_filter": "metadata_filter_node",
         "parent_lookup": "parent_lookup_node",
         "children_lookup": "children_lookup_node",
-    }.get(step.mode, "__end__") #type:ignore
+    }.get(step.mode, "__end__")  # type:ignore
+    print(f"DEBUG route_dispatch: step.mode={step.mode}, returning '{result}'")
+    return result
 
 
-def after_execution(state: material_state) -> Literal["route_dispatch", "__end__"]:
+def first_route(
+    state: material_state,
+) -> Literal[
+    "semantic_search_children",
+    "metadata_filter_node",
+    "parent_lookup_node",
+    "children_lookup_node",
+    "__end__",
+]:
+    """Route from planner to first execution node."""
+    return route_dispatch(state)
+
+
+def after_execution(
+    state: material_state,
+) -> Literal[
+    "semantic_search_children",
+    "metadata_filter_node",
+    "parent_lookup_node",
+    "children_lookup_node",
+    "__end__",
+]:
     """Advance to next step or end."""
     state["current_step_idx"] += 1
+    print(
+        f"DEBUG after_execution: incremented current_step_idx to {state['current_step_idx']}, plan length={len(state['plan'])}"
+    )
     if state["current_step_idx"] >= len(state["plan"]):
+        print(f"DEBUG after_execution: returning '__end__'")
         return "__end__"
-    return "route_dispatch"
+    result = route_dispatch(state)
+    print(f"DEBUG after_execution: returning '{result}'")
+    return result
 
 
 def build_material_graph():
@@ -315,15 +371,13 @@ def build_material_graph():
     graph = StateGraph(material_state)
 
     graph.add_node("planner", plan_node)
-    graph.add_node("route_dispatch", route_dispatch)
     graph.add_node("semantic_search_children", semantic_search_children)
     graph.add_node("metadata_filter_node", metadata_filter_node)
     graph.add_node("parent_lookup_node", parent_lookup_node)
     graph.add_node("children_lookup_node", children_lookup_node)
 
     graph.set_entry_point("planner")
-    graph.add_edge("planner", "route_dispatch")
-    graph.add_conditional_edges("route_dispatch", route_dispatch)
+    graph.add_conditional_edges("planner", first_route)
     graph.add_conditional_edges("semantic_search_children", after_execution)
     graph.add_conditional_edges("metadata_filter_node", after_execution)
     graph.add_conditional_edges("parent_lookup_node", after_execution)
@@ -337,9 +391,13 @@ _material_graph = None
 
 def get_material_graph():
     global _material_graph
+    # Force rebuild for debugging - remove after fix is confirmed
+    _material_graph = None
     if _material_graph is None:
+        print("DEBUG: Building new material retrieval graph")
         _material_graph = build_material_graph()
     return _material_graph
+
 
 @tool
 async def retrieve_materials(query: str) -> List[MaterialResult]:

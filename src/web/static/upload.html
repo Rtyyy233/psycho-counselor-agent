@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Memory</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <style>
+        .upload-container {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: var(--bg-secondary);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        h1 {
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            border: 2px dashed var(--border-color);
+            border-radius: var(--radius-sm);
+            background: var(--bg-primary);
+            cursor: pointer;
+        }
+        button {
+            width: 100%;
+            padding: 14px;
+            background: var(--accent-primary);
+            color: white;
+            border: none;
+            border-radius: var(--radius);
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: var(--accent-secondary);
+        }
+        button:disabled {
+            background: var(--border-color);
+            cursor: not-allowed;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 12px;
+            border-radius: var(--radius-sm);
+            display: none;
+        }
+        .success {
+            background: #e8f7ef;
+            color: #2e7d32;
+        }
+        .error {
+            background: #ffebee;
+            color: #c62828;
+        }
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        .progress-container {
+            margin: 20px 0;
+            display: none;
+        }
+        .progress-bar {
+            width: 100%;
+            height: 8px;
+            background: var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--accent-primary);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        .progress-text {
+            text-align: center;
+            margin-top: 8px;
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+        .spinner {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid var(--border-color);
+            border-radius: 50%;
+            border-top-color: var(--accent-primary);
+            animation: spin 1s linear infinite;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="upload-container">
+        <h1>Upload Memory File</h1>
+        <p>Upload a diary, material, or conversation outline file to store in memory database.</p>
+        <form id="upload-form">
+            <div class="form-group">
+                <label for="file">Select file (txt, pdf, md, csv, docx):</label>
+                <input type="file" id="file" name="file" accept=".txt,.pdf,.md,.csv,.docx" required>
+            </div>
+            <button type="submit" id="submit-btn">
+                <span class="btn-text">Upload</span>
+                <span class="spinner" style="display: none;"></span>
+            </button>
+        </form>
+        <div class="progress-container" id="progress-container">
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+            <div class="progress-text" id="progress-text">Starting upload...</div>
+        </div>
+        <div id="result" class="result"></div>
+        <a href="/" class="back-link">← Back to chat</a>
+    </div>
+
+    <script>
+        const form = document.getElementById('upload-form');
+        const resultDiv = document.getElementById('result');
+
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const fileInput = document.getElementById('file');
+            const file = fileInput.files[0];
+            if (!file) return;
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            // Reset UI
+            resultDiv.style.display = 'none';
+            resultDiv.className = 'result';
+            
+            // Show progress
+            const progressContainer = document.getElementById('progress-container');
+            const progressFill = document.getElementById('progress-fill');
+            const progressText = document.getElementById('progress-text');
+            const submitBtn = document.getElementById('submit-btn');
+            const btnText = submitBtn.querySelector('.btn-text');
+            const btnSpinner = submitBtn.querySelector('.spinner');
+            
+            progressContainer.style.display = 'block';
+            progressFill.style.width = '0%';
+            submitBtn.disabled = true;
+            btnText.style.display = 'none';
+            btnSpinner.style.display = 'inline-block';
+
+            // Simulate progress updates since fetch doesn't provide upload progress
+            const progressSteps = [
+                {percent: 5, text: "Starting upload..."},
+                {percent: 20, text: "Uploading file..."},
+                {percent: 40, text: "Storing to memory database..."},
+                {percent: 60, text: "Processing content..."},
+                {percent: 80, text: "Analyzing..."},
+                {percent: 95, text: "Finalizing..."}
+            ];
+            
+            let currentStep = 0;
+            const progressInterval = setInterval(() => {
+                if (currentStep < progressSteps.length) {
+                    const step = progressSteps[currentStep];
+                    progressFill.style.width = step.percent + '%';
+                    progressText.textContent = step.text;
+                    currentStep++;
+                }
+            }, 500); // Update every 500ms
+
+            try {
+                const response = await fetch('/api/upload', {
+                    method: 'POST',
+                    body: formData
+                });
+                
+                clearInterval(progressInterval);
+                progressFill.style.width = '100%';
+                progressText.textContent = 'Complete!';
+                
+                const data = await response.json();
+                
+                // Hide progress after a delay
+                setTimeout(() => {
+                    progressContainer.style.display = 'none';
+                }, 1000);
+                
+                if (response.ok) {
+                    let resultText = "Upload successful!";
+                    if (data.storage_result) {
+                        resultText += ` Storage: ${JSON.stringify(data.storage_result).slice(0, 100)}...`;
+                    }
+                    if (data.analysis) {
+                        resultText += ` Analysis: ${data.analysis.slice(0, 200)}...`;
+                    }
+                    resultDiv.textContent = resultText;
+                    resultDiv.classList.add('success');
+                } else {
+                    resultDiv.textContent = `Upload failed: ${data.detail || 'Unknown error'}`;
+                    resultDiv.classList.add('error');
+                }
+            } catch (error) {
+                clearInterval(progressInterval);
+                progressContainer.style.display = 'none';
+                resultDiv.textContent = `Network error: ${error.message}`;
+                resultDiv.classList.add('error');
+            } finally {
+                submitBtn.disabled = false;
+                btnText.style.display = 'inline';
+                btnSpinner.style.display = 'none';
+                resultDiv.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

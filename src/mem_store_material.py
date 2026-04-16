@@ -20,7 +20,7 @@ from langchain_experimental.text_splitter import SemanticChunker
 from langchain_ollama import OllamaEmbeddings
 from mem_collections import material_store, parent_store
 from dotenv import load_dotenv
-from pydantic import BaseModel,Field
+from pydantic import BaseModel, Field
 
 
 # ---------- 环境配置 ----------
@@ -29,9 +29,11 @@ load_dotenv(PROJECT_ROOT / ".env")
 DATA_DIR = PROJECT_ROOT / os.getenv("DATA_DIR", "data")
 DATA_DIR.mkdir(exist_ok=True)
 
+
 # ---------- 文本类型枚举 ----------
 class MaterialType(str, Enum):
     """材料类型枚举，涵盖常见文档类别"""
+
     # 个人记录类
     JOURNAL = "日志"
     MEMOIR = "回忆录"
@@ -57,6 +59,7 @@ class MaterialType(str, Enum):
     # 其他
     UNKNOWN = "未知"
 
+
 # ---------- 文件加载 ----------
 def load_file(file_path: str) -> List[Document]:
     ext = Path(file_path).suffix.lower()[1:]
@@ -69,15 +72,17 @@ def load_file(file_path: str) -> List[Document]:
     }
     if ext not in loader_classes:
         raise ValueError(f"不支持的文件类型: {ext}")
-    loader = loader_classes[ext](file_path, encoding="utf-8" if ext=="txt" else None)
+    loader = loader_classes[ext](file_path, encoding="utf-8" if ext == "txt" else None)
     return loader.load()
+
+
 # ---------- LLM 类型识别 ----------
 class TypeInference(BaseModel):
     material_type: MaterialType = Field(description="从给定候选类型中选择最匹配的一项")
 
+
 async def infer_material_type(
-    text_sample: str,
-    llm: Optional[BaseChatModel] = None
+    text_sample: str, llm: Optional[BaseChatModel] = None
 ) -> MaterialType:
     """异步识别文本类型"""
     if llm is None:
@@ -99,9 +104,10 @@ async def infer_material_type(
 """
     try:
         result = structured_llm.invoke(prompt)
-        return result.material_type #type:ignore
+        return result.material_type  # type:ignore
     except Exception:
         return MaterialType.UNKNOWN
+
 
 # ---------- 异步父子语义分块器 ----------
 class ParentChildSemanticSplitter:
@@ -131,12 +137,12 @@ class ParentChildSemanticSplitter:
         """
         # 将同步分块操作封装为异步调用
         loop = asyncio.get_running_loop()
-        
+
         # 父块分割（CPU/IO 操作放入线程池）
         parent_docs = await loop.run_in_executor(
             None, self.parent_splitter.split_documents, documents
         )
-        
+
         parent_map = {}
         child_docs = []
 
@@ -151,10 +157,12 @@ class ParentChildSemanticSplitter:
             )
 
             for child in children:
-                child.metadata.update({
-                    "parent_id": parent_id,
-                    "parent_index": idx,
-                })
+                child.metadata.update(
+                    {
+                        "parent_id": parent_id,
+                        "parent_index": idx,
+                    }
+                )
                 child_docs.append(child)
 
         return {
@@ -162,6 +170,7 @@ class ParentChildSemanticSplitter:
             "child_chunks": child_docs,
             "parent_map": parent_map,
         }
+
 
 # ---------- 唯一 ID 生成器 ----------
 class UniqueIDGenerator:
@@ -174,7 +183,7 @@ class UniqueIDGenerator:
         timestamp = now.strftime("%Y%m%d_%H%M%S")
         ms = now.microsecond // 1000
         full_ts = f"{timestamp}_{ms:03d}"
-        
+
         if full_ts == self._last_timestamp:
             self._sequence += 1
         else:
@@ -184,6 +193,7 @@ class UniqueIDGenerator:
         seq_str = f"{self._sequence:03d}"
         base = f"{full_ts}_{seq_str}"
         return f"{prefix}_{base}" if prefix else base
+
 
 # ---------- 主存储函数（异步） ----------
 @tool
@@ -197,7 +207,7 @@ async def store_materials(file_path: str) -> List[str]:
         raise ValueError("文件内容为空或加载失败")
 
     full_text = "\n".join([doc.page_content for doc in raw_docs])
-    
+
     # 2. 异步识别类型
     llm = ChatDeepSeek(model="deepseek-chat", temperature=0)
     material_type = await infer_material_type(full_text[:1500], llm)
@@ -213,13 +223,20 @@ async def store_materials(file_path: str) -> List[str]:
     child_ids = []
     docs_to_store = []
 
-    # 按parent_index分组收集子块
+    # 按parent_index分组收集子块并先为子块生成ID
     parent_index_to_children: Dict[int, List] = {}
+    child_with_ids = []  # 存储(子块, 子块ID)对
+
     for child in child_chunks:
+        child_id = id_gen.generate(prefix="child")
+        child_ids.append(child_id)
         p_idx = child.metadata.get("parent_index", 0)
+
         if p_idx not in parent_index_to_children:
             parent_index_to_children[p_idx] = []
-        parent_index_to_children[p_idx].append(child)
+        parent_index_to_children[p_idx].append(child_id)  # 存储子块ID而不是子块对象
+
+        child_with_ids.append((child, child_id, p_idx))
 
     # 存储父块
     parent_ids_list: List[str] = []
@@ -228,7 +245,7 @@ async def store_materials(file_path: str) -> List[str]:
         parent_id = id_gen.generate(prefix="parent")
         parent_ids_list.append(parent_id)
         parent_id_by_index[idx] = parent_id
-        child_ids_for_this_parent = [c.id for c in parent_index_to_children.get(idx, [])]
+        child_ids_for_this_parent = parent_index_to_children.get(idx, [])
 
         docs_to_store.append(
             Document(
@@ -239,26 +256,25 @@ async def store_materials(file_path: str) -> List[str]:
                     "text_type": material_type.value,
                     "chunk_type": "parent",
                     "parent_id": parent_id,
-                    "child_ids": child_ids_for_this_parent,
+                    "child_ids": child_ids_for_this_parent,  # 现在这是字符串列表
                     "source_file": str(file_path),
                 },
             )
         )
 
     # 存储子块（带parent_id链接）
-    for child in child_chunks:
-        child_id = id_gen.generate(prefix="child")
-        child_ids.append(child_id)
-        p_idx = child.metadata.get("parent_index", 0)
+    for child, child_id, p_idx in child_with_ids:
         parent_id = parent_id_by_index.get(p_idx, "")
 
-        child.metadata.update({
-            "date": store_date,
-            "text_type": material_type.value,
-            "chunk_type": "child",
-            "parent_id": parent_id,
-            "source_file": str(file_path),
-        })
+        child.metadata.update(
+            {
+                "date": store_date,
+                "text_type": material_type.value,
+                "chunk_type": "child",
+                "parent_id": parent_id,
+                "source_file": str(file_path),
+            }
+        )
 
         docs_to_store.append(
             Document(
@@ -269,20 +285,19 @@ async def store_materials(file_path: str) -> List[str]:
         )
 
     # 5. 存入向量库 - 分离存储到两个集合
-    parent_docs_to_store = [doc for doc in docs_to_store if doc.metadata.get("chunk_type") == "parent"]
-    child_docs_to_store = [doc for doc in docs_to_store if doc.metadata.get("chunk_type") == "child"]
+    parent_docs_to_store = [
+        doc for doc in docs_to_store if doc.metadata.get("chunk_type") == "parent"
+    ]
+    child_docs_to_store = [
+        doc for doc in docs_to_store if doc.metadata.get("chunk_type") == "child"
+    ]
 
     loop = asyncio.get_running_loop()
 
     # 存储父块到 parent_store
-    await loop.run_in_executor(
-        None, parent_store.add_documents, parent_docs_to_store
-    )
+    await loop.run_in_executor(None, parent_store.add_documents, parent_docs_to_store)
 
     # 存储子块到 child_store
-    await loop.run_in_executor(
-        None, material_store.add_documents, child_docs_to_store
-    )
+    await loop.run_in_executor(None, material_store.add_documents, child_docs_to_store)
 
     return child_ids
-

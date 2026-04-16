@@ -25,7 +25,17 @@ class retrieve_filter(BaseModel):
         Literal["工作", "家庭", "亲密关系", "社交", "独处", "学习", "其他"]
     ] = Field(None, description="场景类型")
     event_type: Optional[
-        Literal["创伤", "积极", "重大转折", "日常", "冲突", "成就", "失落", "反思", "情绪抒发"]
+        Literal[
+            "创伤",
+            "积极",
+            "重大转折",
+            "日常",
+            "冲突",
+            "成就",
+            "失落",
+            "反思",
+            "情绪抒发",
+        ]
     ] = Field(None, description="事件类型")
     emotion: Optional[List[EmotionType]] = Field(
         None, description="当前情绪名称，可包含一到三个情绪"
@@ -41,9 +51,7 @@ class retrieve_step(BaseModel):
     filter: Optional[retrieve_filter] = Field(
         None, description="metadata_filter模式的过滤参数"
     )
-    temp_query: Optional[str] = Field(
-        None, description="semantic_search模式的查询语句"
-    )
+    temp_query: Optional[str] = Field(None, description="semantic_search模式的查询语句")
     input_source: Literal["query", "previous_step"] = Field(
         description="依赖上一步结果还是原始查询"
     )
@@ -92,16 +100,21 @@ async def plan_node(state: agent_state) -> agent_state:
 请制定1-3步的检索计划。"""
 
     try:
-        steps = await planner.ainvoke([
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"用户查询: {state['query']}\n\n制定检索计划。"},
-        ])
+        steps = await planner.ainvoke(
+            [
+                {"role": "system", "content": system_prompt},
+                {
+                    "role": "user",
+                    "content": f"用户查询: {state['query']}\n\n制定检索计划。",
+                },
+            ]
+        )
         if isinstance(steps, retrieve_step):
             plan = [steps]
         elif isinstance(steps, list):
             plan = steps
         else:
-            plan = [retrieve_step(**s) if isinstance(s, dict) else s for s in steps] #type:ignore
+            plan = [retrieve_step(**s) if isinstance(s, dict) else s for s in steps]  # type:ignore
     except Exception:
         # Fallback: simple semantic search on annotation
         plan = [
@@ -111,15 +124,15 @@ async def plan_node(state: agent_state) -> agent_state:
                 mode="semantic_search",
                 temp_query=state["query"],
                 input_source="query",
-                filter=None
+                filter=None,
             )
         ]
 
     # Ensure step_ids are sequential
     for i, step in enumerate(plan):
-        step.step_id = i + 1 #type:ignore
+        step.step_id = i + 1  # type:ignore
 
-    state["retrieve_plan"] = plan #type:ignore
+    state["retrieve_plan"] = plan  # type:ignore
     state["current_step_idx"] = 0
     return state
 
@@ -184,7 +197,7 @@ async def semantic_search_node(state: agent_state) -> agent_state:
     query_text = step.temp_query if step.input_source == "query" else state["query"]
 
     def _sync():
-        return collection.similarity_search_with_score(query_text, k=10) #type:ignore
+        return collection.similarity_search_with_score(query_text, k=10)  # type:ignore
 
     results = await asyncio.get_running_loop().run_in_executor(None, _sync)
     docs = [r[0] for r in results]
@@ -244,7 +257,7 @@ async def id_lookup_node(state: agent_state) -> agent_state:
     return state
 
 
-async def rerank_node(state: agent_state) -> agent_state: # ai logic waits for check
+async def rerank_node(state: agent_state) -> agent_state:  # ai logic waits for check
     """Rerank results using annotation metadata."""
     step = state["retrieve_plan"][state["current_step_idx"]]
     if step.mode != "rerank":
@@ -300,7 +313,15 @@ async def rerank_node(state: agent_state) -> agent_state: # ai logic waits for c
     return state
 
 
-def route_dispatch(state: agent_state) -> Literal["metadata_filter_node", "semantic_search_node", "id_lookup_node", "rerank_node", "__end__"]:
+def route_dispatch(
+    state: agent_state,
+) -> Literal[
+    "metadata_filter_node",
+    "semantic_search_node",
+    "id_lookup_node",
+    "rerank_node",
+    "__end__",
+]:
     """Route to appropriate node based on current step mode."""
     if state["current_step_idx"] >= len(state["retrieve_plan"]):
         return "__end__"
@@ -310,15 +331,36 @@ def route_dispatch(state: agent_state) -> Literal["metadata_filter_node", "seman
         "semantic_search": "semantic_search_node",
         "id_lookup": "id_lookup_node",
         "rerank": "rerank_node",
-    }.get(step.mode, "__end__") #type:ignore
+    }.get(step.mode, "__end__")  # type:ignore
 
 
-def after_execution(state: agent_state) -> Literal["route_dispatch", "__end__"]:
+def first_route(
+    state: agent_state,
+) -> Literal[
+    "metadata_filter_node",
+    "semantic_search_node",
+    "id_lookup_node",
+    "rerank_node",
+    "__end__",
+]:
+    """Route from planner to first execution node."""
+    return route_dispatch(state)
+
+
+def after_execution(
+    state: agent_state,
+) -> Literal[
+    "metadata_filter_node",
+    "semantic_search_node",
+    "id_lookup_node",
+    "rerank_node",
+    "__end__",
+]:
     """After any execution node, advance to next step or end."""
     state["current_step_idx"] += 1
     if state["current_step_idx"] >= len(state["retrieve_plan"]):
         return "__end__"
-    return "route_dispatch"
+    return route_dispatch(state)
 
 
 def build_retrieve_graph():
@@ -326,15 +368,13 @@ def build_retrieve_graph():
     graph = StateGraph(agent_state)
 
     graph.add_node("planner", plan_node)
-    graph.add_node("route_dispatch", route_dispatch)
     graph.add_node("metadata_filter_node", metadata_filter_node)
     graph.add_node("semantic_search_node", semantic_search_node)
     graph.add_node("id_lookup_node", id_lookup_node)
     graph.add_node("rerank_node", rerank_node)
 
     graph.set_entry_point("planner")
-    graph.add_edge("planner", "route_dispatch")
-    graph.add_conditional_edges("route_dispatch", route_dispatch)
+    graph.add_conditional_edges("planner", first_route)
     graph.add_conditional_edges("metadata_filter_node", after_execution)
     graph.add_conditional_edges("semantic_search_node", after_execution)
     graph.add_conditional_edges("id_lookup_node", after_execution)
@@ -348,9 +388,13 @@ _graph = None
 
 def get_retrieve_graph():
     global _graph
+    # Force rebuild for debugging - remove after fix is confirmed
+    _graph = None
     if _graph is None:
+        print("DEBUG: Building new diary retrieval graph")
         _graph = build_retrieve_graph()
     return _graph
+
 
 @tool
 async def retrieve_diary(query: str) -> List[RetrievalResult]:

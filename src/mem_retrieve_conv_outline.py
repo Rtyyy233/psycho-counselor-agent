@@ -8,8 +8,10 @@ from pydantic import BaseModel, Field
 from langgraph.graph import StateGraph, END
 from langchain_core.tools import tool
 
+
 class conv_filter(BaseModel):
     """Filter for conversation outline search."""
+
     section: Optional[
         Literal["problem", "assessment", "intervention", "plan", "raw"]
     ] = Field(None, description="PAIP 部分或原文")
@@ -30,6 +32,7 @@ class conv_retrieve_step(BaseModel):
 
 class PAIPResult(BaseModel):
     """Single PAIP section result."""
+
     section: str
     content: str
     base_id: str
@@ -38,6 +41,7 @@ class PAIPResult(BaseModel):
 
 class ConvRetrievalResult(BaseModel):
     """Result from conversation outline retrieval."""
+
     step_id: int
     matched_docs: List[Document]
     paip_outlines: List[PAIPResult]  # Reconstructed PAIP outlines for matched base_ids
@@ -233,17 +237,19 @@ async def plan_node(state: conv_state) -> conv_state:
 请生成1-2步的检索计划。"""
 
     try:
-        steps = await planner.ainvoke([
-            {"role": "system", "content": system_prompt},
-            {"role": "user", "content": f"查询: {state['query']}"},
-        ])
+        steps = await planner.ainvoke(
+            [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": f"查询: {state['query']}"},
+            ]
+        )
         if isinstance(steps, conv_retrieve_step):
             plan = [steps]
         elif isinstance(steps, list):
             plan = steps
         else:
             plan = [
-                conv_retrieve_step(**s) if isinstance(s, dict) else s #type:ignore
+                conv_retrieve_step(**s) if isinstance(s, dict) else s  # type:ignore
                 for s in steps
             ]
     except Exception:
@@ -253,17 +259,17 @@ async def plan_node(state: conv_state) -> conv_state:
                 step_id=1,
                 mode="semantic_search",
                 temp_query=state["query"],
-            ), #type:ignore
+            ),  # type:ignore
             conv_retrieve_step(
                 step_id=2,
                 mode="paip_outline_lookup",
-            ), #type:ignore
+            ),  # type:ignore
         ]
 
     for i, step in enumerate(plan):
-        step.step_id = i + 1 #type:ignore
+        step.step_id = i + 1  # type:ignore
 
-    state["plan"] = plan #type:ignore
+    state["plan"] = plan  # type:ignore
     state["current_step_idx"] = 0
     return state
 
@@ -278,21 +284,51 @@ def route_dispatch(
 ]:
     """Route to appropriate node based on step mode."""
     if state["current_step_idx"] >= len(state["plan"]):
+        print(
+            f"DEBUG route_dispatch: current_step_idx {state['current_step_idx']} >= plan length {len(state['plan'])}, returning '__end__'"
+        )
         return "__end__"
     step = state["plan"][state["current_step_idx"]]
-    return {
+    result = {
         "semantic_search": "semantic_search_node",
         "metadata_filter": "metadata_filter_node",
         "paip_outline_lookup": "paip_outline_lookup_node",
-    }.get(step.mode, "__end__") #type:ignore
+    }.get(step.mode, "__end__")  # type:ignore
+    print(f"DEBUG route_dispatch: step.mode={step.mode}, returning '{result}'")
+    return result
 
 
-def after_execution(state: conv_state) -> Literal["route_dispatch", "__end__"]:
+def first_route(
+    state: conv_state,
+) -> Literal[
+    "semantic_search_node",
+    "metadata_filter_node",
+    "paip_outline_lookup_node",
+    "__end__",
+]:
+    """Route from planner to first execution node."""
+    return route_dispatch(state)
+
+
+def after_execution(
+    state: conv_state,
+) -> Literal[
+    "semantic_search_node",
+    "metadata_filter_node",
+    "paip_outline_lookup_node",
+    "__end__",
+]:
     """Advance to next step or end."""
     state["current_step_idx"] += 1
+    print(
+        f"DEBUG after_execution: incremented current_step_idx to {state['current_step_idx']}, plan length={len(state['plan'])}"
+    )
     if state["current_step_idx"] >= len(state["plan"]):
+        print(f"DEBUG after_execution: returning '__end__'")
         return "__end__"
-    return "route_dispatch"
+    result = route_dispatch(state)
+    print(f"DEBUG after_execution: returning '{result}'")
+    return result
 
 
 def build_conv_retrieve_graph():
@@ -300,14 +336,12 @@ def build_conv_retrieve_graph():
     graph = StateGraph(conv_state)
 
     graph.add_node("planner", plan_node)
-    graph.add_node("route_dispatch", route_dispatch)
     graph.add_node("semantic_search_node", semantic_search_node)
     graph.add_node("metadata_filter_node", metadata_filter_node)
     graph.add_node("paip_outline_lookup_node", paip_outline_lookup_node)
 
     graph.set_entry_point("planner")
-    graph.add_edge("planner", "route_dispatch")
-    graph.add_conditional_edges("route_dispatch", route_dispatch)
+    graph.add_conditional_edges("planner", first_route)
     graph.add_conditional_edges("semantic_search_node", after_execution)
     graph.add_conditional_edges("metadata_filter_node", after_execution)
     graph.add_conditional_edges("paip_outline_lookup_node", after_execution)
@@ -320,9 +354,13 @@ _conv_graph = None
 
 def get_conv_retrieve_graph():
     global _conv_graph
+    # Force rebuild for debugging - remove after fix is confirmed
+    _conv_graph = None
     if _conv_graph is None:
+        print("DEBUG: Building new conversation retrieval graph")
         _conv_graph = build_conv_retrieve_graph()
     return _conv_graph
+
 
 @tool
 async def retrieve_conv_outline(query: str) -> List[ConvRetrievalResult]:
