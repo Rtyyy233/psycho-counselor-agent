@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Psychological Counselor</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <h2>Sessions</h2>
+                <button class="btn-new" id="btn-new-chat" title="New conversation">+</button>
+            </div>
+            <div class="sidebar-actions">
+                <a href="/upload" class="btn-upload" title="Upload memory file">📁 Upload Memory</a>
+            </div>
+            <div class="session-list" id="session-list">
+                <!-- Sessions will be loaded here -->
+            </div>
+        </aside>
+
+        <!-- Overlay for mobile sidebar -->
+        <div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+        <!-- Main Chat Area -->
+        <main class="chat-area">
+            <!-- Header -->
+            <header class="chat-header">
+                <button class="btn-menu" id="btn-menu" title="Toggle sidebar">☰</button>
+                <h1 class="chat-title" id="chat-title">Psychological Counselor</h1>
+                <div class="header-actions">
+                    <button class="btn-clear" id="btn-clear" title="Clear conversation">Clear</button>
+                </div>
+            </header>
+
+            <!-- Messages -->
+            <div class="messages-container" id="messages-container">
+                <div class="welcome-message">
+                    <p>Hello, I'm your psychological counselor.</p>
+                    <p>Feel free to share anything on your mind. Everything you say is confidential.</p>
+                </div>
+            </div>
+
+            <!-- Indicators -->
+            <div class="indicators" id="indicators">
+                <div class="indicator" id="indicator-chatter" style="display: none;">
+                    <span class="indicator-dot"></span>
+                    <span class="indicator-text">Chatter is responding...</span>
+                </div>
+                <div class="indicator" id="indicator-analyst" style="display: none;">
+                    <span class="indicator-dot"></span>
+                    <span class="indicator-text">Analyst is analyzing...</span>
+                </div>
+                <div class="indicator" id="indicator-supervisor" style="display: none;">
+                    <span class="indicator-dot"></span>
+                    <span class="indicator-text">Supervisor is observing...</span>
+                </div>
+            </div>
+
+            <!-- Context Stats -->
+            <div class="context-stats" id="context-stats">
+                <span id="stats-messages">0 messages</span>
+                <span class="stats-separator">•</span>
+                <span id="stats-tokens">~0 tokens</span>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-area">
+                <textarea
+                    id="message-input"
+                    placeholder="Share what's on your mind..."
+                    rows="1"
+                ></textarea>
+                <button class="btn-send" id="btn-send" title="Send message">→</button>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

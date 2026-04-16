@@ -1,0 +1,10 @@
+# Web server dependencies
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+websockets>=12.0
+
+# Optional tracing
+# langchainsmith>=0.1.0
+
+# Main project dependencies (installed from root)
+# Note: Install from ../requirements.txt first
