@@ -6,7 +6,7 @@ and retrieves relevant memories. Returns analysis string for injection.
 """
 
 from langchain_deepseek import ChatDeepSeek
-from langchain.agents import create_agent
+
 from langchain_core.messages import HumanMessage, SystemMessage
 from mem_retrieve_conv_outline import retrieve_conv_outline
 from mem_retrieve_diary import retrieve_diary
@@ -14,39 +14,6 @@ from mem_retrieve_material import retrieve_materials
 from pydantic import BaseModel, Field
 from typing import Literal, Optional, List
 import asyncio
-
-
-# Create an agent with retrieval tools
-SYSTEM_PROMPT = """你是一位专业的心理分析专家。
-
-职责：
-- 分析用户表达的情绪、认知模式和行为模式
-- 从记忆中检索相关信息进行对比分析
-- 生成洞察性的分析报告
-
-工具说明：
-- retrieve_diary: 从日记中检索相关信息
-- retrieve_materials: 从个人材料中检索相关信息
-- retrieve_conv_outline: 从咨询记录中检索相关信息
-
-工作流程：
-1. 分析用户最近的对话内容，理解当前话题和情绪状态
-2. 根据分析决定需要检索哪些记忆类型
-3. 调用相应的检索工具获取相关信息
-4. 综合分析检索结果，生成洞察性报告
-5. 输出包含分析洞察、相关记忆和建议方向的结构化报告
-
-请使用合适的工具进行检索，然后综合分析结果。"""
-
-# Create LLM for analysis
-base_model = ChatDeepSeek(model="deepseek-chat", temperature=0.2)
-
-# Create agent with retrieval tools
-analyst_agent = create_agent(
-    model=base_model,
-    tools=[retrieve_diary, retrieve_materials, retrieve_conv_outline],
-    system_prompt=SYSTEM_PROMPT,
-)
 
 
 class AnalystResult(BaseModel):

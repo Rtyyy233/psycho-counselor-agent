@@ -42,6 +42,10 @@ import tempfile
 import shutil
 import os
 
+# 自定义工具
+from tool_utils import call_tool_async, detect_file_type
+from config import *
+
 from session_manager import SessionManager, get_session_manager, ChatMessage
 from top_module import SharedContext, ChatMessage as TopModuleChatMessage
 
@@ -431,16 +435,25 @@ async def upload_file(file: UploadFile = File(...)):
     # Save uploaded file to temp location
     temp_dir = tempfile.mkdtemp()
     temp_path = os.path.join(temp_dir, file.filename)
+
+    # Validate file extension
+    if not validate_file_extension(file.filename):
+        allowed_extensions_str = get_allowed_extensions_str()
+        raise HTTPException(
+            status_code=400,
+            detail=f"不支持的文件类型。允许的扩展名: {allowed_extensions_str}",
+        )
+
     try:
         # Write uploaded content
         with open(temp_path, "wb") as f:
             content = await file.read()
-            # Validate file size (max 10MB)
-            max_file_size = 10 * 1024 * 1024  # 10MB
+            # Validate file size
+            max_file_size = MAX_FILE_SIZE
             if len(content) > max_file_size:
                 raise HTTPException(
                     status_code=400,
-                    detail=f"文件大小超过限制（最大10MB），当前文件大小：{len(content) / 1024 / 1024:.2f}MB",
+                    detail=f"文件大小超过限制（最大{MAX_FILE_SIZE // 1024 // 1024}MB），当前文件大小：{len(content) / 1024 / 1024:.2f}MB",
                 )
             f.write(content)
 
@@ -484,8 +497,12 @@ async def upload_file(file: UploadFile = File(...)):
             import re
 
             # Check for diary patterns (date patterns, personal reflection)
+            # Support both 4-digit and 2-digit years, and date ranges like "25.12.21-26.3.28"
             date_pattern = (
-                r"\d{4}[-./]\d{1,2}[-./]\d{1,2}|\d{1,2}[-./]\d{1,2}[-./]\d{4}"
+                r"\d{4}[-./]\d{1,2}[-./]\d{1,2}|"  # 4-digit year: 2025.12.21 or 2025-12-21
+                r"\d{1,2}[-./]\d{1,2}[-./]\d{4}|"  # 4-digit year at end: 12.21.2025
+                r"\d{2}[-./]\d{1,2}[-./]\d{1,2}|"  # 2-digit year: 25.12.21
+                r"\d{2}[-./]\d{1,2}[-./]\d{1,2}-\d{2}[-./]\d{1,2}[-./]\d{1,2}"  # date range: 25.12.21-26.3.28
             )
             diary_keywords = [
                 "今天",
@@ -509,10 +526,19 @@ async def upload_file(file: UploadFile = File(...)):
             ]
 
             is_diary = False
+            # Check file content for date patterns
             if re.search(date_pattern, file_content_sample):
                 is_diary = True
+                print(f"DEBUG: Detected diary by date pattern in content")
+            # Check file name for date patterns (common in diary files like "25.12.21-26.3.28.txt")
+            elif re.search(date_pattern, file.filename):
+                is_diary = True
+                print(
+                    f"DEBUG: Detected diary by date pattern in filename: {file.filename}"
+                )
             elif any(keyword in file_content_sample for keyword in diary_keywords):
                 is_diary = True
+                print(f"DEBUG: Detected diary by keywords in content")
 
             # Check for conversation outline patterns (PAIP format, counseling terms)
             conv_keywords = [
@@ -544,9 +570,12 @@ async def upload_file(file: UploadFile = File(...)):
                 print(f"Detected as diary, storing with store_diary")
                 from mem_store_diary import store_diary
 
-                print(f"DEBUG: Calling store_diary.ainvoke with file: {temp_path}")
-                raw_storage_result = await asyncio.wait_for(
-                    store_diary.ainvoke({"file_path": temp_path}), timeout=60.0
+                print(f"DEBUG: Calling store_diary with call_tool_async: {temp_path}")
+                storage_result = await call_tool_async(
+                    store_diary,
+                    {"file_path": temp_path},
+                    timeout=STORAGE_TIMEOUT,
+                    max_retries=1,
                 )
             elif is_conversation:
                 print(
@@ -555,36 +584,30 @@ async def upload_file(file: UploadFile = File(...)):
                 from mem_store_conv_outline import store_conversation_outline
 
                 print(
-                    f"DEBUG: Calling store_conversation_outline.ainvoke with file: {temp_path}"
+                    f"DEBUG: Calling store_conversation_outline with call_tool_async: {temp_path}"
                 )
-                raw_storage_result = await asyncio.wait_for(
-                    store_conversation_outline.ainvoke({"file_path": temp_path}),
-                    timeout=60.0,
+                storage_result = await call_tool_async(
+                    store_conversation_outline,
+                    {"file_path": temp_path},
+                    timeout=STORAGE_TIMEOUT,
+                    max_retries=1,
                 )
-                from mem_store_conv_outline import store_conversation_outline
 
-                print(
-                    f"DEBUG: Calling store_conversation_outline with file: {temp_path}"
-                )
-                raw_storage_result = await asyncio.wait_for(
-                    store_conversation_outline(file_path=temp_path),
-                    timeout=60.0,
-                )
             else:
                 print(f"Detected as material, storing with store_materials")
                 from mem_store_material import store_materials
 
-                print(f"DEBUG: Calling store_materials.ainvoke with file: {temp_path}")
-                raw_storage_result = await asyncio.wait_for(
-                    store_materials.ainvoke({"file_path": temp_path}), timeout=60.0
-                )
-                print(f"DEBUG: raw_storage_result type: {type(raw_storage_result)}")
                 print(
-                    f"DEBUG: raw_storage_result repr: {repr(raw_storage_result)[:500]}"
+                    f"DEBUG: Calling store_materials with call_tool_async: {temp_path}"
+                )
+                storage_result = await call_tool_async(
+                    store_materials,
+                    {"file_path": temp_path},
+                    timeout=STORAGE_TIMEOUT,
+                    max_retries=1,
                 )
 
-            # Extract content from storage response
-            storage_result = extract_content_from_response(raw_storage_result)
+            # storage_result already set in each branch
             print(f"Storage result: {storage_result}")
 
         except asyncio.TimeoutError:
@@ -599,7 +622,7 @@ async def upload_file(file: UploadFile = File(...)):
         analysis_result = None
         try:
             # Read file content for analysis (with size limit)
-            max_file_size = 1024 * 1024  # 1MB limit
+            max_file_size = MAX_FILE_SIZE_FOR_ANALYSIS
             file_size = os.path.getsize(temp_path)
 
             if file_size > max_file_size:
@@ -657,7 +680,7 @@ async def upload_file(file: UploadFile = File(...)):
                                     HumanMessage(content=analysis_prompt),
                                 ]
                             ),
-                            timeout=30.0,  # 30秒超时
+                            timeout=ANALYSIS_TIMEOUT,  # 分析超时
                         )
 
                         analysis_result = extract_content_from_response(

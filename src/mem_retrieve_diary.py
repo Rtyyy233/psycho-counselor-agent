@@ -1,5 +1,5 @@
 from mem_collections import original_diary, diary_annotation
-from mem_store_diary import EmotionType
+
 from typing import TypedDict, List, Literal, Optional, Annotated
 import asyncio
 from langchain_deepseek import ChatDeepSeek
@@ -37,8 +37,9 @@ class retrieve_filter(BaseModel):
             "情绪抒发",
         ]
     ] = Field(None, description="事件类型")
-    emotion: Optional[List[EmotionType]] = Field(
-        None, description="当前情绪名称，可包含一到三个情绪"
+    emotion: Optional[List[str]] = Field(
+        None,
+        description="当前情绪名称，可包含一到三个情绪。常见情绪：喜悦、悲伤、焦虑、愤怒、恐惧、惊讶、厌恶、平静、疲惫、孤独、羞耻、内疚、希望、迷茫、满足、害羞、安全感、兴奋、失望、感激、爱、恨、嫉妒、自豪、自卑、好奇、无聊、放松、紧张、困惑等",
     )
 
 

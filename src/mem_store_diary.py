@@ -58,7 +58,23 @@ EmotionType = Literal[
     "希望",  # 期盼、乐观、憧憬
     "迷茫",  # 困惑、不知所措
     "满足",  # 满意、充实、欣慰
+    "害羞",  # 羞涩、腼腆
+    "安全感",  # 安全、安心
+    "兴奋",  # 激动、亢奋
+    "失望",  # 失落、沮丧
+    "感激",  # 感谢、感恩
+    "爱",  # 喜爱、爱情
+    "恨",  # 憎恨、怨恨
+    "嫉妒",  # 妒忌、羡慕
+    "自豪",  # 骄傲、自豪
+    "自卑",  # 自卑、自我否定
+    "好奇",  # 好奇、探究
+    "无聊",  # 无聊、乏味
+    "放松",  # 轻松、舒缓
+    "紧张",  # 紧张、紧绷
+    "困惑",  # 迷惑、不解
 ]
+
 
 def find_project_root(start_path=Path(__file__).parent):
     for parent in [start_path] + list(start_path.parents):
@@ -66,8 +82,9 @@ def find_project_root(start_path=Path(__file__).parent):
             return parent
     return start_path
 
+
 PROJECT_ROOT = find_project_root()
-load_dotenv(PROJECT_ROOT / ".env") 
+load_dotenv(PROJECT_ROOT / ".env")
 rel_data_dir = os.getenv("DATA_DIR", default="databse")
 abs_data_dir = PROJECT_ROOT / rel_data_dir
 
@@ -75,8 +92,9 @@ abs_data_dir = PROJECT_ROOT / rel_data_dir
 class EmotionalState(BaseModel):
     """情绪状态"""
 
-    emotion: Optional[List[EmotionType]] = Field(
-        None, description="当前情绪名称，可包含一到三个情绪"
+    emotion: Optional[List[str]] = Field(
+        None,
+        description="当前情绪名称，可包含一到三个情绪。常见情绪：喜悦、悲伤、焦虑、愤怒、恐惧、惊讶、厌恶、平静、疲惫、孤独、羞耻、内疚、希望、迷茫、满足、害羞、安全感、兴奋、失望、感激、爱、恨、嫉妒、自豪、自卑、好奇、无聊、放松、紧张、困惑等",
     )
     intensity: Optional[Literal["潜意识", "弱", "中", "强", "极强"]] = Field(
         None, description="情绪强度"
@@ -199,33 +217,54 @@ diary_chunker = ChatDeepSeek(
 
 
 def diary_splitter_date(file_path):  # 待改善：1.非txt， 2.非文本数据， 3.非结构化日期
-    diary = Path(file_path).read_text(encoding="utf-8")
-    date_pattern = r"\b\d{2}\.\d{1,2}\.\d{1,2}\b"
+    diary = Path(file_path).read_text(encoding="utf-8", errors="ignore")
+    # 支持多种日期格式：2024-12-01, 2024/12/01, 25.12.21, 25.12.21-26.3.28, 12月1日
+    date_pattern = r"\d{4}[-/\.]\d{1,2}[-/\.]\d{1,2}|\d{1,2}[-/\.]\d{1,2}[-/\.]\d{2,4}|\d{1,2}月\d{1,2}日|\d{2}\.\d{1,2}\.\d{1,2}(?:-\d{2}\.\d{1,2}\.\d{1,2})?"
     dates = re.findall(date_pattern, diary)
     splitted_diary = re.split(date_pattern, diary)
-    j = 1
     diary_splitted_date = []
-    for i in dates:
+
+    if not dates:
+        # 如果没有找到日期，将整个文件作为一个文档
         diary_splitted_date.append(
-            Document(page_content=splitted_diary[j], metadata={"date": i})
+            Document(page_content=diary, metadata={"date": "未知日期"})
         )
-        j += 1
-    print("split by date success")
+        print("未找到日期格式，使用整个文件作为单个文档")
+    else:
+        # 确保分割后的片段数量比日期多一个
+        if len(splitted_diary) > len(dates):
+            # 第一个分割片段可能是日期前的文本（通常为空）
+            for j in range(1, len(splitted_diary)):
+                if j - 1 < len(dates):
+                    diary_splitted_date.append(
+                        Document(
+                            page_content=splitted_diary[j],
+                            metadata={"date": dates[j - 1]},
+                        )
+                    )
+        else:
+            # 回退：将每个日期与对应内容配对
+            for j in range(len(dates)):
+                content = splitted_diary[j + 1] if j + 1 < len(splitted_diary) else ""
+                diary_splitted_date.append(
+                    Document(page_content=content, metadata={"date": dates[j]})
+                )
+
+    print(f"按日期分割成功，找到 {len(diary_splitted_date)} 个文档")
     return diary_splitted_date
 
 
 def diary_splitter_event(diary_splitted_date):  # 待改进：异步化处理
     text_chunker = SemanticChunker(OllamaEmbeddings(model="qwen3-embedding:4b"))
     diary_splitted_event = []
-    tasks = []
 
     docs = text_chunker.split_documents(diary_splitted_date)
 
     for k in docs:
         k.page_content += k.metadata["date"]
         diary_splitted_event.append(k)
-    print("split by event success")
-    return {"message": diary_splitted_event}
+    print(f"按事件分割成功，得到 {len(diary_splitted_event)} 个事件")
+    return diary_splitted_event
 
 
 """async def diary_splitter_event(splitted_docs_date):
@@ -334,21 +373,13 @@ async def store_diary(file_path: str) -> str:
     original_diary = Chroma(
         collection_name="original_diary",
         embedding_function=embeddings,
-<<<<<<< HEAD:src/memory_storation.py
-        persist_directory=str(abs_data_dir) # notice the problem of hard coed path
-=======
         persist_directory=str(data_path),  # notice the problem of hard coed path
->>>>>>> dev:src/mem_store_diary.py
     )
 
     diary_annotation = Chroma(
         collection_name="diary_annotation",
         embedding_function=embeddings,
-<<<<<<< HEAD:src/memory_storation.py
-        persist_directory=str(abs_data_dir) # notice the problem of hard coed path
-=======
         persist_directory=str(data_path),  # notice the problem of hard coed path
->>>>>>> dev:src/mem_store_diary.py
     )
 
     # docs = load_file(file_path)
@@ -373,9 +404,10 @@ async def store_diary(file_path: str) -> str:
         "你是一个有深厚心理咨询和精神医学背景的日记分析师，你需要对接收的日记片段"
         "从认知内容、行为表现、情景标签三个大方面进行分析，如果存在，则提取出日记片段的自动想法、深层信念、"
         "反思、洞见、具体行为、行为后果、情绪状态（包括情绪名称和强度）以及结构化的情境标签（包括绝对日期、相对时间、地点、涉及人物及角色、场景类型和事件类型）。"
-        "如果某个方面的信息在日记片段中没有体现，则填充'无'。请严格按照规则进行分析"
+        "如果某个方面的信息在日记片段中没有体现，则填充'无'。请严格按照规则进行分析。"
+        "情绪名称可以使用常见的中文情绪词汇，如：喜悦、悲伤、焦虑、愤怒、恐惧、惊讶、厌恶、平静、疲惫、孤独、羞耻、内疚、希望、迷茫、满足、害羞、安全感、兴奋、失望、感激、爱、恨、嫉妒、自豪、自卑、好奇、无聊、放松、紧张、困惑等。"
     )
-    for i in splitted_docs_event["message"]:
+    for i in splitted_docs_event:
         task = analysist.ainvoke(
             [
                 {"role": "system", "content": prompt},
@@ -436,12 +468,5 @@ async def store_diary(file_path: str) -> str:
 
     return "Success"
 
-<<<<<<< HEAD:src/memory_storation.py
-
-
-
-
-=======
->>>>>>> dev:src/mem_store_diary.py
 
 # 发现的问题：概括事件的时候丢失了信息，叙事性不够强的内容被忽视了
