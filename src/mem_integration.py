@@ -56,3 +56,30 @@ conv_store = Chroma(
         embedding_function=embeddings,
         persist_directory=str(DATA_DIR),
     )
+
+from mem_retrieve_conv_outline import retrieve_conv_outline
+from mem_retrieve_diary import retrieve_diary
+from mem_retrieve_material import retrieve_materials
+from langchain_core.tools import tool
+
+
+@tool
+async def retrieve_diary_tool(query: str):
+    """
+    依据日记检索所需的信息
+    """
+    return retrieve_diary(query) # return a agentstate
+
+@tool
+async def retrieve_materials_tool(query: str):
+    """
+        依据侧写情绪的材料检索所需的信息
+    """
+    return retrieve_materials(query)
+
+@tool
+async def retrieve_conv_outline_tool(query: str):
+    """
+    从历史对话的摘要中检索所需的信息
+    """
+    return retrieve_conv_outline(query)

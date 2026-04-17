@@ -1,4 +1,4 @@
-from mem_collections import conv_store
+from mem_integration import conv_store
 from operator import add
 from typing import TypedDict, List, Literal, Optional, Annotated
 import asyncio
@@ -324,7 +324,7 @@ def get_conv_retrieve_graph():
         _conv_graph = build_conv_retrieve_graph()
     return _conv_graph
 
-@tool
+
 async def retrieve_conv_outline(query: str) -> List[ConvRetrievalResult]:
     """
     Main entry point for conversation outline retrieval.

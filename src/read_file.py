@@ -24,4 +24,4 @@ def read_file(file_path):
             return ValueError("unsupported file type:" + extend)
         else:
             txt = loaders[extend].load()
-            return txt[0].page_content[0:300]
+            return txt[0].page_content

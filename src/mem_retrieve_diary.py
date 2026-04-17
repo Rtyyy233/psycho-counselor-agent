@@ -1,4 +1,4 @@
-from mem_collections import original_diary, diary_annotation
+from mem_integration import original_diary, diary_annotation
 from mem_store_diary import EmotionType
 from typing import TypedDict, List, Literal, Optional, Annotated
 import asyncio
@@ -352,7 +352,7 @@ def get_retrieve_graph():
         _graph = build_retrieve_graph()
     return _graph
 
-@tool
+
 async def retrieve_diary(query: str) -> List[RetrievalResult]:
     """
     依据日记检索所需的信息

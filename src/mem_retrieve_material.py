@@ -1,4 +1,4 @@
-from mem_collections import material_store, parent_store
+from mem_integration import material_store, parent_store
 from operator import add
 from typing import TypedDict, List, Literal, Optional, Annotated
 import asyncio
@@ -341,7 +341,7 @@ def get_material_graph():
         _material_graph = build_material_graph()
     return _material_graph
 
-@tool
+
 async def retrieve_materials(query: str) -> List[MaterialResult]:
     """
     search for non-diary materials stored in database

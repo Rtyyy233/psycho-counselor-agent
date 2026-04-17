@@ -4,6 +4,7 @@ from read_file import read_file
 from mem_store_material import store_materials
 from mem_store_conv_outline import store_conversation_outline
 
+# 不必要的架构设计，考虑舍去
 memory_manager = create_agent(
     model = "deepseek-chat",
     tools = [store_diary, read_file, store_materials, store_conversation_outline],
