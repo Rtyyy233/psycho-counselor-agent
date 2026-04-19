@@ -7,7 +7,7 @@ from langchain_community.document_loaders import (
 )
 from langchain_core.tools import tool
 
-@tool
+
 def read_file(file_path):
         """A tool to read files of different types, including txt, pdf, md, csv and docx,but only return the first 300 characters"""
         extend = file_path.split(".")[-1].lower()

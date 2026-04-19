@@ -83,3 +83,23 @@ async def retrieve_conv_outline_tool(query: str):
     从历史对话的摘要中检索所需的信息
     """
     return retrieve_conv_outline(query)
+
+from mem_store_diary import store_diary
+from mem_store_material import store_materials
+from mem_store_module import memory_manager
+from mem_store_conv_outline import store_conversation_outline
+
+@tool(
+    "memory_manager",
+    description= "call memory_manager to store files uploaded by user"
+)
+async def call_memory_manager(file_path:str):
+    await memory_manager.ainvoke({"messages":[{"role": "user", "content": file_path}] })
+
+
+from read_file import read_file
+
+@tool
+async def read_file_tool(file_path:str):
+    """read file through file path provided"""
+    return read_file(file_path)
