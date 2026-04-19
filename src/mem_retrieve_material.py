@@ -289,6 +289,10 @@ async def plan_node(state: material_state) -> material_state:
     return state
 
 
+def route_dispatch_node(state: material_state) -> material_state:
+    """Route dispatch node - returns state unchanged."""
+    return state
+
 def route_dispatch(state: material_state) -> Literal["semantic_search_children", "metadata_filter_node", "parent_lookup_node", "children_lookup_node", "__end__"]:
     """Route to appropriate node based on step mode."""
     if state["current_step_idx"] >= len(state["plan"]):
@@ -315,7 +319,7 @@ def build_material_graph():
     graph = StateGraph(material_state)
 
     graph.add_node("planner", plan_node)
-    graph.add_node("route_dispatch", route_dispatch)
+    graph.add_node("route_dispatch", route_dispatch_node)
     graph.add_node("semantic_search_children", semantic_search_children)
     graph.add_node("metadata_filter_node", metadata_filter_node)
     graph.add_node("parent_lookup_node", parent_lookup_node)

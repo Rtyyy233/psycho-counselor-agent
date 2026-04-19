@@ -31,13 +31,29 @@ async def call_supervisor(SharedContext: SharedContext):
         SharedContext.supervisor_spare = False
         messages = SharedContext._messages[-10:]
     
+    # 将消息列表格式化为字符串
+    formatted_history = "\n".join([
+        f"{msg['role']}: {msg['content']}" 
+        for msg in messages
+    ])
+    
     injection = await supervisor.ainvoke({
-        "messages": [{"role": "user", "content": messages}]
+        "messages": [{"role": "user", "content": formatted_history}]
     })
     
     async with SharedContext._lock:
         SharedContext.supervisor_spare = True
-        SharedContext._supervisor_injection.content = injection["messages"][-1].content #type:ignore
+        # 检查并创建 PromptInjection 对象
+        if SharedContext._supervisor_injection is None:
+            from SharedContext import PromptInjection
+            import time
+            SharedContext._supervisor_injection = PromptInjection(
+                content=injection["messages"][-1].content,
+                timestamp=time.time(),
+                source="supervisor"
+            )
+        else:
+            SharedContext._supervisor_injection.content = injection["messages"][-1].content
         SharedContext.supervisor_trigger.clear()  # Fixed: added parentheses
     
     return
