@@ -23,6 +23,14 @@ def load_command(user_input: str):
     return True, load_id
 
 async def input_process(SharedContext: SharedContext):
+    def log_exception(task):
+        try:
+            task.result()
+        except asyncio.CancelledError:
+            pass
+        except Exception as e:
+            print(f"后台任务异常: {e}")
+    
     while True:
         user_input = input("type in here:")
         if user_input:
@@ -46,23 +54,29 @@ async def input_process(SharedContext: SharedContext):
             
 
 
-            if SharedContext.analysist_spare:
-                await call_analysist(SharedContext)
-            if SharedContext.supervisor_spare:
-                await call_supervisor(SharedContext)
-
-            history = await SharedContext.get_recent_messages(50) 
-            history_messages = [msg["content"] for msg in history]
-
-            chat_input = "\n\n".join(history_messages) + "\n\n" + user_input
-
+            # 添加用户消息（触发analyst和supervisor事件）
             await SharedContext.add_message("user", user_input)
 
+            # 启动后台任务进行分析（不阻塞主流程）
+            if SharedContext.analysist_spare:
+                task = asyncio.create_task(call_analysist(SharedContext))
+                task.add_done_callback(log_exception)
+            if SharedContext.supervisor_spare:
+                task = asyncio.create_task(call_supervisor(SharedContext))
+                task.add_done_callback(log_exception)
+
+            # 构建聊天输入
+            history = await SharedContext.get_recent_messages(50)
+            history_messages = [msg["content"] for msg in history]
+            chat_input = "\n\n".join(history_messages) + "\n\n" + user_input
+
+            # 获取AI回复
             reply = await chatter.ainvoke({
                 "messages":[{"role": "user", "content": chat_input}]
             })
             print(reply["messages"][-1].content)
 
+            # 添加助手消息
             await SharedContext.add_message("assistant", reply["messages"][-1].content)
 
            
