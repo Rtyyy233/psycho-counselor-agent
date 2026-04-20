@@ -1,80 +1,20 @@
-"""
-Chatter Agent - Conversational interface for psychological counselor.
-
-User sees: warm, empathetic conversation
-Behind the scenes: observes context, incorporates analyst/supervisor injections
-"""
-from langchain_deepseek import ChatDeepSeek
 from langchain.agents import create_agent
-from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
-from pydantic import BaseModel, Field
-from typing import Literal, Optional
-import asyncio
-
+from langchain_deepseek import ChatDeepSeek
+from pydantic import BaseModel
+from typing import Literal,TypedDict,Annotated,Optional
 
 base_model = ChatDeepSeek(
-    model="deepseek-chat",
-    temperature=0.5,
+    model= "deepseek-chat",
+    temperature= 0.5
 )
 
-SYSTEM_PROMPT = """你是一位温柔、有同理心的心理咨询陪伴者。
+from mem_integration import read_file_tool
 
-角色特点：
-- 倾听为主，不急于给建议
-- 适时共情，温和引导
-- 注意用户的情绪变化，给予空间
-
-当有[分析洞察]或[指导建议]时，将其自然地融入你的回复中，但不要直接提及这些标签。"""
-
-
-class ChatterResponse(BaseModel):
-    reply: str = Field(description="回复内容")
-    analysist_trigger: Literal["false", "true"] = Field(
-        default="false",
-        description="是否触发深度分析"
-    )
-
-
-async def call_chatter(ctx) -> str:
-    """
-    Chatter generates response using context + observer injections.
-
-    Args:
-        ctx: SharedContext instance with messages and pending injections
-
-    Returns:
-        str: Chatter's response text
-    """
-    chatter = base_model.with_structured_output(ChatterResponse)
-
-    # Build messages for LLM
-    llm_messages = [SystemMessage(content=SYSTEM_PROMPT)]
-
-    # Read pending injections
-    analyst_injection = ctx.analyst_injection
-    supervisor_injection = ctx.supervisor_injection
-
-    # Build enriched system prompt with injections
-    enriched_prompt = SYSTEM_PROMPT
-    if analyst_injection:
-        enriched_prompt += f"\n\n[分析洞察]\n{analyst_injection.content}"
-        ctx.analyst_injection = None  # Clear after use
-
-    if supervisor_injection:
-        enriched_prompt += f"\n\n[指导建议]\n{supervisor_injection.content}"
-        ctx.supervisor_injection = None  # Clear after use
-
-    llm_messages[0] = SystemMessage(content=enriched_prompt)
-
-    # Add conversation history
-    for msg in ctx.messages[-10:]:  # Last 10 messages
-        if msg.role == "user":
-            llm_messages.append(HumanMessage(content=msg.content))
-        else:
-            llm_messages.append(AIMessage(content=msg.content))
-
-    # Generate response
-    result = await chatter.ainvoke(llm_messages)
-    reply = result.reply if hasattr(result, 'reply') else result.get('reply', '')
-
-    return reply
+chatter = create_agent(
+    model= base_model,
+    system_prompt= "你是一名资深的心理咨询专家，你正在参与一个多Agent协作心理咨询系统," \
+    "有时你会收到来自分析师analysis、督导supervisor的协作建议，这时务必参考；当你没有收到建议的时候，" \
+    "你需要按照分析模式-表达共情-引导聚焦情绪的模式，作为情绪聚焦疗法的专家回应、安抚用户" \
+    "当用户上传文件时，阅读文件并进行初步分析",
+    tools=[read_file_tool]
+)

@@ -74,7 +74,7 @@ async def generate_paip_outline(
         )
 
 # ---------- 主存储函数 ----------
-@tool
+
 async def store_conversation_outline(conv_doc: Document) -> str:
     """
     存储咨询对话原文及对应的 PAIP（problem,assessment,intervention,plan) 摘要

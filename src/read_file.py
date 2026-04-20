@@ -7,7 +7,7 @@ from langchain_community.document_loaders import (
 )
 from langchain_core.tools import tool
 
-@tool
+
 def read_file(file_path):
         """A tool to read files of different types, including txt, pdf, md, csv and docx,but only return the first 300 characters"""
         extend = file_path.split(".")[-1].lower()
@@ -24,4 +24,4 @@ def read_file(file_path):
             return ValueError("unsupported file type:" + extend)
         else:
             txt = loaders[extend].load()
-            return txt[0].page_content[0:300]
+            return txt[0].page_content

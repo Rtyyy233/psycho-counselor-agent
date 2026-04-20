@@ -18,7 +18,7 @@ from langchain_core.language_models import BaseChatModel
 from langchain_deepseek import ChatDeepSeek
 from langchain_experimental.text_splitter import SemanticChunker
 from langchain_ollama import OllamaEmbeddings
-from mem_collections import material_store, parent_store
+
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
 
@@ -196,11 +196,12 @@ class UniqueIDGenerator:
 
 
 # ---------- 主存储函数（异步） ----------
-@tool
+
 async def store_materials(file_path: str) -> List[str]:
     """
     将用户提供的非日记类材料存入向量数据库。
     """
+    from mem_integration import material_store, parent_store
     # 1. 加载文档（同步操作，但通常很快，若文件较大可考虑异步加载）
     raw_docs = load_file(file_path)
     if not raw_docs:

@@ -1,161 +1,71 @@
-"""
-Analyst Agent - Deep analysis using retrieval modules.
-
-Works as a background observer. When triggered, analyzes recent conversation
-and retrieves relevant memories. Returns analysis string for injection.
-"""
-
+from langchain.agents import create_agent
 from langchain_deepseek import ChatDeepSeek
+from pydantic import BaseModel
+from langchain.agents.structured_output import ToolStrategy
+from typing import Literal,TypedDict,Annotated,Optional
+from SharedContext import SharedContext
 
-from langchain_core.messages import HumanMessage, SystemMessage
-from mem_retrieve_conv_outline import retrieve_conv_outline
-from mem_retrieve_diary import retrieve_diary
-from mem_retrieve_material import retrieve_materials
-from pydantic import BaseModel, Field
-from typing import Literal, Optional, List
-import asyncio
-
-
-class AnalystResult(BaseModel):
-    insight: str = Field(description="分析洞察")
-    direction: str = Field(description="建议的下一步方向")
-    relevant_memories: list[str] = Field(
-        default_factory=list, description="相关记忆片段"
-    )
+base_model = ChatDeepSeek(
+    model= "deepseek-chat",
+    temperature= 0.2
+)
 
 
-async def synthesize_analysis(
-    query: str, diary_results, material_results, conv_results
-) -> str:
-    """Synthesize analysis from retrieval results."""
-    # Collect relevant texts
-    all_texts = []
-
-    for result in diary_results:
-        for doc in result.documents:
-            all_texts.append(f"[日记] {doc.page_content[:500]}")  # Limit length
-
-    for result in material_results:
-        for doc in result.documents:
-            all_texts.append(f"[材料] {doc.page_content[:500]}")
-
-    for result in conv_results:
-        for doc in result.documents:
-            all_texts.append(f"[咨询记录] {doc.page_content[:500]}")
-
-    if not all_texts:
-        return "暂无相关记忆可供分析。"
-
-    # Prepare context for LLM
-    context = "\n\n".join(all_texts[:10])  # Limit to 10 snippets
-
-    from langchain_deepseek import ChatDeepSeek
-    from langchain_core.messages import SystemMessage, HumanMessage
-
-    llm = ChatDeepSeek(model="deepseek-chat", temperature=0.2)
-
-    prompt = f"""基于以下相关记忆，分析用户的查询并提供专业心理分析：
-
-用户查询：{query}
-
-相关记忆片段：
-{context}
-
-请提供：
-1. 对用户当前情绪状态和认知模式的分析
-2. 记忆片段中发现的模式和关联
-3. 建议的下一步探索方向
-
-请用中文回复，保持专业且富有洞察力。"""
-
-    response = await llm.ainvoke(
-        [
-            SystemMessage(
-                content="你是一位专业的心理分析专家。根据提供的记忆片段进行分析。"
-            ),
-            HumanMessage(content=prompt),
-        ]
-    )
-
-    if hasattr(response, "content"):
-        return response.content
-    else:
-        return str(response)
+class analysis(BaseModel):
+    analysist_state: Literal["true","false"] = "false"
+    analysist_injection: Optional[str] = None
 
 
-async def call_analysist(ctx) -> Optional[str]:
-    """
-    Analyst performs deep analysis based on recent conversation.
+from mem_integration import retrieve_conv_outline_tool, retrieve_diary_tool,retrieve_materials_tool
+from read_file import read_file
 
-    Args:
-        ctx: SharedContext with messages
+analysist = create_agent(
+    model= base_model,
+    system_prompt= "你是一名资深心理咨询分析师，你正在参与一个多Agent协作心理咨询系统"\
+    "你将静默监听一段对话，当你认为有深度分析的必要时进行分析，"\
+    "将analysist_state输出为true,并填写analysist_injection，否则保持沉默",
+    tools= [
+            retrieve_conv_outline_tool,
+            retrieve_diary_tool,
+            retrieve_materials_tool,
+            read_file
+    ],
+    response_format= ToolStrategy(analysis)
+)
 
-    Returns:
-        str: Analysis result for injection, or None if not triggered
-    """
-    # Get recent messages for context
-    recent = await ctx.get_recent_messages(5)
-    if len(recent) < 2:
-        return None
+async def call_analysist(SharedContext:SharedContext):
+    await SharedContext.analyst_trigger.wait()
 
-    # Build query from recent user message
-    last_user_msg = next((m.content for m in reversed(recent) if m.role == "user"), "")
+    messages = None
 
-    # Use direct retrieval instead of agent to avoid LangGraph issues
-    try:
-        # Run retrievals in parallel using tool's ainvoke method
-        diary_results, material_results, conv_results = await asyncio.gather(
-            retrieve_diary.ainvoke({"query": last_user_msg}),
-            retrieve_materials.ainvoke({"query": last_user_msg}),
-            retrieve_conv_outline.ainvoke({"query": last_user_msg}),
-            return_exceptions=True,  # Don't fail if one retrieval fails
-        )
+    async with SharedContext._lock:
+        SharedContext.analysist_spare = False
+        messages = SharedContext._messages[-10:]
+    
+    # 将消息列表格式化为字符串
+    formatted_history = "\n".join([
+        f"{msg['role']}: {msg['content']}" 
+        for msg in messages
+    ])
+    
+    injection = await analysist.ainvoke({
+        "messages": [{"role": "user", "content": formatted_history}]
+    })
 
-        # Convert exceptions to empty results
-        if isinstance(diary_results, Exception):
-            print(f"Diary retrieval error: {diary_results}")
-            diary_results = []
-        if isinstance(material_results, Exception):
-            print(f"Material retrieval error: {material_results}")
-            material_results = []
-        if isinstance(conv_results, Exception):
-            print(f"Conversation retrieval error: {conv_results}")
-            conv_results = []
-
-        # Synthesize analysis
-        analysis = await synthesize_analysis(
-            query=last_user_msg,
-            diary_results=diary_results,
-            material_results=material_results,
-            conv_results=conv_results,
-        )
-
-        # Ensure we have meaningful analysis
-        if not analysis or len(analysis.strip()) < 10:
-            return None
-
-        return analysis
-
-    except Exception as e:
-        print(f"Analyst error: {e}")
-        # Fallback to simple analysis without retrieval
-        try:
-            from langchain_deepseek import ChatDeepSeek
-            from langchain_core.messages import SystemMessage, HumanMessage
-
-            llm = ChatDeepSeek(model="deepseek-chat", temperature=0.2)
-            prompt = f"请分析用户的以下表达，提供简要的心理分析：{last_user_msg}"
-
-            response = await llm.ainvoke(
-                [
-                    SystemMessage(content="你是一位心理分析专家。"),
-                    HumanMessage(content=prompt),
-                ]
+    async with SharedContext._lock:
+        SharedContext.analysist_spare = True
+        # 检查并创建 PromptInjection 对象
+        if SharedContext._analyst_injection is None:
+            from SharedContext import PromptInjection
+            import time
+            SharedContext._analyst_injection = PromptInjection(
+                content=injection["messages"][-1].content,
+                timestamp=time.time(),
+                source="analyst"
             )
+        else:
+            SharedContext._analyst_injection.content = injection["messages"][-1].content
+        SharedContext.analyst_trigger.clear()
 
-            if hasattr(response, "content"):
-                return response.content[:500]  # Limit length
-            else:
-                return str(response)[:500]
-        except Exception as inner_e:
-            return f"分析失败: {str(inner_e)}"
+    return
+

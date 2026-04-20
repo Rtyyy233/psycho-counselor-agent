@@ -1,5 +1,5 @@
-from mem_collections import original_diary, diary_annotation
-
+from mem_integration import original_diary, diary_annotation
+from mem_store_diary import EmotionType
 from typing import TypedDict, List, Literal, Optional, Annotated
 import asyncio
 from langchain_deepseek import ChatDeepSeek
@@ -314,15 +314,11 @@ async def rerank_node(state: agent_state) -> agent_state:  # ai logic waits for 
     return state
 
 
-def route_dispatch(
-    state: agent_state,
-) -> Literal[
-    "metadata_filter_node",
-    "semantic_search_node",
-    "id_lookup_node",
-    "rerank_node",
-    "__end__",
-]:
+def route_dispatch_node(state: agent_state) -> agent_state:
+    """Route dispatch node - returns state unchanged."""
+    return state
+
+def route_dispatch(state: agent_state) -> Literal["metadata_filter_node", "semantic_search_node", "id_lookup_node", "rerank_node", "__end__"]:
     """Route to appropriate node based on current step mode."""
     if state["current_step_idx"] >= len(state["retrieve_plan"]):
         return "__end__"
@@ -369,6 +365,7 @@ def build_retrieve_graph():
     graph = StateGraph(agent_state)
 
     graph.add_node("planner", plan_node)
+    graph.add_node("route_dispatch", route_dispatch_node)
     graph.add_node("metadata_filter_node", metadata_filter_node)
     graph.add_node("semantic_search_node", semantic_search_node)
     graph.add_node("id_lookup_node", id_lookup_node)
@@ -397,7 +394,6 @@ def get_retrieve_graph():
     return _graph
 
 
-@tool
 async def retrieve_diary(query: str) -> List[RetrievalResult]:
     """
     依据日记检索所需的信息

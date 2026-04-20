@@ -1,4 +1,4 @@
-from mem_collections import conv_store
+from mem_integration import conv_store
 from operator import add
 from typing import TypedDict, List, Literal, Optional, Annotated
 import asyncio
@@ -274,6 +274,10 @@ async def plan_node(state: conv_state) -> conv_state:
     return state
 
 
+def route_dispatch_node(state: conv_state) -> conv_state:
+    """Route dispatch node - returns state unchanged."""
+    return state
+
 def route_dispatch(
     state: conv_state,
 ) -> Literal[
@@ -336,6 +340,7 @@ def build_conv_retrieve_graph():
     graph = StateGraph(conv_state)
 
     graph.add_node("planner", plan_node)
+    graph.add_node("route_dispatch", route_dispatch_node)
     graph.add_node("semantic_search_node", semantic_search_node)
     graph.add_node("metadata_filter_node", metadata_filter_node)
     graph.add_node("paip_outline_lookup_node", paip_outline_lookup_node)
@@ -362,7 +367,6 @@ def get_conv_retrieve_graph():
     return _conv_graph
 
 
-@tool
 async def retrieve_conv_outline(query: str) -> List[ConvRetrievalResult]:
     """
     Main entry point for conversation outline retrieval.
