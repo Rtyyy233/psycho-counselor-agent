@@ -2,11 +2,14 @@ from mem_integration import conv_store
 from operator import add
 from typing import TypedDict, List, Literal, Optional, Annotated
 import asyncio
+import logging
 from langchain_deepseek import ChatDeepSeek
 from langchain_core.documents import Document
 from pydantic import BaseModel, Field
 from langgraph.graph import StateGraph, END
 from langchain_core.tools import tool
+
+logger = logging.getLogger(__name__)
 
 
 class conv_filter(BaseModel):
@@ -266,11 +269,18 @@ async def plan_node(state: conv_state) -> conv_state:
             ),  # type:ignore
         ]
 
+    # Limit maximum steps to prevent infinite loops
+    MAX_STEPS = 5
+    if len(plan) > MAX_STEPS:
+        logger.warning(f"Plan has {len(plan)} steps, limiting to {MAX_STEPS}")
+        plan = plan[:MAX_STEPS]
+    
     for i, step in enumerate(plan):
         step.step_id = i + 1  # type:ignore
 
     state["plan"] = plan  # type:ignore
     state["current_step_idx"] = 0
+    logger.debug(f"Generated plan with {len(plan)} steps for query: {state['query'][:50]}...")
     return state
 
 
@@ -288,7 +298,7 @@ def route_dispatch(
 ]:
     """Route to appropriate node based on step mode."""
     if state["current_step_idx"] >= len(state["plan"]):
-        print(
+        logger.debug(
             f"DEBUG route_dispatch: current_step_idx {state['current_step_idx']} >= plan length {len(state['plan'])}, returning '__end__'"
         )
         return "__end__"
@@ -298,41 +308,45 @@ def route_dispatch(
         "metadata_filter": "metadata_filter_node",
         "paip_outline_lookup": "paip_outline_lookup_node",
     }.get(step.mode, "__end__")  # type:ignore
-    print(f"DEBUG route_dispatch: step.mode={step.mode}, returning '{result}'")
+    logger.debug(f"DEBUG route_dispatch: step.mode={step.mode}, returning '{result}'")
     return result
 
 
 def first_route(
     state: conv_state,
-) -> Literal[
-    "semantic_search_node",
-    "metadata_filter_node",
-    "paip_outline_lookup_node",
-    "__end__",
-]:
+) -> Literal["route_dispatch", "__end__"]:
     """Route from planner to first execution node."""
-    return route_dispatch(state)
+    if not state["plan"]:
+        logger.debug(f"DEBUG first_route: plan is empty, returning '__end__'")
+        return "__end__"
+    logger.debug(f"DEBUG first_route: plan has {len(state['plan'])} steps, returning 'route_dispatch'")
+    return "route_dispatch"
 
 
 def after_execution(
     state: conv_state,
-) -> Literal[
-    "semantic_search_node",
-    "metadata_filter_node",
-    "paip_outline_lookup_node",
-    "__end__",
-]:
+) -> Literal["route_dispatch", "__end__"]:
     """Advance to next step or end."""
+    # Initialize loop counter if not present
+    if "_execution_loop_count" not in state:
+        state["_execution_loop_count"] = 0
+    state["_execution_loop_count"] += 1
+    
+    # Safety check: prevent infinite loops
+    MAX_LOOPS = 20
+    if state["_execution_loop_count"] > MAX_LOOPS:
+        logger.error(f"Infinite loop detected! current_step_idx={state['current_step_idx']}, plan_len={len(state['plan'])}, forcing end")
+        return "__end__"
+    
     state["current_step_idx"] += 1
-    print(
-        f"DEBUG after_execution: incremented current_step_idx to {state['current_step_idx']}, plan length={len(state['plan'])}"
+    logger.debug(
+        f"DEBUG after_execution: incremented current_step_idx to {state['current_step_idx']}, plan length={len(state['plan'])}, loop={state['_execution_loop_count']}"
     )
     if state["current_step_idx"] >= len(state["plan"]):
-        print(f"DEBUG after_execution: returning '__end__'")
+        logger.debug(f"DEBUG after_execution: returning '__end__'")
         return "__end__"
-    result = route_dispatch(state)
-    print(f"DEBUG after_execution: returning '{result}'")
-    return result
+    logger.debug(f"DEBUG after_execution: returning 'route_dispatch'")
+    return "route_dispatch"
 
 
 def build_conv_retrieve_graph():
@@ -347,6 +361,7 @@ def build_conv_retrieve_graph():
 
     graph.set_entry_point("planner")
     graph.add_conditional_edges("planner", first_route)
+    graph.add_conditional_edges("route_dispatch", route_dispatch)  # 从route_dispatch节点到路由函数
     graph.add_conditional_edges("semantic_search_node", after_execution)
     graph.add_conditional_edges("metadata_filter_node", after_execution)
     graph.add_conditional_edges("paip_outline_lookup_node", after_execution)
@@ -360,9 +375,9 @@ _conv_graph = None
 def get_conv_retrieve_graph():
     global _conv_graph
     # Force rebuild for debugging - remove after fix is confirmed
-    _conv_graph = None
+    # _conv_graph = None  # Removed - fix confirmed
     if _conv_graph is None:
-        print("DEBUG: Building new conversation retrieval graph")
+        logger.debug("Building new conversation retrieval graph")
         _conv_graph = build_conv_retrieve_graph()
     return _conv_graph
 

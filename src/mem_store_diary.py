@@ -120,7 +120,7 @@ class SituationalTag(BaseModel):
         default_factory=list, description="涉及人物及角色，如['母亲-权威']"
     )
     scene_type: Optional[
-        Literal["工作", "家庭", "亲密关系", "社交", "独处", "学习", "其他"]
+        Literal["工作", "家庭", "亲密关系", "社交", "独处", "学习", "日常", "其他"]
     ] = Field(None, description="场景类型")
     event_type: Optional[
         Literal[
@@ -324,24 +324,25 @@ diary_analysist = ChatDeepSeek(
 )
 
 
-@tool
-def read_file(file_path):
-    """A tool to read files of different types, including txt, pdf, md, csv and docx,but only return the first 300 characters"""
-    extend = file_path.split(".")[-1].lower()
-    # print(extend) # temporary code for testing the file type, to be deleted soon
-    loaders = {
-        "txt": TextLoader(file_path, encoding="utf-8"),
-        "pdf": PyPDFLoader(file_path),
-        "md": UnstructuredMarkdownLoader(file_path),
-        "csv": CSVLoader(file_path),
-        "docx": UnstructuredWordDocumentLoader(file_path),
-    }
-
-    if extend not in loaders:
-        return ValueError("unsupported file type:" + extend)
-    else:
-        txt = loaders[extend].load()
-        return txt[0].page_content[0:300]
+# DEPRECATED: Use src/read_file.read_file instead
+# @tool
+# def read_file(file_path):
+#     """A tool to read files of different types, including txt, pdf, md, csv and docx,but only return the first 300 characters"""
+#     extend = file_path.split(".")[-1].lower()
+#     # print(extend) # temporary code for testing the file type, to be deleted soon
+#     loaders = {
+#         "txt": TextLoader(file_path, encoding="utf-8"),
+#         "pdf": PyPDFLoader(file_path),
+#         "md": UnstructuredMarkdownLoader(file_path),
+#         "csv": CSVLoader(file_path),
+#         "docx": UnstructuredWordDocumentLoader(file_path),
+#     }
+#
+#     if extend not in loaders:
+#         return ValueError("unsupported file type:" + extend)
+#     else:
+#         txt = loaders[extend].load()
+#         return txt[0].page_content[0:300]
 
 
 
@@ -417,12 +418,24 @@ async def store_diary(file_path: str) -> str:
     print("diary annotation success")
 
     for i in standardized_docs:
+        # 安全访问字段，防止None值导致AttributeError
+        emotions = i.emotions if hasattr(i, 'emotions') else None
+        tags = i.tags if hasattr(i, 'tags') else None
+        cognitions = i.cognitions if hasattr(i, 'cognitions') else None
+        behaviors = i.behaviors if hasattr(i, 'behaviors') else None
+        
+        # 安全提取datatable字段
+        intensity = emotions.intensity if emotions and emotions.intensity else " "
+        scene_type = tags.scene_type if tags and tags.scene_type else " "
+        event_type = tags.event_type if tags and tags.event_type else " "
+        emotion_list = emotions.emotion if emotions and emotions.emotion else []
+        
         datatable = {  # 已修改：根据DiaryChunk的结构调整
-            "intensity": i.emotions.intensity,  # 仅记录主要情绪的强度，后续可以考虑记录次要情绪
+            "intensity": intensity,  # 仅记录主要情绪的强度，后续可以考虑记录次要情绪
             "date": i.date,  # 格式为'25.03.15'
-            "scene_type": i.tags.scene_type,
-            "event_type": i.tags.event_type,
-            "emotion": i.emotions.emotion,  # 仅记录主要情绪，后续可以考虑记录次要情绪
+            "scene_type": scene_type,  # 场景类型，如工作、家庭、社交等
+            "event_type": event_type,  # 事件类型，如创伤、日常、积极等
+            "emotion": ", ".join(emotion_list) if emotion_list else " ",  # 仅记录主要情绪
         }
 
         index = hashlib.md5(i.raw_text.encode("utf-8")).hexdigest()
@@ -435,21 +448,31 @@ async def store_diary(file_path: str) -> str:
         )
 
         # Convert emotions list to string
-        emotion_str = ", ".join(i.emotions.emotion) if i.emotions.emotion else ""
+        emotion_str = ", ".join(emotion_list) if emotion_list else ""
+
+        # 安全提取其他字段
+        outline = i.outline if hasattr(i, 'outline') else ""
+        automatic_thought = cognitions.automatic_thought if cognitions and cognitions.automatic_thought else ""
+        belief = cognitions.belief if cognitions and cognitions.belief else ""
+        reflection = cognitions.reflection if cognitions and cognitions.reflection else ""
+        action = behaviors.action if behaviors and behaviors.action else ""
+        consequence = behaviors.consequence if behaviors and behaviors.consequence else ""
+        place = tags.place if tags and tags.place else ""
+        persons = ", ".join(tags.persons) if tags and tags.persons else ""
 
         diary_annotation_to_save.append(
             Document(
                 page_content="\n".join(
                     [
-                        i.outline or "",
+                        outline,
                         emotion_str,
-                        i.cognitions.automatic_thought or "",
-                        i.cognitions.belief or "",
-                        i.cognitions.reflection or "",
-                        i.behaviors.action or "",
-                        i.behaviors.consequence or "",
-                        i.tags.place or "",
-                        ", ".join(i.tags.persons) if i.tags.persons else "",
+                        automatic_thought,
+                        belief,
+                        reflection,
+                        action,
+                        consequence,
+                        place,
+                        persons,
                     ]
                 ),
                 metadata=datatable,

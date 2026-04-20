@@ -1,12 +1,14 @@
 from mem_integration import original_diary, diary_annotation
-from mem_store_diary import EmotionType
 from typing import TypedDict, List, Literal, Optional, Annotated
 import asyncio
+import logging
 from langchain_deepseek import ChatDeepSeek
 from langchain_core.documents import Document
 from pydantic import BaseModel, Field
 from langgraph.graph import StateGraph, END
 from langchain_core.tools import tool
+
+logger = logging.getLogger(__name__)
 
 
 class retrieve_filter(BaseModel):
@@ -129,12 +131,19 @@ async def plan_node(state: agent_state) -> agent_state:
             )
         ]
 
+    # Limit maximum steps to prevent infinite loops
+    MAX_STEPS = 5
+    if len(plan) > MAX_STEPS:
+        logger.warning(f"Plan has {len(plan)} steps, limiting to {MAX_STEPS}")
+        plan = plan[:MAX_STEPS]
+    
     # Ensure step_ids are sequential
     for i, step in enumerate(plan):
         step.step_id = i + 1  # type:ignore
 
     state["retrieve_plan"] = plan  # type:ignore
     state["current_step_idx"] = 0
+    logger.debug(f"Generated plan with {len(plan)} steps for query: {state['query'][:50]}...")
     return state
 
 
@@ -320,44 +329,55 @@ def route_dispatch_node(state: agent_state) -> agent_state:
 
 def route_dispatch(state: agent_state) -> Literal["metadata_filter_node", "semantic_search_node", "id_lookup_node", "rerank_node", "__end__"]:
     """Route to appropriate node based on current step mode."""
+    logger.debug(f"route_dispatch: current_step_idx={state['current_step_idx']}, plan_len={len(state['retrieve_plan'])}")
     if state["current_step_idx"] >= len(state["retrieve_plan"]):
+        logger.debug(f"route_dispatch: current_step_idx out of range, returning '__end__'")
         return "__end__"
     step = state["retrieve_plan"][state["current_step_idx"]]
-    return {
+    logger.debug(f"route_dispatch: step {state['current_step_idx']} mode={step.mode}, target_collection={step.target_collection if hasattr(step, 'target_collection') else 'N/A'}")
+    result = {
         "metadata_filter": "metadata_filter_node",
         "semantic_search": "semantic_search_node",
         "id_lookup": "id_lookup_node",
         "rerank": "rerank_node",
     }.get(step.mode, "__end__")  # type:ignore
+    logger.debug(f"route_dispatch: returning '{result}'")
+    return result
 
 
 def first_route(
     state: agent_state,
-) -> Literal[
-    "metadata_filter_node",
-    "semantic_search_node",
-    "id_lookup_node",
-    "rerank_node",
-    "__end__",
-]:
+) -> Literal["route_dispatch", "__end__"]:
     """Route from planner to first execution node."""
-    return route_dispatch(state)
+    if not state["retrieve_plan"]:
+        return "__end__"
+    return "route_dispatch"
 
 
 def after_execution(
     state: agent_state,
-) -> Literal[
-    "metadata_filter_node",
-    "semantic_search_node",
-    "id_lookup_node",
-    "rerank_node",
-    "__end__",
-]:
+) -> Literal["route_dispatch", "__end__"]:
     """After any execution node, advance to next step or end."""
-    state["current_step_idx"] += 1
-    if state["current_step_idx"] >= len(state["retrieve_plan"]):
+    # Initialize loop counter if not present
+    if "_execution_loop_count" not in state:
+        state["_execution_loop_count"] = 0
+    state["_execution_loop_count"] += 1
+    
+    # Safety check: prevent infinite loops
+    MAX_LOOPS = 20
+    if state["_execution_loop_count"] > MAX_LOOPS:
+        logger.error(f"Infinite loop detected! current_step_idx={state['current_step_idx']}, plan_len={len(state['retrieve_plan'])}, forcing end")
         return "__end__"
-    return route_dispatch(state)
+    
+    state["current_step_idx"] += 1
+    logger.debug(f"after_execution: current_step_idx={state['current_step_idx']-1}->{state['current_step_idx']}, plan_len={len(state['retrieve_plan'])}, step_modes={[step.mode for step in state['retrieve_plan']]}")
+    
+    if state["current_step_idx"] >= len(state["retrieve_plan"]):
+        logger.debug(f"after_execution: reached end of plan, returning '__end__'")
+        return "__end__"
+    
+    logger.debug(f"after_execution: returning 'route_dispatch' for next step")
+    return "route_dispatch"
 
 
 def build_retrieve_graph():
@@ -373,6 +393,7 @@ def build_retrieve_graph():
 
     graph.set_entry_point("planner")
     graph.add_conditional_edges("planner", first_route)
+    graph.add_conditional_edges("route_dispatch", route_dispatch)  # 从route_dispatch节点到路由函数
     graph.add_conditional_edges("metadata_filter_node", after_execution)
     graph.add_conditional_edges("semantic_search_node", after_execution)
     graph.add_conditional_edges("id_lookup_node", after_execution)
@@ -387,9 +408,9 @@ _graph = None
 def get_retrieve_graph():
     global _graph
     # Force rebuild for debugging - remove after fix is confirmed
-    _graph = None
+    # _graph = None  # Removed - fix confirmed
     if _graph is None:
-        print("DEBUG: Building new diary retrieval graph")
+        logger.debug("DEBUG: Building new diary retrieval graph")
         _graph = build_retrieve_graph()
     return _graph
 
