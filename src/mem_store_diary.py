@@ -76,11 +76,7 @@ EmotionType = Literal[
 ]
 
 
-def find_project_root(start_path=Path(__file__).parent):
-    for parent in [start_path] + list(start_path.parents):
-        if (parent / ".env").exists():
-            return parent
-    return start_path
+
 
 
 PROJECT_ROOT = find_project_root()
@@ -348,7 +344,7 @@ def read_file(file_path):
         return txt[0].page_content[0:300]
 
 
-@tool
+
 async def store_diary(file_path: str) -> str:
     """A tool to store the diary into the vector database"""
 

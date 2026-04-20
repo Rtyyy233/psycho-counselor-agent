@@ -15,12 +15,16 @@ class supervision(BaseModel):
     supervisor_injection: Optional[str] = None
 
 
+from mem_integration import read_file_tool,store_material_tool,store_diary_tool
+
 supervisor = create_agent(
     model= base_model,
     system_prompt= "你是一名资深的心理咨询专家，你正在参与一个多Agent协作心理咨询系统,"\
     "静默监听你收到的对话，当你认为需要提出督导建议的时候，将supervision_state改为true,"\
-    "然后在supervisor_injection中填写你给出的督导建议",
-    response_format= ToolStrategy(supervision)
+    "然后在supervisor_injection中填写你给出的督导建议" \
+    "当用户上传文件时，阅读文件，判断文件类型，然后存储文件（无法判断为日记类型的就存储为材料）",
+    response_format= ToolStrategy(supervision),
+    tools=[read_file_tool,store_material_tool,store_diary_tool],
 )
 
 async def call_supervisor(SharedContext: SharedContext):

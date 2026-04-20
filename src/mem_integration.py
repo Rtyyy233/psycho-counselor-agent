@@ -101,3 +101,16 @@ from read_file import read_file
 async def read_file_tool(file_path:str):
     """read file through file path provided"""
     return read_file(file_path)
+
+from mem_store_diary import store_diary
+from mem_store_material import store_materials
+
+@tool
+async def store_diary_tool(file_path:str):
+    """store diary after reading file"""
+    return await store_diary(file_path)
+
+@tool
+async def store_material_tool(file_path:str):
+    """store materials after reading file"""
+    return await store_materials(file_path)
