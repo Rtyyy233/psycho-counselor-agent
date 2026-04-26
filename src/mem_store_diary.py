@@ -1,4 +1,5 @@
 from langchain.agents import create_agent
+from config import LLM_MODEL
 from langchain_deepseek import ChatDeepSeek
 from langchain_community.document_loaders import (
     TextLoader,
@@ -207,7 +208,7 @@ class DiaryChunkbyEvent(BaseModel):  # diary_chunker ver 2.0
 
 # timeout waiting to be set
 diary_chunker = ChatDeepSeek(
-    model="deepseek-chat",
+    model=LLM_MODEL,
     # response_format=DiaryChunkbyEvent_schema,
 )
 
@@ -317,7 +318,7 @@ def diary_splitter_event(diary_splitted_date):  # 待改进：异步化处理
     return {"message": chunks}"""
 
 diary_analysist = ChatDeepSeek(
-    model="deepseek-chat",
+    model=LLM_MODEL,
     # system_prompt="你是一个有深厚心理咨询和精神医学背景的日记分析师，你需要把接收" \
     # "的日记按事件进行拆分，并且对每个事件进行分析，提取出事件的摘要、日期、类型、主要情绪、次要情绪和情绪强度。" ,
     # response_format=DiaryChunk_schema,

@@ -10,6 +10,8 @@ import asyncio
 from dataclasses import dataclass, field
 from datetime import datetime
 from typing import Optional, Literal
+import os
+from config import LLM_MODEL
 from langchain_deepseek import ChatDeepSeek
 from langchain_core.documents import Document
 from pydantic import BaseModel, Field
@@ -71,7 +73,7 @@ class ConversationManager:
         threshold: float = DEFAULT_SUMMARY_THRESHOLD
     ):
         self.ctx = ctx
-        self.llm = llm or ChatDeepSeek(model="deepseek-chat", temperature=0.3)
+        self.llm = llm or ChatDeepSeek(model=LLM_MODEL, temperature=0.3)
         self.max_tokens = max_tokens
         self.threshold = threshold
 

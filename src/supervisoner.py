@@ -12,11 +12,12 @@ from langchain_deepseek import ChatDeepSeek
 from langchain_core.messages import HumanMessage, SystemMessage
 from pydantic import BaseModel, Field
 from typing import Literal, Optional
+from config import LLM_MODEL
 
 
 # Create LLM for supervision
 base_model = ChatDeepSeek(
-    model="deepseek-chat",
+    model=LLM_MODEL,
     temperature=0.1,  # Lower temperature for more consistent supervision
 )
 

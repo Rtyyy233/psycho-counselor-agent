@@ -13,9 +13,10 @@ from langchain.agents import create_agent
 from langchain_core.messages import HumanMessage, SystemMessage
 from pydantic import BaseModel, Field
 from typing import Literal, Optional
+from config import LLM_MODEL
 
 
-base_model = ChatDeepSeek(model="deepseek-chat", temperature=0.2)
+base_model = ChatDeepSeek(model=LLM_MODEL, temperature=0.2)
 
 SYSTEM_PROMPT = """你是一位临床督导专家，观察咨询对话并提供指导。
 

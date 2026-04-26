@@ -90,7 +90,7 @@ async def retrieve_diary_tool(query: str):
 @tool
 async def retrieve_materials_tool(query: str):
     """
-        依据侧写情绪的材料检索所需的信息
+        依据侧写情绪的材料检索所需的信息（非日记类材料）
     """
     try:
         from mem_retrieve_material import retrieve_materials

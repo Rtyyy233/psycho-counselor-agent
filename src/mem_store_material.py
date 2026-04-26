@@ -5,6 +5,7 @@ from enum import Enum
 from pathlib import Path
 from typing import List, Dict, Optional
 
+from config import LLM_MODEL
 from langchain_community.document_loaders import (
     TextLoader,
     PyPDFLoader,
@@ -63,16 +64,20 @@ class MaterialType(str, Enum):
 # ---------- 文件加载 ----------
 def load_file(file_path: str) -> List[Document]:
     ext = Path(file_path).suffix.lower()[1:]
-    loader_classes = {
-        "txt": TextLoader,
-        "pdf": PyPDFLoader,
-        "md": UnstructuredMarkdownLoader,
-        "csv": CSVLoader,
-        "docx": UnstructuredWordDocumentLoader,
-    }
-    if ext not in loader_classes:
+    
+    if ext == "txt":
+        loader = TextLoader(file_path, encoding="utf-8")
+    elif ext == "pdf":
+        loader = PyPDFLoader(file_path)
+    elif ext == "md":
+        loader = UnstructuredMarkdownLoader(file_path)
+    elif ext == "csv":
+        loader = CSVLoader(file_path)
+    elif ext == "docx":
+        loader = UnstructuredWordDocumentLoader(file_path)
+    else:
         raise ValueError(f"不支持的文件类型: {ext}")
-    loader = loader_classes[ext](file_path, encoding="utf-8" if ext == "txt" else None)
+    
     return loader.load()
 
 
@@ -86,7 +91,7 @@ async def infer_material_type(
 ) -> MaterialType:
     """异步识别文本类型"""
     if llm is None:
-        llm = ChatDeepSeek(model="deepseek-chat", temperature=0)
+        llm = ChatDeepSeek(model=LLM_MODEL, temperature=0)
 
     structured_llm = llm.with_structured_output(TypeInference)
     type_options = "\n".join([f"- {t.value}" for t in MaterialType])
@@ -210,7 +215,7 @@ async def store_materials(file_path: str) -> List[str]:
     full_text = "\n".join([doc.page_content for doc in raw_docs])
 
     # 2. 异步识别类型
-    llm = ChatDeepSeek(model="deepseek-chat", temperature=0)
+    llm = ChatDeepSeek(model=LLM_MODEL, temperature=0)
     material_type = await infer_material_type(full_text[:1500], llm)
 
     # 3. 异步父子分块

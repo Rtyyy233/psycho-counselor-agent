@@ -1,6 +1,6 @@
 import asyncio
 import time
-from typing import Dict
+from typing import Dict, Optional
 from langchain_core.documents import Document
 from SharedContext import SharedContext
 from supervisor import supervisor,supervision,call_supervisor
@@ -81,7 +81,7 @@ def parse_command(user_input: str):
     else:
         return "message", None
 
-async def input_process(SharedContext: SharedContext):
+async def input_process(SharedContext: SharedContext) -> None:
     def log_exception(task):
         try:
             task.result()
@@ -148,8 +148,27 @@ async def input_process(SharedContext: SharedContext):
         elif cmd_type == "load":
             if cmd_arg:
                 print(f"正在加载会话: {cmd_arg}")
-                success = await SharedContext.load_from_file(cmd_arg)
-                if success:
+                new_ctx = await SharedContext.load_from_file(cmd_arg)
+                if new_ctx:
+                    # 将新实例的状态复制到当前实例
+                    async with SharedContext._lock:
+                        # 复制消息
+                        SharedContext._messages.clear()
+                        SharedContext._messages.extend(new_ctx._messages)
+                        # 复制统计信息
+                        SharedContext._stats = new_ctx._stats.copy()
+                        # 复制注入状态
+                        SharedContext._analyst_injection = new_ctx._analyst_injection
+                        SharedContext._supervisor_injection = new_ctx._supervisor_injection
+                        # 更新session_id
+                        SharedContext.session_id = new_ctx.session_id
+                        # 重置事件和标志（加载新会话后应重置）
+                        SharedContext.analyst_trigger.clear()
+                        SharedContext.supervisor_trigger.clear()
+                        SharedContext.analysist_spare = True
+                        SharedContext.supervisor_spare = True
+                        # 注意：token_limit和_tokenizer保持不变
+                    
                     print(f"会话加载成功: {cmd_arg}")
                     # 显示加载后的令牌使用情况
                     usage = await SharedContext.get_token_usage()
@@ -302,7 +321,7 @@ async def main_async():
     # 创建带令牌管理的上下文
     state = SharedContext(
         session_id="default",
-        token_limit=128000,  # DeepSeek V3标准窗口
+        token_limit=1000000,  # DeepSeek V4标准窗口
         tokenizer=tokenizer
     )
     

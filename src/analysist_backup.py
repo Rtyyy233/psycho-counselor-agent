@@ -13,10 +13,11 @@ from mem_retrieve_diary import retrieve_diary
 from mem_retrieve_material import retrieve_materials
 from pydantic import BaseModel, Field
 from typing import Literal, Optional
+from config import LLM_MODEL
 import asyncio
 
 
-base_model = ChatDeepSeek(model="deepseek-chat", temperature=0.2)
+base_model = ChatDeepSeek(model=LLM_MODEL, temperature=0.2)
 
 SYSTEM_PROMPT = """你是一位专业的心理分析专家。
 

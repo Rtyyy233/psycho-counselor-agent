@@ -37,6 +37,7 @@ from fastapi import (
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse, FileResponse, JSONResponse
 from pydantic import BaseModel
+from config import LLM_MODEL
 from langchain_deepseek import ChatDeepSeek
 import tempfile
 import shutil
@@ -287,7 +288,7 @@ async def websocket_chat(websocket: WebSocket, session_id: str = None):
 
     # Initialize context
     ctx = ConnectionContext(websocket, session.id)
-    ctx.llm = ChatDeepSeek(model="deepseek-chat", temperature=0.5)
+    ctx.llm = ChatDeepSeek(model=LLM_MODEL, temperature=0.5)
     ctx.ctx = SharedContext()
 
     # Load existing messages into context
@@ -668,7 +669,7 @@ async def upload_file(file: UploadFile = File(...)):
 
                         # Create a simple LLM instance for analysis
                         analysis_llm = ChatDeepSeek(
-                            model="deepseek-chat", temperature=0.2
+                            model=LLM_MODEL, temperature=0.2
                         )
 
                         analysis_response = await asyncio.wait_for(

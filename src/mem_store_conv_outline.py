@@ -8,6 +8,7 @@ from typing import List, Dict, Optional, Union
 
 from dotenv import load_dotenv
 from pydantic import BaseModel, Field
+from config import LLM_MODEL
 from langchain_core.tools import tool
 from langchain_core.documents import Document
 from langchain_core.language_models import BaseChatModel
@@ -41,7 +42,7 @@ async def generate_paip_outline(
 ) -> PAIPOutline:
     """使用 LLM 根据对话原文生成 PAIP 结构化摘要"""
     if llm is None:
-        llm = ChatDeepSeek(model="deepseek-chat", temperature=0)
+        llm = ChatDeepSeek(model=LLM_MODEL, temperature=0)
 
     structured_llm = llm.with_structured_output(PAIPOutline) # 后续建立完整Agent后考虑调用专门的Analysist模块提供以下内容
     prompt = f"""你是一位专业的心理咨询记录分析师。请根据以下咨询对话内容，提取并整理成 PAIP 格式的摘要。
@@ -89,7 +90,7 @@ async def store_conversation_outline(conv_doc: Document) -> str:
     base_id = id_gen.generate(prefix="conv")
 
     # 3. 异步生成 PAIP 摘要
-    llm = ChatDeepSeek(model="deepseek-chat", temperature=0)
+    llm = ChatDeepSeek(model=LLM_MODEL, temperature=0)
     paip_outline = await generate_paip_outline(full_text, llm)
 
     # 4. 对对话原文进行父子分块（复用已实现的异步分块器）

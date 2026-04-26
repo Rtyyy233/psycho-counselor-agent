@@ -1,3 +1,4 @@
+import os
 from mem_integration import material_store, parent_store
 from operator import add
 from typing import TypedDict, List, Literal, Optional, Annotated
@@ -8,6 +9,7 @@ from langchain_core.documents import Document
 from pydantic import BaseModel, Field
 from langgraph.graph import StateGraph, END
 from langchain_core.tools import tool
+from config import LLM_MODEL
 
 logger = logging.getLogger(__name__)
 
@@ -85,6 +87,7 @@ async def semantic_search_children(state: material_state) -> material_state:
         mode="semantic_search",
     )
     state["results"].append(result)
+    state["current_step_idx"] += 1
     return state
 
 
@@ -122,6 +125,7 @@ async def metadata_filter_node(state: material_state) -> material_state:
         mode="metadata_filter",
     )
     state["results"].append(result)
+    state["current_step_idx"] += 1
     return state
 
 
@@ -175,6 +179,7 @@ async def parent_lookup_node(state: material_state) -> material_state:
     if state["results"]:
         state["results"][-1].parent_contexts = parent_docs
 
+    state["current_step_idx"] += 1
     return state
 
 
@@ -232,6 +237,7 @@ async def children_lookup_node(state: material_state) -> material_state:
         mode="children_lookup",
     )
     state["results"].append(result)
+    state["current_step_idx"] += 1
     return state
 
 
@@ -240,7 +246,7 @@ async def plan_node(state: material_state) -> material_state:
     Plan the retrieval strategy based on query.
     Default: semantic search children → parent lookup (small-to-big).
     """
-    plan_model = ChatDeepSeek(model="deepseek-chat", temperature=0.3)
+    plan_model = ChatDeepSeek(model=LLM_MODEL, temperature=0.3)
     planner = plan_model.with_structured_output(material_retrieve_step, mode="json")
 
     system_prompt = """你是一个材料检索规划专家。制定检索计划。
@@ -328,26 +334,21 @@ def first_route(
 
 
 def after_execution(state: material_state) -> Literal["route_dispatch", "__end__"]:
-    """Advance to next step or end."""
-    # Initialize loop counter if not present
+    """Route to next step or end after node execution."""
     if "_execution_loop_count" not in state:
         state["_execution_loop_count"] = 0
     state["_execution_loop_count"] += 1
-    
-    # Safety check: prevent infinite loops
+
     MAX_LOOPS = 20
     if state["_execution_loop_count"] > MAX_LOOPS:
         logger.error(f"Infinite loop detected! current_step_idx={state['current_step_idx']}, plan_len={len(state['plan'])}, forcing end")
         return "__end__"
-    
-    state["current_step_idx"] += 1
-    logger.debug(f"after_execution: current_step_idx={state['current_step_idx']-1}->{state['current_step_idx']}, plan_len={len(state['plan'])}, step_modes={[step.mode for step in state['plan']]}")
-    
+
     if state["current_step_idx"] >= len(state["plan"]):
         logger.debug(f"after_execution: reached end of plan, returning '__end__'")
         return "__end__"
-    
-    logger.debug(f"after_execution: returning 'route_dispatch' for next step")
+
+    logger.debug(f"after_execution: current_step_idx={state['current_step_idx']}, routing to next step")
     return "route_dispatch"
 
 

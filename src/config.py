@@ -6,9 +6,13 @@
 
 import os
 from pathlib import Path
+from dotenv import load_dotenv
 
 # 项目根目录
 PROJECT_ROOT = Path(__file__).parent.parent
+
+# 在读取任何环境变量之前加载 .env
+load_dotenv(PROJECT_ROOT / ".env")
 
 # 数据目录
 DATA_DIR = PROJECT_ROOT / os.getenv("DATA_DIR", "database")
@@ -56,6 +60,7 @@ EMBEDDING_MODEL = "qwen3-embedding:4b"
 
 # ========== LLM配置 ==========
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY", "")
+LLM_MODEL = os.getenv("LLM_MODEL", "deepseek-v4-flash")
 LANGCHAIN_TRACING_V2 = os.getenv("LANGCHAIN_TRACING_V2", "false").lower() == "true"
 LANGCHAIN_PROJECT = os.getenv("LANGCHAIN_PROJECT", "counselor-agent-demo")
 
