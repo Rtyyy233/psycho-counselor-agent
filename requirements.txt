@@ -33,6 +33,8 @@ langchain-text-splitters>=0.0.1
 # 文档处理
 unstructured>=0.12.0
 pdfminer-six>=20221105
+pymupdf>=1.24.0
+easyocr>=1.7.0
 docx2txt>=0.8
 
 # 异步和工具

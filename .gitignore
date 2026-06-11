@@ -45,10 +45,16 @@ venv.bak/
 *.swo
 *~
 
-# Database
-database/chroma.sqlite3
-database/chroma.sqlite3-shm
-database/chroma.sqlite3-wal
+# Database — all data, never commit
+database/
+
+# Claude Code local settings — personal paths, never commit
+.claude/settings.local.json
+
+# Temp/debug files
+src/_error_debug.txt
+src/_ocr_result.txt
+src/_rebuild.py
 
 # Sessions
 web/sessions/

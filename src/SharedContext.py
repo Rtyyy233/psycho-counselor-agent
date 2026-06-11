@@ -28,8 +28,9 @@ class SharedContext:
     3. 提供原子性复合操作
     """
     
-    def __init__(self, session_id: str = "default", token_limit: int = 128000, tokenizer = None):
+    def __init__(self, session_id: str = "default", token_limit: int = 128000, tokenizer = None, user_id: str = None):
         self.session_id = session_id
+        self.user_id = user_id or session_id  # 用户标识，默认等于session_id
         self.token_limit = token_limit  # 令牌上限，默认128k对应DeepSeek V3
         self._tokenizer = tokenizer  # tokenizer实例，应有encode()方法
         self._lock = asyncio.Lock()  # 核心：异步锁
@@ -38,6 +39,11 @@ class SharedContext:
         self._messages: List[Dict] = []
         self._analyst_injection: Optional[PromptInjection] = None
         self._supervisor_injection: Optional[PromptInjection] = None
+        self._chatter_retrieval_injection: Optional[PromptInjection] = None
+        self._profile_summary: str = ""  # 用户画像 L1 摘要，对话全程保持
+        self._plan_context: str = ""  # 治疗连续性上下文（阶段、目标、方法、pending_items）
+        self._plan_feedback: str = ""  # Supervisor 的治疗计划修订反馈
+        self._revise_plan_count: int = 0  # 本次会话中 Supervisor 标记 should_revise_plan 的计数
         
         # 异步事件（用于触发后台Agent）
         self.analyst_trigger = asyncio.Event()
@@ -80,10 +86,8 @@ class SharedContext:
             self._stats["message_count"] += 1
             self._stats["last_updated"] = time.time()
             
-            # 用户消息自动触发分析
+            # 用户消息自动触发后台分析
             if role == "user":
-                self.analyst_trigger.set()
-                logger.debug(f"用户消息触发Analyst: {content[:50]}...")
                 self.supervisor_trigger.set()
                 logger.debug(f"用户消息触发Supervisor: {content[:50]}...")
                 
@@ -431,6 +435,7 @@ class SharedContext:
                 "remaining_tokens": remaining_tokens,
                 "remaining_messages": len(self._messages),
                 "storage_id": storage_id,
+                "summary_text": summary_text,
                 "new_usage_percentage": (remaining_tokens / self.token_limit) * 100 if self.token_limit > 0 else 0,
                 "target_usage_percentage": target_usage * 100
             }
@@ -464,7 +469,55 @@ class SharedContext:
             self._supervisor_injection = injection
             self._stats["supervisor_injections"] += 1
             logger.info(f"Supervisor注入设置: {len(content)}字符")
-    
+
+    def set_profile_summary(self, summary: str) -> None:
+        """Set user profile L1 summary (persists across turns)."""
+        self._profile_summary = summary
+        logger.info(f"Profile summary updated: {len(summary)} chars")
+
+    def get_profile_summary(self) -> str:
+        """Get current profile summary."""
+        return self._profile_summary
+
+    def set_plan_context(self, context: str) -> None:
+        """Set treatment continuity context."""
+        self._plan_context = context
+        logger.info(f"Treatment plan context updated: {len(context)} chars")
+
+    def get_plan_context(self) -> str:
+        """Get current treatment plan context."""
+        return self._plan_context
+
+    async def get_and_clear_plan_feedback(self) -> str:
+        """Atomically get and clear supervisor plan revision feedback.
+
+        Called at end-of-session by user_interface to pass feedback to PlanManager.
+        Lock-protected because supervisor background task may write concurrently.
+        """
+        async with self._lock:
+            feedback = self._plan_feedback
+            self._plan_feedback = ""
+        return feedback
+
+    async def increment_revise_plan_count(self) -> None:
+        """Increment plan revision counter. Called by supervisor on should_revise_plan=true.
+
+        Lock-protected to prevent lost updates from concurrent supervisor tasks.
+        """
+        async with self._lock:
+            self._revise_plan_count += 1
+
+    async def get_and_reset_revise_plan_count(self) -> int:
+        """Atomically get and reset plan revision count.
+
+        Called by the main loop in user_interface. Count >=2 triggers mid-session plan update.
+        Lock-protected to prevent race with supervisor increment.
+        """
+        async with self._lock:
+            count = self._revise_plan_count
+            self._revise_plan_count = 0
+        return count
+
     async def get_and_clear_injections(self) -> Dict[str, Optional[str]]:
         """
         原子操作：获取并清空所有injections
@@ -472,36 +525,45 @@ class SharedContext:
         """
         async with self._lock:
             result = {
-                "analyst": self._analyst_injection.content 
+                "analyst": self._analyst_injection.content
                     if self._analyst_injection else None,
-                "supervisor": self._supervisor_injection.content 
-                    if self._supervisor_injection else None
+                "supervisor": self._supervisor_injection.content
+                    if self._supervisor_injection else None,
+                "chatter_retrieval": self._chatter_retrieval_injection.content
+                    if self._chatter_retrieval_injection else None
             }
-            
+
             # 清理过期injections
             now = time.time()
-            if (self._analyst_injection and 
+            if (self._analyst_injection and
                 (now - self._analyst_injection.timestamp) > 300):
                 self._analyst_injection = None
-                
-            if (self._supervisor_injection and 
+
+            if (self._supervisor_injection and
                 (now - self._supervisor_injection.timestamp) > 300):
                 self._supervisor_injection = None
-            
+
+            if (self._chatter_retrieval_injection and
+                (now - self._chatter_retrieval_injection.timestamp) > 300):
+                self._chatter_retrieval_injection = None
+
             # 清空（消费后）
             self._analyst_injection = None
             self._supervisor_injection = None
-            
+            self._chatter_retrieval_injection = None
+
             return result
     
     async def peek_injections(self) -> Dict[str, Optional[str]]:
         """查看injections但不消费（用于监控）"""
         async with self._lock:
             return {
-                "analyst": self._analyst_injection.content 
+                "analyst": self._analyst_injection.content
                     if self._analyst_injection else None,
-                "supervisor": self._supervisor_injection.content 
-                    if self._supervisor_injection else None
+                "supervisor": self._supervisor_injection.content
+                    if self._supervisor_injection else None,
+                "chatter_retrieval": self._chatter_retrieval_injection.content
+                    if self._chatter_retrieval_injection else None
             }
     
     # ========== 会话持久化 ==========

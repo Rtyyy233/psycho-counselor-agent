@@ -1,0 +1,915 @@
+impair autonomous decision making. Psychologists are aware of and
+respect cultural, individual, and role differences, including those based
+on age, gender, gender identity, race, ethnicity, culture, national origin,
+religion, sexual orientation, disability, language, and socioeconomic
+status, and consider these factors when working with members of such
+groups. Psychologists try to eliminate the effect on their work of biases
+based on those factors, and they do not knowingly participate in or
+condone activities of others based upon such prejudices (APA, 2002a,
+Principle E).
+At first glance, this principle might appear to be readily achievable;
+however, as with most principles, it is easier to put into words than it is to
+accomplish. The development of an appreciation for diversity is a psychologi-
+cally challenging task, if it is taken seriously. The task, in its most radical
+sense, involves a deconstruction of the "inescapable framework" of beliefs,
+assumptions, and morality that provides the implicit scaffolding of our sense
+of reality and identity (C. Taylor, 1989). Deconstruction involves "demysti-
+fying a text, tearing it apart to reveal its internal, arbitrary hierarchies and
+its presuppositions" (Rosenau, 1992, p. 120). For our purposes, this task
+means that we assume an antiobjectivist stance to the assumptions that we
+tacitly hold about human nature. We contend that identity is socially
+constructed and privileged by the happenstance of the culture into which
+one is born and affiliates. When we come upon difference, we recognize
+the difference as being inherent to the other party (e.g., "they are different")
+rather than appreciate that it is our internal construction of difference.
+Gadamer (1962/1976) offers, "In the last analysis all understanding is self
+understanding" (emphasis in original; p. 55). With this postmodern sensitiv-
+ity, we attempt to appreciate diversity by first recognizing that "all people
+are 'multicultural beings,' that all interactions are cross-cultural, and that
+all of our life experiences are perceived and shaped from within our own
+cultural perspectives" (APA, 2002b).
+In the clinical setting, appreciation for diversity is integral in the quest
+to understand the experience of the other, to gain insight into the inherent
+limitations and cultural biases in our perceptions, to develop awareness and
+respect for cultural and individual differences, and to accurately assess the
+appropriate use of psychological assessment and intervention procedures. A
+major responsibility and challenge in supervision is to actively support
+the development of diversity competence and to ensure that culturally
+appropriate practices inform applied clinical service (see chap. 6, this vol-
+ume; APA, 2000b). Our definition of diversity competency draws on many
+of the others provided in the literature. We believe that diversity competency
+includes the incorporation of self-awareness by both supervisor and super-
+visee and is an interactive process of the parties involved in the clinical
+session and in supervision, incorporating all of their diversity factors. It
+32 
+CLINICAL SUPERVISION
+
+entails awareness, knowledge, and appreciation of the interactions among
+the client's, supervisee's, and supervisor's assumptions, values, biases, expec-
+tations, and worldviews, integrating and practicing appropriate, relevant,
+and sensitive assessment and intervention strategies and skills and taking
+into account the larger milieu of organization, society, and sociopolitical
+variables.
+The development of cultural and diversity competency is particularly
+timely in light of how the United States is "becoming more racially and
+ethnically diverse, increasing the urgency for culturally responsive practices
+and services" (APA, 2002b). As the U.S. Surgeon General recommends,
+"To be effective, the diagnosis and treatment of mental illness must be
+tailored to all characteristics that shape a person's image and identity.
+The consequences of not understanding these influences can be profoundly
+deleterious" (U.S. Department of Health and Human Services, 1999).
+Science-Informed Practice
+Whether one conceives of a psychologist as a scientist-practitioner
+(Academy of Psychological Clinical Science, 2002; Raimy, 1950), prac-
+titioner-scholar (Peterson et al., 1997), clinical scientist (Belar & Perry,
+1992), local clinical scientist (Strieker & Trierweiler, 1995), or scientific
+practitioner (Peterson, 2000), there is consensus that one of the defining
+characteristics of the profession is the integration of science with practice.
+The relationship between science and practice is not one of opposition;
+rather, "together they equally contribute to excellence in clinical training
+in professional psychology" (APA, Committee on Accreditation, 2000e,
+p. 3). In our view, science-informed practice constitutes a superordinate
+value, and one of the primary goals of supervision is to provide practical
+experience in learning how to meaningfully integrate science and practice
+in the provision of clinical services. We agree with the following from
+Holloway and Wolleat (1994):
+because the goal of clinical supervision is to connect science and prac-
+tice, supervision is among the most complex of all activities associated
+with the practice of psychology. The competent clinical supervisor must
+embrace not only the domain of psychological science, but also the
+domains of client service and trainee development. The competent
+supervisor must not only comprehend how these various knowledge
+bases are connected, but also apply them to an individual case (p. 30).
+Supervisors, as clinical educators, stand at the forefront of this task.
+They teach and demonstrate how knowledge and practices derived from
+science are systematically applied in professional consultation. By modeling
+the use of such practices in case consultation and supervision, by actively
+using the scientific literature (see, e.g., Kanfer, 1990), and by initiating,
+THE PRACTICE OF CLINICAL SUPERVISION 
+33
+
+participating or supporting applied research projects within the clinic setting
+(Borkovec, Echemendia, Ragusea, & Ruiz, 2001), supervisors affirm the
+importance of science-informed practice. More salient, perhaps, they instill
+"the questioning attitude of the scientist" (Shakow, 1976, p. 554) whereby
+skills in observation, critical thinking, and hypothesis testing are incorpo-
+rated into one's understanding of the therapeutic process.
+THE STRUCTURE OF THE BOOK
+Supervision aims to assist trainees in developing a number of competen-
+cies, attitudes, and values that support science-informed practice, safeguard
+client welfare, and instill a commitment to professional ethics and service.
+In the following chapters, we critically examine the theoretical and empirical
+literature and present a competency-based model of clinical supervision. In
+advocating for a science-informed approach to supervision and clinical
+practice, we base our recommendations on the existing empirical evidence.
+We identify inconsistencies in the research literature and point out issues
+that require further investigation.
+The chapters in this volume are organized around topics we consider
+to be foundational to supervision practice: effective practices in supervision,
+technical competence, personal factors, the therapeutic and supervisory
+alliance, diversity competence, ethical and legal responsibilities and case
+management, and evaluation. We conclude with a discussion of the existing
+challenges and opportunities that must be addressed to advance the practice
+of clinical supervision. Although these topics are divided into separate
+chapters for organizational purposes, we believe that, in practice, they are
+highly interrelated. For example, ethics cannot be considered without incor-
+porating diversity competence, and the therapeutic and supervisory alliance
+cannot be understood without paying attention to personal factors.
+Throughout the text, we emphasize the interaction between competen-
+cies enacted within supervision and within the clinical setting. It is our
+view that there is likely a correspondence between the use of a competency
+within the supervisory relationship—for example, diversity competence or
+attending to strains in the supervisory alliance—and the development and
+use of that competency by the trainee in the clinical arena. We present
+examples from both supervision and clinical practice to illustrate the impor-
+tance of the competency in both settings. We use the terms "trainee" and
+"supervisee" interchangeably, as synonymous terms, and consider the princi-
+ples espoused in the book to be applicable to the entire range of clinical
+training settings, from first-year field placement externships and practica
+through internship and postgraduate fellowships.
+34 
+CLINICAL SUPERVISION
+
+Although this volume is written primarily for the field of professional
+psychology, the competency-based model that is presented could readily be
+applied to any of the allied mental health professions, psychiatry, social
+work, counseling, and so forth. No intellectual work is constructed in a
+vacuum; rather, such work draws on the contributions of others. The work
+presented in this volume builds on the existing foundation of scholarship
+in the field, enlivened by our own personal experiences as supervisors,
+educators, clinicians, and supervisees. As you read further, we suggest that
+you stop along the way and consider the literature and our recommendations
+in light of your own experiences in supervision. In so doing, you may gain
+a deeper appreciation for what was gained and missed in the past and what
+can be provided to others in the future.
+THE PRACTICE OF CLINICAL SUPERVISION 
+35
+
+2
+WHAT MAKES FOR
+GOOD SUPERVISION?
+Research on the "best" and "worst" supervisors is useful in understand-
+ing what factors contribute to high-quality supervision and acts as the
+framework for defining dimensions of competence in the chapters that
+follow. In this chapter, existent research is reviewed to define the particular
+constellation of characteristics that distinguish a good therapist from a good
+supervisor, to describe a "good" supervisor, and to determine the factors
+that contribute to supervisee's perceptions of effective (and ineffective)
+clinical supervision. A summary of research on qualities associated with
+excellent supervision and with lousy supervision is presented, followed by
+a description of the factors involved in provision of high-quality supervision,
+including conflict resolution, disclosure, mentoring, culture, gender, and
+format. The last section of the chapter details how an understanding of
+the qualities of best and worst supervisors contributes to practice and the
+development of specific competencies for best supervision. The material
+presented in this section is particularly relevant because "about one half
+of a professional psychologist's formal training involves learning through
+supervision" (Bent, Schindler, & Dobbins, 1991, p. 124).
+It has been suggested that the same personal characteristics of the
+"ideal psychotherapist" may apply to the "ideal supervisor" (Carifio &
+Hess, 1987). These characteristics included empathy, respect, genuineness,
+concreteness, and self-disclosure as well as self-knowledge, tolerance, and
+37
+
+superior ability (Raimy, 1950). However, McCarthy, DeBell, Kanuha, and
+McLeod (1988) viewed the idea of equating the most effective supervisor
+with a master counselor as a myth. In addition to the lack of empirical
+support for equating the two, McCarthy et al. pointed out that the ideal
+supervisor clearly separates supervision from psychotherapy and does not
+provide counseling as part of supervision (Carifio & Hess, 1987), thus using
+a different skill set with different outcome goals. However, it is important
+to note that the best supervisors use therapeutic qualities such as empathy
+and genuineness in the process of supervision (Stout, 1987).
+Many of the studies of best and worst supervision have been fraught
+with the types of methodological flaws prevalent in research on development
+of the supervisee (Ellis & Ladany, 1997). Researchers are concerned that
+the entire self-report methodology underlying best and worst studies is flawed
+in that effective supervision may not be the most satisfying or pleasurable
+at the time (Ladany, Ellis, & Friedlander, 1999), and that variables of liking
+may influence reporting. Thus, we lack significant empirical data to support
+results, and our conclusions must be tentative at best. However, there does
+appear to be some consensus on the constituent areas comprising good
+supervision described throughout this chapter. These areas are supported
+by individual research studies and several reviews in which the categories
+were inferred (Henderson, Cawyer, & Watkins, 1999; Neufeldt, Beutler, &
+Banchero, 1997; Worthen & McNeil, 1996). Two consensually impor-
+tant aspects of supervision are the supportive relationship and the work-
+ing alliance.
+RESEARCH ON HIGH-QUALITY SUPERVISION
+Supportive Relationship
+Studies of the best or most effective supervisor have provided us with
+a profile of a high-quality supervisory relationship (Henderson, Cawyer, &
+Watkins, 1999; Worthen & McNeill, 1996), the establishment of which is
+determined to be a central aspect of supervisory competency. This finding is
+not surprising in light of Ekstein and Wallerstein's (1958) description of the
+art of psychotherapy as transmitted through the relationship with the super-
+visor and Ellis and Ladany's (1997) conclusion from their comprehensive
+methodological review that "the quality of the supervisory relationship is para-
+mount to successful supervision" (p. 495). Many of the characteristics of the
+supervisory relationship are parallel to factors previously defined as significant
+in the therapeutic alliance (Stein & Lambert, 1995). A high-quality supervi-
+sory relationship entails a combination of facilitating attitudes, behaviors, and
+practices. Facilitating attitudes and behaviors consist of supervisor empathy
+38 
+CLINICAL 
+SUPERVISION
+
+with and understanding of the difficult struggles and self-analysis through
+which the supervisee must go. Facilitation also refers to the creation of a sense
+of teamwork between supervisor and supervisee (Henderson, Cawyer, &
+Watkins, 1999). Facilitating behaviors include empathy (Carifio & Hess,
+1987; Nerdrum & Ronnestad, 2002; Worthen &. McNeil, 1996); warmth and
+understanding (Hutt, Scott, & King, 1983; Martin, Goodyear & Newton,
+1987); a sense of validation or affirmation (Wulf & Nelson, 2000); accep-
+tance (Hutt et al., 1983); approachability and attentiveness (Henderson
+et al., 1999); respect for personal integrity, autonomy (Henderson et al., 1999;
+Hutt et al., 1983), and strengths (Heppner & Roehlke, 1984); and a nonjudg-
+mental stance. Highly valued supervisors are flexible, genuine (Carifio & Hess,
+1987; Nelson, 1978), interested, experienced, and currently conducting ther-
+apy regularly themselves. They have a sense of humor and use it in their super-
+vision (E. L. Worthington, 1984a).
+Also valued was competence in facilitating learning (Henderson et al.,
+1999), including knowledge and experience relevant to the supervisee, and
+an open-minded approach to allow for maximal autonomy of the supervisee.
+Specific components include specialized expertise (Allen, Szollos, &. Wil-
+liams, 1986; McCarthy et al., 1994); skill (Hutt et al., 1983); theoretical,
+technical, and conceptual knowledge (Watkins, 1995b); and significant
+skill at analyzing events of therapy (Henderson et al., 1999). Practices that
+facilitate learning include encouragement of exploration and experimenta-
+tion (Worthen & McNeill, 1996); encouragement of supervisee disclosures
+of actions, feelings, attitudes, and conflicts (Hutt et al., 1983; McCarthy
+et al., 1994); understanding of personal supervisee characteristics and the
+dynamics of the supervisory relationship (Gandolfo & Brown, 1987); and
+knowing when to self-disclose to normalize a trainee's experience (Worthen
+& McNeill, 1996).
+Nelson (1978) concluded that interest in supervision appears to over-
+ride experience and knowledge as an essential component. High-quality
+supervision has been distinguished by duration of experience (quality is
+associated with duration and frequency of contact) and occurring after a
+less favorable supervisory experience (Allen et al., 1986).
+Evaluation practices have been highly valued as a component of good
+supervision. Evaluation refers to a predesignated procedure for providing
+regular feedback structured around agreed-on goals. Specific components
+include constructive criticism balanced with encouragement, regular feed-
+back (Henderson et al., 1999), articulation of shared expectations and mu-
+tual goals for the supervision and relationship (Leddick & Dye, 1987), and
+constructive confrontation (Gandolfo & Brown, 1987; Henderson et al.,
+1999; C. D. Miller & Getting, 1966).
+Use of theoretical grounding or working within a cohesive theory
+(Allen et al., 1986) and a shared theoretical framework (Kennard, Stewart,
+WHAT MAKES FOR GOOD SUPERVISION? 
+39
+
+& Gluck, 1987; Putney, Worthington, & McCullough, 1992) were valued
+supervision skills. These skills refer to significant theoretical under-
+pinnings—and agreement on these factors—as a basis for supervision. Con-
+gruent theories or supervisors and supervisees who shared a theoretical
+orientation were associated with greater client improvement (Steinhelber,
+Patterson, Cliffe, & LeGoullon, 1984).
+Putney et al. (1992) reported that theoretical orientation may affect the
+supervisor-supervisee relationship in that cognitive-behavioral supervisors
+were perceived to assume a consultant role and to focus on skills and
+strategies more than did humanistic, psychodynamic, or existential supervi-
+sors. Humanistic, psychodynamic, and existential supervisors were perceived
+as using a relationship model with a focus on conceptualization.
+Supervisory emphasis on personal growth was valued more than a
+technical-skills orientation (Allen et al., 1986). The best supervisors culti-
+vated in supervisees a sense of accomplishment, imagination, respect, inner
+harmony, and wisdom (P. D. Guest & Beutler, 1988). Supervisees preferred
+an emphasis on learning personally relevant "artistic" aspects of psycho-
+therapy (Allen et al., 1986).
+Although supervisees and supervisors may not agree on what factors
+make for the best supervision, there is consensus that the amount and quality
+of supervision constitute one of the top criteria that differentiate first-choice
+internship sites from others (Stedman, Neff, Donahoe, Kopel, et al., 1995).
+In terms of differences in perception, Rotholz and Werk (1984) reported that
+supervisees much preferred autonomy-giving behaviors, whereas supervisors
+favored cognitive-structuring behaviors. Supervisors perceived best supervi-
+sion to be based on feedback to the student, whereas supervisees valued being
+directly taught in a supportive, facilitative relationship (E. L. Worthington &
+Roehlke, 1979). Supervisees' expectations of the supervisory relationship
+may have been lower in some instances than their perceptions of the actual
+relationship. Supervisees experienced significantly higher levels of empathic
+understanding, unconditional regard, and total relationship than they had
+expected from their supervisors (J. C. Hansen, 1965).
+Working Alliance
+A strong working alliance has also been associated with greater satisfac-
+tion with supervision (Ladany et al., 1999), and thus the ability to establish
+this should be considered a supervisory competency. The working alliance
+consists of a bond or relationship, agreement on goals, and agreement on
+tasks (Bordin, 1994). Supervisory pairs with a strong emotional bond, in-
+cluding trust, respect, and caring, experienced less role conflict and role
+ambiguity. This finding implies that such pairs work through and resolve
+40 
+CLINICAL SUPERVISION
+
+conflicts more readily (Ladany & Friedlander, 1995). Greater self-disclosure
+by the supervisor was associated with a stronger supervisory working alliance
+(Ladany & Lehrman-Waterman, 1999). Goodyear and Bernard (1998) cited
+Patton and Kivlighan's (1997) study relating the quality of the working
+alliance between supervisor and supervisee and adherence to the intended
+treatment model to the supervisor's final evaluation of the supervisee.
+There have been several efforts to describe supervision stylistically.
+Lochner and Melchert (1997; 32% response rate) added the dimensions
+of cognitive style and manner of conceptualization of psychotherapy or
+theoretical orientation. They found that whether the ideal supervisor should
+be task oriented (an approach typically associated with a novice trainee)
+or warm, supportive, and friendly depended on the supervisee's theoretical
+orientation. Those interns who reported their theoretical orientation as
+behavioral tended to prefer task-oriented supervisors, whereas interns with
+a psychodynamic or humanistic theoretical orientation preferred supervisors
+who were warm, supportive, and friendly.
+Although they concluded that supervisory style is multidimensional,
+encompassing parts of all styles, Friedlander and Ward (1984) differentiated
+three metastyle categories. The first, "attractive," consists of components
+connoting positive and supportive: friendly, warm, trusting, open, and flexi-
+ble. The second, "interpersonally sensitive," includes an amalgam of percep-
+tive and intuitive, including invested, committed, reflective, creative, and
+resourceful. The third, "task oriented," includes descriptors depicting a goal-
+oriented, didactic, and prescriptive focus that is thorough, evaluative, practi-
+cal, and concrete. Cognitive-behavioral supervisors had higher task-oriented
+ratings, whereas psychodynamic and humanistic supervisors were rated as
+being more interpersonally sensitive and less task directed. It was predicted
+that these styles would be correlated with other stylistic variables, including
+self-disclosure (Ladany & Lehrman-Waterman, 1999).
+Cherniss and Equatios (1977) described the best supervision styles as
+insight oriented, with the supervisor asking questions designed to activate
+the supervisee to solve problems independently, and feelings oriented, with
+the supervisor encouraging the supervisee to question and deal with emo-
+tional responses to the clinical process. The didactic-consultative style,
+with the supervisor offering advice, suggestions, and interpretations concern-
+ing client dynamics and clinical technique, was the most prevalent style
+used in the community mental health settings studied, as well as what
+supervisees preferred. The laissez-faire approach was negatively associated
+with satisfaction, and the authoritative supervisory style was not correlated
+with satisfaction. Cherniss and Equatios (1977) concluded that the ideal
+supervisor combines multiple styles, with much higher frequencies of the
+insight-oriented, feelings-oriented, and didactic—consultative styles.
+WHAT MAKES FOR GOOD SUPERVISION? 
+41
+
+The Developmental Model in Quality Supervision
+The developmental model has direct relevance to what constitutes
+the "best" supervisor. According to developmental models, the novice
+trainee most highly values directive, didactic, technical-skills-based training
+with a high degree of structure, whereas the advanced trainee prefers super-
+vision involving issues of countertransference, theory-anchored conceptual-
+izations with multiple levels, and emphasis on personal and professional
+development. "Lousy supervisors" were not sensitive to developmental levels
+or the developing skills of their supervisees (Magnuson, Wilcoxon, &
+Norem, 2000).
+SUPERVISEES WHOM SUPERVISORS PREFER
+Because supervision is a two-way process, variables related to the super-
+visee contribute significantly to good supervision. Although most research
+has concerned supervisors from the point of view of the supervisee, several
+studies have addressed characteristics of the supervisee that supervisors rate
+as effective or desirable and that thus significantly contribute to supervisory
+success. Especially because response to and effective use of supervision are
+typically part of the evaluation component resulting in unstated expectations
+being evaluated, it is important to articulate that the behaviors are compris-
+ing effective response to and use of supervision. This definition of supervisee
+role is referred to as role induction and is a significant component in orienting
+the supervisee to the process of supervision (Vespia, Heckman-Stone, &
+Delworth, 2002). A list of characteristics defining supervisees who use super-
+vision well was developed, and ratings were collected from supervisees and
+supervisors. Beginning supervisees rated "asks for help when appropriate"
+as highest, whereas advanced supervisees ranked "demonstrates a willingness
+to grow" highest. For interns, the highest ranked item was "actively partici-
+pates in supervision sessions." In contrast, the highest ranked item for
+supervisors was "implements supervisor's directives when client welfare is
+of concern to supervisor." Vespia et al. highlighted items from nonempirical
+post hoc analyses in which there were differences in ratings between supervi-
+sors and supervisees. Supervisor ratings were lower than those of supervisees
+for items on inviting feedback and demonstrating awareness of personal
+dynamics. Similarly, Henderson et al. (1999) reported that only supervisees,
+not supervisors, rated evaluation as contributing to effective supervision.
+Vespia et al.'s Supervisor Utilization Rating Form shows promise in articulat-
+ing supervisee behaviors effective for supervision and in highlighting differ-
+ences in perceptions of supervisees and supervisors as a function of the
+developmental level of each.
+42 
+CLINICAL SUPERVISION
+
+Kauderer and Herron (1990) reported that supervisors viewed most
+positively less dependent, assertive trainees who actively participated in the
+process and limited their self-exploration, thus respecting the boundary
+differentiating supervision from therapy. However, Kauderer and Herron's
+sample size was very small, and the duration in which the study was conducted
+was short.
+Factors that supervisors have identified as contributing to effective
+supervision include trainees' ability to integrate what they have learned in
+class with conceptualization and therapy, ability to be aware of their own
+emotional response to clients as the response happens, and ability to use
+their own response in the therapy. Trainee abilities to form relationships
+with clients, peers, and supervisors; be flexible; and adhere to ethical codes
+and standards are all viewed by supervisors as supervisee-related factors
+contributing to effective supervision (Henderson et al., 1999). From super-
+visee ratings, Efstation, Patton, and Kardash (1990) identified rapport and
+client focus as significant factors in the supervisory relationship. Supervisors
+identified client focus, rapport, and identification (with the supervisor).
+Wong and Wong (2002) expressed concern that supervisors may be
+focusing too much on their own need for support and praise from supervisees.
+They cited such statements as "supervisee admired my approach in therapy,"
+"did his best to follow my directions," and "trusted in me and never ques-
+tioned me" (p. 8), as behaviors viewed by supervisors as positive and cau-
+tioned against the creation of submissive, obedient trainees.
+DIFFERENCES ACROSS DISCIPLINES
+Although congruence exists in best and worst supervisors across disci-
+plines, there are several interesting findings specific to one discipline or
+modality. For example, in training medical residents, the most highly valued
+supervisors (a) allowed the resident to develop the story of his or her client
+experience (Shanfield, Matthews, & Hetherly, 1993); (b) provided guidance
+about highly charged clinical dilemmas (Shanfield, Hetherly, & Matthews,
+2001), acknowledged personal concerns (Shanfield et al., 2001); and
+(c) were empathic towards the supervisee (Shanfield, Mohl, Matthews, &
+Hetherly, 1992).
+In family therapy supervision, Liddle, Davidson, and Barrett (1988)
+described criteria for which supervisor competence is correlated with trainee
+satisfaction. In addition to the already discussed relationship, conceptualiza-
+tion, and feedback skills, they placed value on the supervisor as a role model
+and on a supervisor who can provide guidance that enables supervisee
+autonomy, a supervisory structure that includes readings or tape analysis,
+assistance in adapting models to the individual, supervision to fit the trainee's
+WHAT MAKES FOR GOOD SUPERVISION? 
+43
+
+skills and experience, training in self-assessment of strengths and weaknesses,
+case consultation, and supervisory flexibility.
+EMPIRICALLY SUPPORTED RESULTS
+In a methodological review of some of the studies cited, Ellis and
+Ladany (1997) concluded that there is empirical support for differentiation
+of extreme qualities of supervision (best and worst); the potential importance
+of goal setting in supervision; the different perception of supervision by
+supervisors and supervisees, and the existence of differences between actual
+and ideal supervision. However, overall, the quality of research during the
+past 15 years has been substandard (Ellis & Ladany, 1997).
+Most of the research is based on reports of supervisees and has no link
+to treatment efficacy or other variables that one would expect to be positively
+affected by excellent supervision. As Holloway and Carroll (1996) con-
+eluded, "Losing that perspective (impact of clinical supervision on the client
+outcome) is a bit like viewing parenthood solely for the enrichment of the
+parents" (p. 54). Attention has not been directed to the difference between
+supervisee satisfaction and supervisee effectiveness. As Goodyear and Ber-
+nard (1998) stated in an analogy to customer satisfaction with a donut
+factory, "To ask trainees about whether they were satisfied with supervision
+or their supervisor gives minimal information about the 'nutritional' value
+of their experience" (p. 10). It may be that satisfaction taps into liking,
+pleasantness, relationship, or other variables but perhaps not to effectiveness
+with clients or growth as a supervisee. Goodyear and Bernard concluded
+that data indicate that if a supervisor likes a supervisee, the supervisor is
+more likely to give the supervisee a positive evaluation. It would also seem
+that if the supervisor likes the supervisee, the supervisee will often like the
+supervisor as well. Supervisees also tend to give higher satisfaction ratings
+to supervisors they like.
+WORST SUPERVISORS
+Styles Potentially Leading to Problematic Interactions
+Problematic supervision can have a significant negative impact on
+the supervisory process and ultimately on the supervisee. Kadushin (1968)
+described interactional patterns or "games" prototypic of problematic super-
+vision. Each was an interactive phenomenon in which maladaptive patterns
+were established, akin to a dance in which supervisee behavior elicited
+inappropriate supervisor behavior. These patterns resulted in boundary cross-
+44 
+CLINICAL SUPERVISION
+
+ings. In one example, the supervisee flattered the supervisor by praising
+the supervisor's brilliant insights. The supervisor then found it difficult or
+impossible to supervise or give corrective feedback because of the emotional
+blackmail and the gratification of being viewed as omniscient. In another
+example, the supervisee gradually redefined the supervisory relationship by
+urging the supervisor to go out for coffee or lunch with him or her, transform-
+ing the relationship into one of friendship rather than supervision. Another
+supervisee alluded to areas of knowledge unknown to the supervisor (litera-
+ture or theories), thereby changing the power differential and leading to
+collusion or to the supervisor's covering up ignorance. Yet another supervisee
+alluded to personal or professional experiences (such as substance use, rearing
+children, or public service work), which placed him or her in an expert
+position compared with the supervisor. One supervisee plied the supervisor
+with such extensive lists of questions during the supervisory hour that
+supervision was deflected from any case discussion or interaction. In another
+example, the supervisee cast the supervisor as a capable, knowing parent
+and was dependent on him or her for advice and guidance. In a different
+game, the supervisee scrupulously followed the supervisor's suggestions and
+input and then reported that they did not work. The supervisor ended up
+defending his or her position and was accordingly placed in a position of
+disadvantage, and supervision was derailed. Another supervisee expressed
+confusion over contradictory input from several supervisors. The supervisor
+then adopted a defensive stance, protecting his or her position against
+competing supervisors. In another game, the supervisee flagellated him- or
+herself about all the perceived mistakes he or she had made. The supervisor
+found it necessary to support, reassure, and praise the supervisee and thus
+avoided discussion of the "errors" themselves, as they elicited such angst in
+the supervisee. In another example, the supervisee raised personal problems
+and invited the "wise" supervisor to help solve them. The supervisor was
+tempted to help and, if he or she had done so, might have actually crossed
+the boundary into treatment. In yet another example, the supervisee dis-
+agreed with the supervisor, and the supervisor redefined the interaction as
+a supervisee psychological defense. One supervisee posed questions to the
+supervisor, who then simply responded with other questions. In a supervisor-
+initiated example, the supervisor redefines supervisee questions or disagree-
+ment as resistance.
+Each of these examples pinpoints potential pitfalls and vulnerabilities
+in the supervisory relationship and its boundaries. Kadushin (1968) outlined
+the losses to the supervisor of playing these games. However, ultimately,
+dealing with the games as process issues provided potential for an all-around
+win. A valuable exercise is to address each of these patterns in the context
+of a supervisor-supervisee seminar and deal with them intellectually. Then,
+when they arise in the supervisory context, they can be labeled and dealt
+WHAT MAKES FOR GOOD SUPERVISION? 
+45
+
+with directly. Identification and confrontation are very effective tools with
+both supervisee and supervisor.
+Worst Supervisors Across Disciplines
+Studies of "worst" supervisors did not necessarily identify opposite
+characteristics as those attributed to the "best" supervisors. Instead, each
+end of the spectrum possessed its own characteristics (Hutt et al., 1983).
+Magnuson et al. (2000) described overarching principles of "lousy supervi-
+sion," a category described by E. L. Worthington (1987). Principles included
+unbalanced supervision, which does not represent all elements of the supervi-
+sion experience or focuses on detail to the exclusion of larger themes;
+developmentally inappropriate supervision, which is not sensitive to the
+individual developmental needs of the trainee, intolerant of differences or
+not allowing the trainee to have separate views or styles from the supervisor;
+poor modeling of professional and personal attributes, which occurs when
+supervisors are untrained or poorly prepared to supervise and are profession-
+ally apathetic, lazy, or uncommitted to the profession. Lousy supervision
+included problems in the organizational-administrative, technical-
+cognitive, and relational-affective spheres. In the 
+organizational-
+administrative sphere, neither expectations nor standards of accountability
+were clear, and supervisee needs were not assessed. In the technical-
+cognitive sphere, the supervisor was viewed as unskilled as a clinician and
+supervisor and unreliable as a professional resource. In the relational-
+affective sphere, the supervisor did not provide a safe environment, gave
+too little or too much affirming and corrective feedback, was insensitive to
+the trainee's developmental needs, and imposed a personal agenda, avoiding
+issues that arose between supervisor and supervisee. It would appear that a
+number of these categories violate part of Principle A in the Ethical Principles
+of Psychologists and Code of Conduct to "do no harm" (American Psychological
+Association, 2002a, p. 3). Although this is a preliminary analysis, it provides
+direction for the converse: excellent-quality supervision.
+Instances of worst supervisors cited by others include supervisors who
+were lacking in effective teaching strategies and role modeling and supervi-
+sors who were disinterested or inept. Although we know that trainees viewed
+these supervisors as "worst," we do not know what evaluation each supervisor
+would ascribe to him- or herself. Worst supervisors were unavailable or
+lacked time for supervision, disagreed theoretically or conceptually with
+supervisees, were too nondirective or vague, had personality conflicts with
+supervisees, spent too much time on administrative issues, lacked expertise,
+or discussed their own work too much (McCarthy et al., 1994). They can-
+celed or interrupted supervision sessions or seemed distracted (Chung,
+Baskin, & Case, 1998) and were preoccupied with and spent considerable
+46 
+CLINICAL SUPERVISION
+
+supervisory time discussing their personal problems (Allen et al, 1986;
+Ladany & Walker, 2003). Worst supervisors were also authoritarian, encour'
+aging conformity and punishing divergence from the "party line." Both
+laissez-faire and authoritarian supervision styles were linked to low trainee
+satisfaction (Cherniss & Equatios, 1977).
+Worst supervisors emphasized the shortcomings of the trainee and were
+inflexible and intolerant (Watkins, 1997c). They demeaned the supervisee
+(Allen et al., 1986), were indirect or avoidant, or did not foster individuation
+(Wulf & Nelson, 2000). The most significant aspect of "worst" supervision
+experiences was relationship: Rather than feeling that the supervisor trusted
+him or her, the supervisee reported feeling mistrusted. The trainee then
+began to expect criticism rather than support. Cyclically, the supervisor did
+not identify conflicts and take responsibility for exploring them, indicating
+supervisory insensitivity (Hutt et al., 1983). "Worst" supervisors were defen-
+sive and uninterested in training to improve supervisory skills (Watkins,
+1997c).
+Analysis of Negative Supervision
+Several researchers have analyzed patterns or events pivotal to ineffec-
+tual or bad supervision. Nelson and Friedlander (2001) analyzed supervisory
+experiences that supervisees felt had had detrimental effects on their training.
+They categorized the experiences into initiation of the relationship, impasse
+characteristics, and contributing factors. In initiation of the relationship,
+deleterious factors included supervisors who were remote and uncommitted
+to the training relationship or too busy. Impasse characteristics included
+the occurrence of power struggles or role conflicts precipitated by situations
+in which the supervisee was perceived to have greater status by virtue of
+age, experience, or knowledge. Also present in this category were role
+(boundary) conflicts including supervisors attempting to be friends with the
+supervisee, to confide in the supervisee, or to use the supervisee as a sounding
+board. Other cases involved misunderstandings based on differences in
+worldviews of gender or culture. The other contributing factors included
+supervisees being made privy to internecine quarrels within the agency
+or setting.
+Negative supervision may be identified through specific negative
+events. Ramos-Sanchez et al. (2002) found that 21.4% of their sample of
+predoctoral interns and practicum students reported they had had a negative
+event in supervision (28% response rate). Those who reported negative
+experiences had weaker supervisory alliances and lower levels of satisfaction
+with that supervisor. Some of the negative events involved harsh criticism
+and judgmental attitudes. In exploration of what types of "counterproduc-
+tive events" occur in supervision, Gray, Ladany, Walker, and Ancis (2001)
+WHAT MAKES FOR GOOD SUPERVISION? 
+47
+
+described the supervisor's dismissing the supervisee's conceptualizations in
+favor of the supervisor's, inappropriate self-disclosure, being unprepared
+for supervision, misunderstanding the supervisee, or focusing on negative
+instances rather than areas of improvement. Supervisees reported having
+negative thoughts during the counterproductive event about themselves,
+the supervisor, or the supervisory relationship. Although the supervisees
+wished that the event had been recognized or acknowledged directly and
+then processed (and, in some instances, that they had taken the initiative
+to do so), there was a sense of lack of safety in doing so. To these categories,
+Veach (2001) added supervisory failure to address supervisee poor perfor-
+mance as a category of "counterproductive events."
+Other researchers have studied critical incidents (Ellis, 1991a) or major
+turning points within the supervisory process with respect to relationship,
+competence, emotional awareness, or autonomy. Consequences of these
+incidents included the supervisee deferring to the supervisor, adopting a
+guarded or hypervigilant stance, censoring or limiting expression, becoming
+disengaged, proactively thinking of ways to facilitate better supervision (Gray
+etal., 2001), or spuriously complying with what the supervisor indicated
+(Moskowitz & Rupert, 1983). Spurious compliance refers to pretending to
+do what the supervisor suggested, and then perhaps distorting process notes
+or concealing difficulties in performance.
+Ultimately, in some instances, the counterproductive supervisory event
+had a negative impact on the client. Negative events were found most
+frequently in the interpersonal relationships and style, in specific supervisory
+tasks, and in the fulfillment of supervisory responsibilities. Problematic super-
+vision is discussed further in chapter 8.
+FACTORS INVOLVED IN HIGH-QUALITY SUPERVISION
+Conflict Resolution
+In a study addressing sources of conflict in supervision, Moskowitz and
+Rupert (1983) provided insight into what effective supervisors did to handle
+conflict, in light of the fact that 38% of their sample reported a major
+conflict with a supervisor. Conflicts over style of supervision (direction and
+support) were more readily resolved successfully, whereas solutions to conflict
+over theoretical orientation or therapeutic approach were more difficult to
+formulate and substantially less successful. Most difficult to resolve, and
+most frequently reported, were conflicts involving personality issues. There
+was strong indication that trainees preferred supervisors to take the lead in
+identification and discussion of conflict situations. Eighty-six percent of the
+158 participants preferred that the supervisor identify and initiate discussion
+48 
+CLINICAL SUPERVISION
+
+of the conflict situation, compared with the 13.9% who preferred that the
+supervisor identify the problem and wait for the trainee to initiate discussion.
+Forty of 52 practicum students indicated they had initiated a discussion
+with supervisors. The discussion led to some improvement in the supervisory
+situation in over half of the 40 cases. For the small group of trainees who
+had discussions that did not lead to improvement, the supervisor did not
+change his or her behavior in the way the student had desired, or the
+supervisor felt that the trainee's personal problem was the crux of the conflict.
+Key elements in effective supervision were that supervisors identified
+problems and initiated discussion of them. Simply identifying the problem
+and waiting for the supervisee to initiate discussion was substantially less
+desirable. A significant issue was how the supervisor responded to complaints,
+the trainee's raising issues of conflict, or negative feedback by the supervisee.
+Trainees often raise the issue that when they attempted to complain, discuss
+conflict, or provide negative feedback, the supervisor became confronta-
+tional, defensive, accusatory, or outright angry. It is critical for supervisors
+to respond nondefensively to supervisees' negative feedback or highlighting
+of areas of disagreement. Practicing nondefensive response would be an
+excellent role-play activity for supervisory seminars or support groups.
+Disclosure With Supervisors
+The competency of establishing a good supervisory alliance, with trust
+and communication, is essential to effective supervision. Ladany and Walker
+(2003) suggested that supervisory disclosures directly influence the emotional-
+bond component of the supervisory alliance by communicating trust. Sec-
+ondarily, disclosures by the supervisor may model and encourage supervisee
+self-disclosure. Ladany, Hill, Corbett, and Nutt (1996) reported an average
+of eight nondisclosures to the supervisors in their study and that the issues
+involved were of moderate importance. Most often, nondisclosures con-
+cerned negative reactions to supervisors, personal issues, evaluation con-
+cerns, clinical mistakes, or general clinical observations. Ninety percent of
+those surveyed had experienced a negative reaction to a supervisor that
+they did not disclose. Nondisclosures occurred because the trainee viewed
+the information as unimportant, too personal, involving feelings that were
+too negative or feared that the supervisory alliance was not strong. Yourman
+and Farber (1996) also reported that 39.8% of their sample (35.2% response
+rate) failed to inform supervisors of their perceived clinical errors at a
+moderate to high frequency. Further, 30% never or only infrequently dis-
+closed to the supervisor when they thought he or she was wrong. Nearly
+50% of the sample reported that they told the supervisor what he or she
+wanted to hear, and 59% reported that they never or only infrequently felt
+comfortable disclosing negative feelings toward their supervisor. The only
+WHAT MAKES FOR GOOD SUPERVISION? 
+49
+
+protective factors enhancing disclosure were discussion of countertransfer-
+ence and supervisee satisfaction.
+Ninety one percent of trainees polled in one study reported at least one
+self-disclosure having been made by their supervisor (21% return rate). Most
+frequent categories were personal issues, neutral counseling experiences, and
+counseling struggles (Ladany & Lehrman-Waterman, 1999). Seventy three
+percent of supervisors made at least one personal self-disclosure. Ladany and
+Lehrman-Waterman (1999) reflect on the time lost to supervision, placing
+needs over supervisee, and risk for role reversal. In contrast, self-disclosures
+relating to supervisors' emotional reactions to clients, their own counseling
+struggles and successes, personal feedback on the supervisory relationship,
+general professional experiences, and didactic mentoring providing vicarious
+experiences, all appeared to be facilitative. There may be differing perceptions
+regarding supervisory events affecting disclosures. Although their study had
+a very small sample and had other methodological issues, Reichelt and Skjerve
+(2002) reported only low to moderate correspondence in how supervisors and
+supervisees perceived supervisory events. In the case of low correspondence,
+there was a relationship to supervisor didactic style, a hidden agenda, strong
+opinions, and avoidance of discussion of the trainee's emotional reactions in
+client discussion. In contrast, a trainee-centered approach, a direct style, and
+exploration of trainee thoughts and ideas were associated with a high
+correspondence of supervisor and supervisee perceptions. Further exploration
+is necessary to identify competencies associated with conflict prevention,
+resolution, and disclosures to understand the facilitating factors.
+Supervisors also had significant rates of nondisclosures to supervisees:
+Ninety-eight percent of the supervisors in the Ladany and MelincofPs (1999)
+study reported that they have withheld information from their trainees.
+Most often (in 74% of the cases), the information withheld was the supervi-
+sor's negative reaction to the supervisee's professional performance or ther-
+apy, and it was not disclosed because of a perceived developmental process
+into which the behavior fit or because the supervisor felt that the trainee
+was not ready for the particular feedback. Supervisors also sometimes chose
+to address the issue less directly and more generally. The second most
+frequent type of case (67%) was that supervisors did not disclose personal
+issues relating to their own life, an appropriate boundary definition. Negative
+reactions to the trainee's performance accounted for 56% of nondisclosures;
+trainee personal issues, 37%; negative self-efficacy of the supervisor, 32%;
+dynamics of the training site, 27%; the supervisor's clinical and professional
+issues, 22%; trainee appearance, 18%; positive reactions to the trainee's coun-
+seling and professional performance, 11%; attraction to the trainee, 10%; reac-
+tions to the trainee's clients, 4%; and experiences as a supervisor with other
+trainees, 4%. It is noteworthy that supervisors did not disclose both negative
+and positive impressions. More evaluative feedback would be beneficial to the
+50 
+CLINICAL SUPERVISION
+
+trainee. Culture is a significant factor in issues of self-disclosure. Constantine
+and Kwan (2003) described considerations for client—therapist dyads that are
+applicable to the supervisor—supervisee—client triad. They proposed consid-
+erations of "inescapable" (p. 584) self-disclosures such as skin color and
+inadvertent self-disclosures such as those that occur through transference—
+countertransference to guide deliberate therapist self-disclosure. Awareness
+and assessment of client (and supervisee) response to the first two categories
+should then guide subsequent deliberate self-disclosures.
+Mentoring
+A component of trainee socialization that has been highly rated by
+those who experience it is mentoring. Johnson (2002) draws from multiple
+definitions to describe the mentor as someone who "provides the protege
+with knowledge, advice, challenge, counsel and support in the protege's
+pursuit of becoming a full member of a particular profession" (p. 88). The
+mentor serves as a teacher, adviser, and role model, typically without have
+received any training or supervision in the process. Mentoring is distin-
+guished from supervision by virtue of its volitional quality (i.e., it is typically
+sought out by the protege), lack of an evaluative or legal component associ-
+ated with supervision, and longer duration. However, some supervisors do
+become mentors to their supervisees. Koocher (2002) encourages us to call
+recipients of mentoring "mentor's charges" rather than proteges to avoid
+masculinization of the concept. Mentor's charges advance more rapidly in
+their careers and report enhanced professional-identify development and
+career satisfaction. Interestingly, fewer clinical psychology students (53%)
+have been mentored than those in other areas of psychology (73%; Johnson,
+Koch, Fallow, & Huwe, 2000) and PsyDs are less likely than PhDs to be
+mentored (Clark, Harden, & Johnson, 2000). Mentoring occurs frequently
+in business executive programs.
+Increased interest in abusive (Tepper, 2000), dysfunctional (Johnson
+& Huwe, 2002), and negative (Eby, McManus, Simon, & Russell, 2000)
+supervision practices has drawn attention to the darker side of mentoring,
+which had previously received scant attention. Because, like the supervisor,
+the mentor holds greater power, there is potential for abuse relating to the
+unbalance in the mentor-charge relationship. A dysfunctional relationship
+is defined as unproductive or is characterized primarily as conflictual, result-
+ing in distress of one or both members. Results can be exploitation, sabotage,
+or tyranny. Because of the multiple roles mentoring brings to a relationship,
+it is critical to devote attention to its ethical considerations (Johnson &
+Nelson, 1999). There is some consensus that potential mentors require more
+preparation, training, and support and that value be attached to the function
+of mentoring. For example, in academic settings, minority faculty were
+WHAT MAKES FOR GOOD SUPERVISION? 
+51
+
+reported to be excessively in demand as mentors by all students, but were
+given no credit for that function and still needed to complete committee
+and research responsibilities and quotas (Dickinson & Johnson, 2000).
+Johnson and Huwe (2002) suggest preventative strategies for dysfunction,
+including creation of a culture of mentoring, assessment of new faculty hires
+as potential mentors, using mentorship skills as a criterion when hiring new
+faculty members, mentor training, mentor monitoring, providing rewards
+for faculty members who are mentors, and creation of a clear structure for
+addressing dysfunction.
+Culture
+The role of culture in "best" and "worst" supervision has been sorely
+neglected. One exception is a pilot study to explore critical incidents in
+supervision, conducted with 18 racial-ethnic minority students who had
+completed their APA-approved internship in a university counseling center
+(Fukuyama, 1994a). When both supervisors and supervisees were asked
+to offer positive and negative incidents and to describe organizational or
+environmental conditions that contributed to their professional develop-
+ment, a number of categories emerged. Supervisees preferred openness and
+support, as well as not being stereotyped. Supervisees valued supervisors
+demonstrating belief in their clinical work with difficult clients, most espe-
+cially when cultural issues were presented; supervisees valued culturally-
+specific supervision that addressed cultural implications both for supervisees
+and for clients; and opportunities for multicultural experience through which
+they may enhance their expertise. The few negative incidents reported
+(N =4) included lack of supervisor awareness of cultural-specific norms
+(e.g., interpreting culturally consistent behavior as countertransference),
+use of expressions offensive to the supervisee, and questioning of supervisee
+interpretation of client behavior as culturally relevant when the supervisee
+and client shared same cultural heritage.
+In a study of supervisor and supervisee perceptions of cultural factors,
+McRoy, Freeman, Logan, & Blackmon (1986) described cross-cultural barri-
+ers to supervisory relationships, including language barriers, prejudice or
+bigotry, lack of knowledge of cultural differences, student defensiveness,
+and differences in opinions, background, and life experiences. Twenty-eight
+percent of the reporting field supervisors and 16 percent of the trainees
+indicated they had experienced an actual problem in these areas.
+It is strongly advised that cultural and diversity issues be addressed in
+supervision. This is a competency area for supervision and is relevant for
+supervisees from ethnic or racial minority groups (McNeill, Horn, & Perez,
+1995) as well as for supervisees and supervisors from any ethnic or racial
+52 
+CLINICAL SUPERVISION
+
+group and their clients (Wisnia & Falender, 1999). Supervision should be
+guided by an attitude of discovery, exploration, and critical thinking, rather
+than political correctness (Stone, 1997). Competency includes respect and
+a strong knowledge base in multicultural psychology. It may be that flexibility
+is an antidote to stereotyping: Stereotypes are lacking in flexibility (Abreu,
+2001), and thus flexibility might relate to a cognitive frame of openness.
+It has been suggested that acts of discrimination and racism may occur
+covertly, either accidentally or intentionally, as a result of ignorance and
+misunderstanding (McNeill et al.). Recognition of the Eurocentric influence
+on theory, intervention, (McNeill et al.) and the general lens with which
+we approach culture needs to be acknowledged. Constantine (1997) reported
+that 30% of predoctoral interns and 70% of supervisors in her sample had
+never completed a multicultural or cross-cultural counseling course. As J. M.
+Bernard (1994) suggested, a minimum requirement for supervision is being
+as multiculturally competent as one's supervisees. A more complete discus-
+sion of these issues is provided in chapter 6.
+Gender
+Allen et al. (1986) reported gender differences on several dimensions,
+but the overall quality of supervision was unrelated to the supervisor's gender.
+Differences include less encouragement of the assumption of power in female
+trainees (Nelson & Holloway, 1990), female relational focus versus male
+client focus (Sells, Goodyear, Lichtenberg, & Polkinghorne, 1997), and, in
+general, are affected by gender stereotypes within supervision (J. M. Bernard
+& Goodyear, 1998). Feminist supervisors informally described unconditional
+positive regard combined with intellectual and personal challenge as best
+(Porter & Vasquez, 1997).
+In terms of preferred characteristics from male supervisees, the "best"
+supervisors placed heavy emphasis on evaluation and peer observation. Male
+supervisees also found technical aspects of supervision more salient. For
+females, the absence of sexist attitudes and practices was rated as optimal
+(Allen, et al., 1986). To male supervisees, the "worst" supervisors were those
+for whom one had to compete with other supervisees for attention. Also
+rated worst were supervisors who did not teach practical skills and did not
+encourage exploration of new psychotherapeutic strategies (Allen et al.,
+1986). For female supervisees, the "worst" supervisors used sexist language,
+emphasized traditional sex role stereotypes, subtly devalued the supervisee
+on the basis of sex, or violated personal privacy. Feminist working-group
+members described worst supervisors as overdirecting or requiring confor-
+mity; pathologizing supervisee conflicts, worries, or problems; and promoting
+sexist or racist interpretations (Porter & Vasquez, 1997).
+WHAT MAKES FOR GOOD SUPERVISION? 
+53
+
+PREFERRED SUPERVISORY FORMATS
+In a compilation of previous research on preferred supervisory formats
+for family therapy, Goodyear and Nelson (1997) contrasted supervisor and
+trainee reports of effectiveness. In the review, the most highly rated forms
+of supervision were "supervisor and trainee review videotapes of therapy
+sessions" and "live supervision using phone call-ins to direct the trainee".
+Both trainees and supervisors rated these forms as 1st and 2nd choices.
+There was some divergence with respect to the 3rd choice, with supervisors
+rating "trainee participation on a treatment team behind the one-way mirror"
+and trainees rating "supervisor conducts co-therapy with trainee" and "train-
+ees' participate on treatment team behind one-way mirror." "Live supervision
+using a mid-session break to consult with trainee" was ranked 4th by supervi-
+sors and 5th by trainees. The most frequently used form of supervision for
+trainees and supervisors was "individual case consultation," which accounted
+for in excess of 85% of the responses by both trainees and supervisors.
+Individual case consultation was rated as the 14th most favored format by
+supervisors and the 10th most favored format by trainees (out of 17 possible
+rankings), confirming McCarthy et al.'s (1988) "myth" that individual super-
+vision was the best. Group supervision was the second most frequently
+used modality and was ranked 5th by supervisors and 9th by trainees. The
+techniques most frequently used by supervisees, "use of specific readings
+related to a specific case" and "supervisor demonstrates specific therapy skills
+for supervisee," were not highly ranked by trainees or by supervisors (rankings
+of 12th to 17th). The lowest ranked forms of supervision were reviewing
+written verbatim transcripts with supervisees, "live supervision using an
+earphone to direct supervisee" (especially low ranked by trainees), and
+"family sculpting," or having families form actual spatial body placements
+to represent relationships in family therapy.
+It is interesting to contrast these findings with Nelson (1978), in which
+videotaping and supervisor observation were the methods most preferred
+for acquiring information regarding trainee's therapy sessions, but trainees
+observing supervisors performing therapy and supervisors acting as a cothera-
+pist to trainees were more highly ranked as methods of teaching therapy
+techniques. Training-program directors rated cotherapy as being the strong-
+est method for supervision, followed by live supervision, videotape review,
+audiotape review, and self-report only (Romans, Boswell, Carlozzi, & Fergu-
+son, 1995). Supervisees reported that they preferred less emphasis on discus-
+sion and more on demonstration by supervisor or videotape and on observa-
+tion across their graduate training (Gonsalvez, Oades, & Freestone, 2002).
+Milne and Oliver (2000) found that while all their participants made use
+of individual supervision (100%), there was interest in the more flexible
+formats of group supervision (used by 43% of participants) and cotherapy
+54 
+CLINICAL SUPERVISION

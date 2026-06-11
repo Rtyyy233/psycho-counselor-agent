@@ -165,7 +165,7 @@ async def paip_outline_lookup_node(state: conv_state) -> conv_state:
     if step.mode != "paip_outline_lookup":
         return state
 
-    base_ids = state["matched_base_ids"]
+    base_ids = list(dict.fromkeys(state["matched_base_ids"]))
     if not base_ids:
         return state
 
@@ -173,7 +173,7 @@ async def paip_outline_lookup_node(state: conv_state) -> conv_state:
     section_names = ["problem", "assessment", "intervention", "plan"]
 
     def _sync():
-        where = {"text_type": "paip_summary", "base_id": {"$in": base_ids}}
+        where = {"$and": [{"text_type": "paip_summary"}, {"base_id": {"$in": base_ids}}]}
         return conv_store.get(where=where)
 
     paip_data = await asyncio.get_running_loop().run_in_executor(None, _sync)

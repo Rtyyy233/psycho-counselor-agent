@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(python -m py_compile src/mem_retrieve_material.py)",
-      "Bash(python:*)"
-    ]
-  }
-}

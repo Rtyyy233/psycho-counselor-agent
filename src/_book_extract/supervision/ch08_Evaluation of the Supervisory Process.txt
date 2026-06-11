@@ -1,0 +1,1338 @@
+or depression (43.2%), motivation (14-1%), and interpersonal problems
+(13.2%).
+R. K. Miller and Van Rybroek (1988) proposed guidelines for what a
+helpful letter might contain. These elements include a caveat about how
+many letters overstate desirable qualities, and the writer's intent to avoid that
+trap by highlighting strengths and weaknesses in specific skills, experience,
+commitments, and traits; examples or reasons that the individual should be
+selected over others; and suggestions of the types of internship experiences
+that the candidate might most benefit from. Grote et al. (2001) urged use
+of Likert scales rather than binary yes-no decisions. They suggested an
+acknowledgment in all letters of recommendation that "no applicant is
+perfect and that the writer will describe some areas of personal or professional
+growth that the applicant should work toward in his or her internship year"
+(p. 659-660). We urge movement toward standardization with inclusion of
+details on the scope of experience with the supervisee, mention of Grote's
+recommendations and one's relationship with the supervisee (e.g., primary
+supervisor or director of training), description of the context of the relation-
+ship (e.g., internship or professional organization), discussion of the special
+skills or attributes the supervisee would bring to the setting, and clear
+description of what was supervised. If one is not able to write a positive
+letter for a supervisee, this factor should have been dealt with in ongoing
+supervision, but needs to be clearly discussed with the supervisee.
+As the APA Ethical Principles of Psychologists and Code of Conduct
+states in Principle C, Integrity, "Psychologists seek to promote accuracy,
+honesty, and truthfulness in the science, teaching and practice of psychology.
+In these activities psychologists do not steal, cheat, or engage in fraud,
+subterfuge, or intentional misrepresentation of fact" (American Psychologi-
+cal Association, 2002a, p. 4). Section 7.06 (b) of the same document states,
+"Psychologists evaluate students and supervisee on the basis of their actual
+performance on relevant and established program requirements" (American
+Psychological Association, 2002a).
+RISK MANAGEMENT
+The major components of supervisory risk management have been
+outlined in this chapter. Adherence to informed consent, competency,
+confidentiality, due process, duty to warn, and the approach of taking reason-
+able steps to think through and document the process in identified situations
+are sound preventative steps. Both legally and with respect to common
+sense, the supervisor needs to do what a reasonable supervisor would do under
+the particular set of circumstances. The ethical problem-solving models
+ETHICAL AND LEGAL PERSPECTIVES 
+193
+
+described in this chapter provide a framework for determining appropriate
+actions; the step entailing consultation with a colleague or colleagues is
+particularly important. Harris (2002) advocated "worst case thinking," or
+considering the worst possible outcomes of the scenario in question. This
+technique is very useful in preparing trainees for sessions during times of
+high uncertainty or crisis.
+Competencies
+The competencies for addressing ethical and legal considerations are as follows:
+• Supervisors function within their areas of competency in all clinical practice
+and supervision
+• Supervisors have knowledge and training in ethics of mental health
+professions and conduct themselves in a manner that models such behavior.
+This competency encompasses all areas of ethical functioning, including
+boundary definition
+• Supervisors have knowledge of laws and regulations of the mental health
+disciplines and conduct themselves accordingly. They seek consultation as
+needed
+• Supervisors develop goals and contracts with supervisees and translate these
+objectives into training, giving ongoing constructive feedback and evaluation
+and documenting all parts of the process
+194 
+CLINICAL SUPERVISION
+
+8
+EVALUATION OF THE
+SUPERVISORY PROCESS
+Feedback and evaluation are core components of psychology training
+programs. However, they are two of the most difficult areas in psychology
+training. Evaluation has been described as "typically a weak suit for most
+supervisors" (Cormier & Bernard, 1982, p. 490). Ironically, as psychologists,
+we pride ourselves on our training in research, methodology, psychodiagnos-
+tics, and evaluation, yet find that in the area of evaluation of our students—
+and ourselves—our techniques are sorely lacking, as is our will to do the task.
+In this chapter, we introduce a protocol for evaluation. First, we discuss
+the role of evaluation in psychology training, in terms of both the current
+state of the art and aspirations for its future. We then define the psychologist's
+role as evaluator and describe specific types of evaluation. In particular, we
+devote attention to qualitative versus quantifiable forms of evaluation and
+to the focus of evaluation: assessment of the client interactions between
+the client and the supervisee-therapist and among the client, supervisee-
+therapist, and supervisor, obtained through observation, assessment-of-
+process, and client-outcomes measures. Next, we discuss the variant of
+manualized treatment evaluation. Nuances that differentiate formative and
+summative evaluation, including examples of frames, are laid out as steps
+in the development of competency-based criteria that use an interwoven
+contract as a centerpiece. We then present 360-degree evaluation as an
+alternative to supervisor evaluation and discuss contextual factors that
+J95
+
+influence evaluation and satisfaction of supervisees. Relevant ethical issues
+introduced in evaluation or in lack of an evaluation process are significant
+factors. We also briefly discuss admissions criteria for psychology training
+and licensure programs. Finally, we examine aspects of dealing with a super-
+visee with problematic behavior as defined through the evaluation process,
+including identification, remediation, addressing of legal issues, dismissal,
+and preventative strategies. In this analysis, we do not neglect the problem-
+atic supervisor or program evaluation, factors that only recently have re-
+ceived attention in the context of supervision.
+REASONS FOR DIFFICULTY IN EVALUATION
+The reasons for the evaluation deficit seem multifaceted. First, there
+is the perceived incongruity between developing a supportive supervisory
+relationship or alliance and then giving negative feedback. Central to this
+problem is the belief that feedback may disturb the unmitigated positive
+regard in the relationship (Hahn & Molnar, 1991) or otherwise disrupt the
+relationship. Ladany, Ellis, et al. (1999) suggested that evaluation may even
+moderate the relationship between working alliance and supervision out-
+come, such that, for example, a trainee may not self-disclose relevant personal
+information, out of the fear that doing so may adversely affect his or her
+evaluation. However, effective evaluation practices appear to be positively
+associated with and predictive of a stronger working alliance (Lehrman-
+Waterman & Ladany, 2001). Because most evaluations are positive (Robiner,
+Saltzman, Hoberman, Semrud-Clikeman, et al., 1997), it is even more diffi-
+cult to provide negative evaluations.
+Second, there is a profound misunderstanding of the task of evaluation
+in training: Evaluation is viewed as punitive and worrisome, whereas it
+should be viewed simply as part of the effective learning process and as a
+method of dealing with problematic behavior and remediation in a small
+minority of cases. Multiple studies cited in chapter 2, this volume, reported
+that trainees viewed high levels of feedback and evaluation as a highly
+desirable characteristic of supervision (Gandolfo & Brown, 1987; Henderson
+etal., 1999; Leddick & Dye, 1987; C. D. Miller & Getting, 1966;
+Nerdrum & Ronnestad, 2002). However, the differences in the supervisory
+role between giving formative (ongoing) and summative evaluations are
+complex.
+Third, evaluation has typically been a unidirectional process, given
+from supervisor to supervisee, rather than bidirectional. However, it is impor-
+tant to consider the impact of supervisees' evaluations of supervisors on the
+relationship and on the supervisees' satisfaction. Potentially, such evalua-
+196 
+CLINICAL SUPERVISION
+
+tions would provide supervisors with feedback on their own performance
+and effectiveness, creating a spiral of supervisory improvement.
+Fourth, Robiner et al. (1993) have done an admirable job outlining
+the myriad reasons that we convince ourselves to avoid, be lenient in, or
+inflate evaluation. They described the definitional and measurement issues,
+including lack of clear criteria and definition of competency; legal and
+administrative issues, such as fear of liability, fear of institutional censure,
+concern for program status, and concern for institutional reputation; inter-
+personal issues, including fear of diminished rapport or damaging a trainee's
+career; and supervisor issues, such as a wish to avoid scrutiny of one's own
+work, inexperience with or minimization of impairment, low assertiveness,
+a wish to avoid the time and energy expenditure required in the effort, and
+inappropriate optimism. Norcross, Stevenson, and Nash (1986) found time
+constraints, inadequate measures and methods, lack of personnel, and insuf-
+ficient funding to be primary obstacles, rather than staff resistance and
+theoretical disparity. Much traditional evaluation to date has been single-
+measure, supervisor-reported, and often global evaluation (Hahn &. Molnar,
+1991) or measurement of a single, global factor (Newman & Scott, 1988).
+In terms of methodology, without the use of observation of therapy, videotape
+review, or a 360-degree procedure, the validity of the evaluation may be
+compromised; discomfort on the part of both parties when feedback is based
+on small segments of data is warranted. In addition, few supervisors have been
+formally trained in supervision, and the majority feels less than adequately
+prepared to work with "unsuitable" interns (Robiner, Saltzman, Hoberman,
+& Schirvar, 1997).
+Last, there is the underlying reality that negative evaluation of a
+supervisee may lead to remediation plans and possibly culminate in the
+supervisee's dismissal from the program (Olkin & Gaughen, 1991), thus
+adding the role of judge to that of supervisor.
+That evaluation is a critical part of supervision is unequivocal. One
+need only look at the APA Guidelines and Principles for Accreditation of
+Programs in Professional Psychology to confirm this condition (American
+Psychological Association, Committee on Accreditation, 2002e):
+At the time of admission, the program provides interns with written
+policies and procedures regarding program requirements and expecta-
+tions for interns' performance and continuance in the program and
+procedures for the termination of students. Interns receive, at least
+semiannually, written feedback on the extent to which they are meeting
+these requirements and performance expectations. The feedback should
+address the intern's performance and progress in terms of professional
+conduct and psychological knowledge, skills and competencies in the
+areas of psychological assessment, intervention, and consultation. Such
+feedback should include:
+EVALUATION OF THE SUPERVISORY PROCESS 
+197
+
+Timely written notification of all problems that have been noted
+and the opportunity to discuss them, guidance regarding steps to remedi-
+ate all problems (if remediable); and substantive written feedback on
+the extent to which corrective actions are or are not successful in
+addressing the areas of concern.
+Further confirmation of this point is given by section 7.06, "Assessing
+Student and Supervisee Performance," of the APA Ethical Principles of
+Psychologists and Code of Conduct 7.06 (American Psychological Associa-
+tion, 2002a)
+(a) In academic and supervisory relationships, psychologists establish
+a timely and specific process for providing feedback to students and
+supervisees. Information regarding the process is provided to the student
+at the beginning of supervision.
+(b) Psychologists evaluate students and supervisees on the basis of their
+actual performance on relevant and established program requirements.
+Together, these guidelines leave no doubt that evaluation, feedback,
+and clear performance expectations need to be the hallmark of psychology
+training. However, evidence reveals a significant schism between what
+should be a competence of psychologists and what actually occurs in practice.
+STATE OF THE ART
+Even though it would be reasonable to expect a comparable level of
+methodological rigor for assessment of supervisees and peers as that required
+for client assessments, that has not been the case. In a review of psychometric
+properties of existing competency assessment tools, Scofield and Yoxtheimer
+(1983) concluded that existing measures were lacking in reliability and
+validity of data. The area most frequently assessed was interpersonal compe-
+tencies, including empathy, expertness, interpersonal nonverbal responses,
+and overall therapeutic effectiveness. Ponterotto and Furlong (1985) ex-
+tended the inquiry into rating scales used to assess competency of therapists,
+concluding that use of the rating scales was "based more on convention
+than on sound psychometric evidence" (p. 614). Rater bias has been shown
+to be significant. Rater bias in evaluation includes leniency (giving ratings
+that are more positive than warranted), the central tendency (the tendency
+to skew ratings more toward average than warranted), and strictness (giving
+ratings that are more negative than warranted; Robiner, Saltzman, Hober-
+man, Semrud-Clikeman, et al., 1997). Robiner, Saltzman, Hoberman, Se-
+mrud-Clikeman, et al.'s (1997) survey of 62 supervisors revealed that 58%
+of the supervisors believed their evaluations were biased in some way, mainly
+because of leniency or the central tendency.
+198 
+CLINICAL SUPERVISION
+
+Ladany, Lehrman-Waterman, et al. (1999) found that supervisees cited
+performance evaluation and monitoring of supervisees' activities as the most
+frequent ethical violation. In a survey of counseling training sites, there was
+high variability among programs in the type of evaluation and exit criteria.
+Out of 60 counseling centers, only 1 had complete formal exit criteria (Hahn
+& Molnar, 1991). In a survey of 179 APA-accredited internships, the most
+frequently used procedures were informal qualitative procedures; quantitative
+comparison procedures were used the least (Norcross et al., 1986). Forrest,
+Elman, Gizara, and Vacha-Haase (1999) concluded,
+Our review of the literature describing evaluation criteria used by aca-
+demic and internship programs suggest minimal consensus across pro-
+grams about evaluation criteria and procedures. There does not appear
+to be a systematic and comprehensive evaluation schema that is widely
+accepted within professional psychology training programs, (p. 641)
+Ellis and Ladany (1997) also concluded that, although supervisees can
+be evaluated effectively, currently "there is little evidence indicating how
+or what is being evaluated" (p. 484). There is a significant gap between
+what is ethically and programmatically indicated for evaluation and what
+is actually practiced.
+PSYCHOLOGIST AS EVALUATOR
+Cormier and Bernard (1982) described three pivotal skills in the train-
+ing of the psychologist to be an evaluator:
+(a) the ability to evaluate efficiently using some objective criteria as a
+yardstick or measure; (b) the ability to communicate feedback clearly
+and to have some method of checking the counselor's understanding
+of the feedback; (c) the ability to be comfortable and effective with
+the power inherent in the role of supervisor, (p. 490)
+These skills are basic competencies that all supervisors should possess.
+In addition, Ellis and Ladany (1997) delineated the parameters for evaluating
+supervisee competence. They suggested consideration of scope of compe-
+tency, the particular domain and modality of therapy behavior, skills and
+behaviors desired, a designated period of time, and the method of assessment.
+TYPES OF EVALUATION
+The following are some of the types of evaluation used in supervision:
+• qualitative or quantitative evaluation of material presented by
+the supervisee regarding the client and interactions between
+EVALUATION OF THE SUPERVISORY PROCESS 
+199
+
+the client and the supervisee—therapist, based on recollection
+(described by Cone [2001] as indirect, because of the temporal
+gap and lack of direct observation);
+qualitative or quantitative evaluation of observational (live or
+videotaped) data of interactions between the client or family
+and the supervisee-therapist (described by Cone [2001] as direct
+with no temporal gap), which may include responses to the
+following variables or others that can be operationalized and
+coded from the observed session or Likert scales developed to
+assess the following:
+• affective component,
+• cultural and diversity competency,
+• relationship and interpersonal skills,
+• conceptualization,
+• diagnosis,
+• technical skills,
+• adherence to the model, and
+• empathy;
+evaluation of the progress of the supervisee toward predesig-
+nated therapy goals;
+analysis of client-report outcome data on the client's progress;
+use of rating scales for role induction or to structure forma-
+tive feedback;
+Use of unobtrusive measures, such as comparing tallies of client
+attendance and cancellations, analyzing rates of client reten-
+tion, and determining the number of clients seen per week
+or psychodiagnostics sessions completed, assessing supervisee
+timely and credible completion of paperwork;
+analysis of client satisfaction data, based on client reports and
+attendance records;
+assessment of case presentations at grand rounds or diagnostic
+team meetings;
+analysis of portfolios or examinations (adapted from Sumerall
+et al, 2000);
+ratings of a work sample, including diagnostic assessment, case
+formulation, and course of treatment (Dienst & Armstrong,
+1988);
+analysis of critical incidents (Norman, 1985) or incidents that
+were major turning points in supervision, resulting in change
+to the supervisee's approach or effectiveness;
+study of diagnostic thinking, clinical judgment, or problem
+solving in which physicians are observed and questioned as
+they solve a clinical problem (Norman, 1985).
+200 
+CLINICAL SUPERVISION
+
+Frame and Stevens-Smith (1995) identified and operationalized partic-
+ularly salient variables that can be converted to an evaluation format. They
+identified nine characteristics to be imperative to counselor development,
+compiled through analysis of counselor literature by the counseling psychol-
+ogy department at the University of Colorado—Denver: openness, flexibility,
+positivity, cooperativeness, willingness to use and accept feedback, awareness
+of one's impact on others, ability to deal with conflict, ability to accept
+personal responsibility, and ability to express feelings effectively and appro-
+priately. On a 5-point Likert scale, a minimum rating of 3 points per item
+is required.
+Evaluation of the Process of Supervision
+Evaluation of the process of supervision is another approach. The
+measure by Worthen and Isakson (2000) shown in Appendix J provides for
+supervisee introspection regarding multiple aspects of suitability, conceptual-
+ization, relationship, technique, results, and satisfaction with supervision.
+Although this approach has not been empirically validated, the authors
+reported good reliability of data. It appears to be useful in providing struc-
+tured, somewhat less judgmental feedback from supervisee to supervisor.
+A Supervisory Utilization Rating Form (SURF) was developed by
+Vespia et al. (2002). Although it has not been psychometrically supported,
+they suggested its use as a tool in role induction, to help supervisees define
+their task and what is entailed in being a supervisee. It might also be useful
+in identifying differences between importance assigned to various supervisory
+activities by supervisors and supervisees. For example, two items rated as
+more important by supervisees than supervisors were "critiques own work"
+and "invites feedback from supervisor" (Vespia et al., 2002, p. 60).
+The observational instrument (Process Evaluation of Teaching and
+Supervision) described by Milne and James (2002) provides another format
+for assessment. By coding supervisee behaviors of reflecting, experimenting,
+conceptualizing, experiencing, and planning in the context of supervisor
+behaviors of managing, listening, supporting, informing and educating, and
+guiding experiential learning, the authors provide a framework which could
+be adapted to other assessment and guiding functions.
+The Evaluation Process Within Supervision Inventory (see Appendix
+I; Lehrman-Waterman & Ladany, 2001) is a self-report measure designed
+to assess supervisees' perceptions of the degree of effectiveness of supervision
+goal setting and feedback. Supervisees use a 7-point Likert scale, where 1 =
+strongly disagree and 7 = strongly agree. The scale consists of two groupings
+of items: goal setting and feedback. An example of a goal-setting item is,
+"My supervisor and I created goals that were realistic." An example of a
+feedback item is, "The feedback I received was directly related to the goals
+EVALUATION OF THE SUPERVISORY PROCESS 
+201
+
+we established" (Lehrman-Waterman & Ladany, 2001, p. 171). The authors
+reported that the two scales were highly correlated, but conceptually distinct.
+They accounted for the relatively lower internal consistency of the feedback
+scale by explaining that feedback is very heterogeneous and includes input
+solicited by a supervisor and whether summative evaluation was given. This
+inventory appears useful in providing the supervisor with feedback on the
+supervisee's perspective and satisfaction and as a springboard for discussion
+of the supervision process.
+Evaluating Client Outcome
+Another type of supervision evaluation examines client-outcome data
+on changes in the client's symptoms. There is not a complete correlation
+between client outcome and competence of supervisees, as client's symptom
+status is a significant factor, and assessment of this variable occurs informally
+anyway (Ward, Friedlander, Schoen, &. Klein, 1985) and plays a role in
+evaluation. Although client outcome is considered the acid test of supervi-
+sion efficacy (Ellis & Ladany, 1997; Stein & Lambert, 1995), to date we
+do not have clear, methodologically sound data on client outcome and its
+relationship to supervision.
+Several methodologies have been described to track client change
+(Clement, 1999; Frazier, Dik, Glaser, Steward, & Tashiro, 2002; Lambert
+et al., 2002) or to relate monitoring of client outcome to supervision (Lam-
+bert & Hawkins, 2001, Worthen & Isakson, 2002). The Outcome Question-
+naire, or OQ-45, a self-report measure, consists of three subscales: symptom
+distress, interpersonal relations, and social role performance. A youth ver-
+sion, the Youth Outcome Questionnaire (Y-OQ), is geared to clients ages 4
+to 17 and contains six subscales: intrapersonal distress, somatics, interper-
+sonal relations, critical items, social problems, and behavioral dysfunction
+(Wells, Burlingame, Lambert, Hoag, & Hope, 1996). A noteworthy method-
+ology combines the OQ-45 and, based on the results, a therapeutic-alliance
+assessment (Horvath & Greenberg, 1994) or analysis of the client's motiva-
+tion for change (McConnaughy, Prochaska, & Velicer, 1983) to determine
+which factors are influencing inadequate client progress (Lambert &
+Hawkins, 2001). Under this approach, the therapist is given a weekly graph
+with white, green, yellow, and red dots signifying different degrees of the
+client's self-reported functioning and the probability of achieving a positive
+outcome. White corresponds to normal functioning indicative of a need for
+termination of treatment, whereas green signifies adequate progress without
+a need for treatment-plan changes. Yellow reflects less than adequate prog-
+ress, a need for treatment-plan change, and consideration that treatment
+is not helping. Finally, red signifies that the client is not progressing at an
+202 
+CLINICAL SUPERVISION
+
+expected level and may withdraw from treatment prematurely or end up
+with a negative treatment effect. However, significant changes need to be
+made to this methodology; for example, readiness for change could be
+assessed (Lambert & Hawkins, 2001).
+Lambert and Hawkins (2001) believed that the kinds of feedback
+evinced by their approach are not systematically elicited in the supervisory
+process and have been associated with client improvement in therapist-
+client feedback studies (Lambert etal., 2001). In one case described by
+Lambert and Hawkins (2001), after a series of very negative feedback reports
+about the client's symptom severity, evidence of the need to rethink the
+treatment plan, the client began to improve on self-reports, a change that
+went unnoticed by the novice therapist. When questioned, the client de-
+scribed that the extreme discomfort of the symptoms was unmanageable,
+thereby increasing the client's motivation to improve.
+Worthen and Isakson (2002) used Lambert's OQ-45 (Lambert & Bur-
+lingame, 1996) to provide weekly client-outcome data. They posited client
+feedback to be value neutral and easier for trainees to tolerate and incorpo-
+rate. Lambert et al. (2002) found this feedback to enhance therapy outcome.
+Although the results from the Worthen and Isakson (2002) study were
+equivocal because of pretreatment between-group differences, this technique
+may provide a way to incorporate client outcome into the supervisory process.
+Frazier et al.'s (2002) application of Clement (1999) used scales with fixed
+behavioral points for client self-monitoring, which could be used in supervi-
+sion as well.
+A somewhat different approach to evaluation is provided in the feminist
+supervision model. Under this approach, the supervisor and the supervisee
+each gives the other evaluative feedback both on an ongoing basis and in
+written form on completion of the supervision. Responsibility is shared
+for evaluating success and limitations in goal attainment (Zimmerman &
+Haddock, 2001). However, it is clearly established that the supervisor must
+provide direct and valid evaluations and feedback and if necessary, recom-
+mend the supervisee's termination from the training program. All feedback
+is provided in a humane manner (Porter &. Vasquez, 1997).
+Evaluation of Manualized Treatment
+Supervisors in manualized-treatment programs rate each supervisory
+hour on how closely it adhered to the manual and to the parameters of
+treatment. Attention is given to how well the supervisee completed the
+stated goals of the session, individualized the session for the benefit of the
+client, and stayed within the treatment protocol (Kendall & Southam-
+Gerow, 1995). This type of tracking could be modified so that trainees and
+EVALUATION OF THE SUPERVISORY PROCESS 
+203
+
+supervisors rate these variables session by session. Henggeler and Scboenwald
+(1998) developed a manual for supervision of multisystemic therapy, or
+MST; their manual is one of the only efforts to create a supervisory model
+to accompany a transportable evidence-based mental health treatment for
+the community. Particularly interesting is the Supervisor Adherence
+Measure (Henggeler et al., 2002), a questionnaire that articulates and as-
+sesses multiple aspects of the supervisor's role in implementing the model.
+This questionnaire is a noteworthy effort to organize the elements of super-
+vision in a measurable format, to demystify the process, and to provide
+a roadmap to evaluation of the supervision process within a particular
+model.
+Lambert and Ogles (1997) came to the following conclusions regarding
+existing measures of training outcome: (a) Focusing on observable behavior
+of trainees, with frequency counts, is most useful; (b) evaluation of training
+through criteria from several sources is most desirable (i.e., from clients,
+supervisor, and trainees themselves); (c) it is ideal to evaluate the effects
+of supervision by looking at client-outcome and relationship (e.g., trainee-
+client) variables, but this goal is aspirational; (d) most outcome measures
+are "homemade" and lack reliability and validity, so we need to move toward
+criterion measures instead.
+FORMATIVE AND SUMMATIVE EVALUATION
+Formative and summative evaluations are two types of evaluation in
+the psychology traineeship, each of which may have a different emotional
+valence (Robiner et al., 1993). Formative evaluation, which is seen as a
+way to assist in skill refinement and identification of personal issues that
+may be impeding clinical practice, is viewed more positively than summative
+evaluation. Because psychologists believe in positive change and in the power
+of feedback, formative evaluation may be syntonic. However, summative
+evaluation, or the objective assessment of competence and performance, is
+not viewed so positively. Because of the outcomes it yields (completion and
+passing, probationary status, or termination), there is greater ambivalence
+or negativity associated with this form of evaluation. There may be specific
+reasons that either form of evaluation, but especially summative, is difficult.
+To some supervisors, being an evaluator may feel like a dual role: On one
+hand, the supervisor is supportive, personal, and growth focused, whereas
+on the other hand he or she is the one to give hard facts on how the trainee
+is not measuring up to the requirements of the traineeship. Other reasons
+for supervisor discomfort with these forms of evaluation include unfamiliarity
+with the process of evaluation, because of a lack of supervision evaluation
+204 
+CLINICAL SUPERVISION
+
+training (Borders & Leddick, 1988). In addition, there are all the afbremen'
+tioned reasons that supervisors avoid or are lenient in evaluation.
+Formative and Summative Feedback
+Because of the structure of the supervisory relationship, the definition
+of its parameters and expectations, its use as a vehicle and process for formal
+feedback, etc., an early expectation should be established for a structure of
+goals and for ongoing qualitative feedback. These elements should be dic-
+tated by the goals of the trainee, the developmental level at which the
+trainee is functioning, and attention to the evaluation form that will be
+used for the summative evaluation. Supervisors must have competency in
+providing formative and summative feedback to trainees.
+There are multiple levels of evaluation within the larger categories of
+formative and summative evaluation, including evaluative feedback, correc-
+tive feedback, and general feedback. In particular, giving corrective feedback
+to trainees is an essential part of supervision. When goals are clearly defined,
+as in a training contract, and updated as appropriate, a skillful supervisor uses
+the contract as the overarching framework for supervision. Thus, tangible
+behavioral feedback can be linked to the training goals. In the case, for
+example, of a trainee who continues to be content oriented as opposed to
+process oriented, corrective feedback might include identification of the
+shifts to content, analysis of the trainee's feeling state and thinking process
+at these junctures when the transition to content occurs, and analysis of
+alternative explanations of why the shifts occurred.
+Ronnestad and Skovholt (1993) discriminated between confirmatory
+feedback given to beginning trainees and corrective feedback given to more
+advanced trainees. Summative evaluation takes the form of grades, ratings,
+passing or failing the training sequence, and feedback to the school or
+graduate institution. Formative feedback can take on many forms:
+• Reflective:
+• "I wonder how that felt to you.";
+• "I wonder what you were thinking or feeling when. . .";
+• reflection on the impact of a particular client on the
+supervisee;
+• observation of a behavior or event that was unnoticed in
+the session;
+• a general observation about the role of the therapist vis a vis
+the clients.
+• Integrative:
+• "Let's think about that and how it fits in the direction in
+which you see the family moving";
+EVALUATION OF THE SUPERVISORY PROCESS 
+205
+
+• "Where would pursuing that option have led?";
+• "What was your thought process when you let that opportu-
+nity pass?"
+• Neutral: "It would be interesting to know. . .."
+• Empowering:
+• "Your skill set has markedly enlarged, and with it your integra-
+tion of clinical material";
+• "Your use of the metaphor far surpasses your self-assessment
+of play-therapy competence";
+• "Think about how well you approached the same problem
+last month when the mother was so angry";
+• "Remember how your research experience with anxiety pro-
+vides you with a perspective on how to approach this
+situation";
+« "I am struck by the contrast between how self-effacing you
+are in supervision and how effective you are with this family";
+• "Your skillful use of the metaphor paved the way for the
+child's disclosure about her level of pain."
+• Analytic:
+• "Let's analyze the pattern of what has been happening in the
+past three sessions";
+• "I'm wondering what your thought process would have been
+if there were any other ways to have linked that situation to
+the history of abuse."
+• Responsive:
+• "It seemed like you were wondering which way to proceed";
+• "What emotions were elicited in you when your client accused
+you of being unfeeling?"
+• Corrective:
+• "It would be interesting to see what prefaces besides disclaim-
+ers you could use";
+• "I am wondering what other ideas you and I can come up
+with to get around the problem of the mother's continuing
+to ignore the child's appropriate behavior."
+• Level-I Concern—specification of concern and context: "I'm
+concerned that the mother started to broach punishment and
+you changed the subject. Why do you think that happened?"
+(Assume, in this example, that there was a previous report of
+child abuse, and thus it is critical to monitor the types of
+punishment that are being used.)
+• Level-II Concern: "The fact that you did not follow up with
+the input about exploring possible child abuse in this case is a
+legal breach as well as a breach of professionalism."
+206 
+CLINICAL SUPERVISION
+
+• Evaluative feedback:
+• Positive:
+• "You are responding much more clearly and empathically
+to this family, a direction we indicated in your goals.
+Good job";
+• "Your intervention had the desired effect on the adolescent."
+• Negative:
+• "You are continuing to ignore affective expression of this
+child. Attending to the child's affective expression is a
+goal in your contract, and I am increasingly concerned
+that the efforts we are making to improve this area are
+not succeeding";
+• "I am continuing to be concerned about how you do not
+seem to be integrating the concept of process in your clinical
+work. For your level of training and experience, I am very
+surprised that you are not progressing more easily."
+Supervisors need to develop their own individual styles of imparting
+feedback. Some very seasoned supervisors prefer to give very positive feed-
+back throughout most of the supervisory hour and, at most, one negative
+or corrective piece of feedback toward the end, interwoven with state-
+ments of the trainee's strengths. In a strength-based approach, it is essential
+to be honest, as emphasis on strengths to the extent that areas needing
+improvement are not mentioned is not an ethical, creditable, or educa-
+tional approach.
+PROCEDURE FOR COMPETENCY-BASED EVALUATION
+The first step in the competency-based approach is to compile the
+learning assessment, determining areas of strength and weakness within
+each trainee's prior experience and academic training. Reviews of self-
+reports, the elaborate internship or trainee application forms, and, in some
+cases, descriptions from graduate training directors may be included in the
+assessment. Hahn and Molnar (1991) suggested that evaluation of interns
+actually begins during the internship application process, when training
+committees review applicants, view their areas of strength and weakness,
+and build a class or intern group out of the successful applicants. The next
+step in the establishment of the evaluation process could be to obtain
+postadmission direct input from training directors or professors of practicum,
+internship, or fellowship programs on the supervisee's areas of strength and
+weakness, perhaps through the use of a checklist or Likert-scaled items
+geared to the specific focus and competencies of the training program that
+EVALUATION OF THE SUPERVISORY PROCESS 
+207
+
+the supervisee is entering. Early observations by the new supervisors and
+supervisee self-reports of competencies are done to establish the format for
+goals within a training contract. It may be useful to break down particular
+tasks into component parts (for an example, see chap. 3, this volume)
+and have the trainee complete a self-assessment on the incremental steps.
+Alternatively, larger increments can be self-assessed, with confirmation pro-
+vided from one or more supervisors on observing or supervising performance
+in each area.
+Supervision Contract
+The written training contract, or working agreement (Proctor, 1997),
+is a key to the establishment of the training relationship between trainee
+and setting or supervisor. It is also an important part of ethical structuring,
+relationship building, and evaluation. The contract can be described as an
+"Individualized Learner Contract" (Cobia & Boes, 2000) and should be in
+writing (Osborne & Davis, 1996). It should be initiated by the supervisor
+(Sherry, 1991) prior to or at the very beginning of the training sequence
+and signed by both supervisor and supervisee, with copies for both (Bridge
+& Bascue, 1990). It should be brought to supervision regularly for
+reference, as a review of the goals and expectations. The training contract
+has a structural function analogous to the supervisory relationship per se
+(Ronnestad & Skovholt, 1993). Besides satisfying due-process and informed-
+consent rights of supervisees, the document contributes to the clear articula-
+tion of goals and expectations, which should be frequently addressed and
+reviewed. Such practices result in effective supervision (Leddick & Dye,
+1987). The process of involving the trainee in formulating a working agree-
+ment in the form of a contract may enhance the supervisee's sense of
+responsibility for learning (Osborne & Davis, 1996) and perhaps the super-
+visee's dominance.
+Although we have proposed one sample supervision contract in
+Appendix A, it is intended mainly to be an example. Multiple systems
+can be generated as a function of theoretical orientation, incorporating
+procedures such as manualized treatments, systems, and modalities (Shaw
+& Dodson, 1988). It is important to note the significance of psychometrically
+sound assessments of competencies with excellent interrater reliability as a
+goal. We suggest that developmental gradients for metaphor, process, sense
+of self, and relationship may be built into the evaluation process and serve
+as competency anchors in the process of supervision and in evaluation.
+There are multiple examples of competency-assessment programs available
+at the APPIC Web site (http://www.appic.org), most of which are based
+on an analysis of the components of the tasks that compose each respective
+208 
+CLINICAL SUPERVISION
+
+training program. Use of behaviorally anchored, specific categories with
+ratings given by supervisors appears to be the norm. Some ratings are based
+on observation, whereas others are based on responses to a vignette.
+Goals and objectives should be mutually agreed up by the supervisor
+and supervisee and should include a definition of'how progress toward the
+goals will be evaluated, a statement of expected periods of time for the
+accomplishment of the goals, and a list of responsibilities of supervisor and
+supervisee if the goals are not met (Cobia & Boes, 2000). Cornerstones of
+the contract are the developmental needs and strengths of the supervisee;
+the competencies of the supervisor; the duties and responsibilities of both the
+supervisor and supervisee; procedural considerations; opportunities provided
+within the setting, including those afforded by unique characteristics of the
+clients; and supervisory goals, methods, and foci (Ronnestad 6k Skovholt,
+1993). Lehrman-Waterman & Ladany (2001) summarized their research
+findings on desirable qualities of goals as including specificity, realistic qual-
+ity, measurability, prioritization, and early definition. Within this context,
+we may also include the amount and length of supervision, where and how
+supervision is to be conducted, and the types of monitoring activities as
+elements that should be articulated in the contract (Osborne & Davis,
+1996).
+Specifying available resources ensures clear communication regarding
+realistic possibilities within a particular setting. For example, trainees would
+do well to formulate goals that are compatible with the organization and
+mission of the agency. Methods that need to be spelled out include procedures
+such as for reviewing required videotapes, audiotapes, or live observations
+or for supervisory interventions such as role-playing, midsession supervision
+with feedback, didactics, or observation of a clinician or supervisor. Live
+supervision serves as an ethical safeguard (Cormier & Bernard, 1982). The
+functions of observation are to enhance compliance with a training model,
+to refine supervisory communication, and to address process, transference,
+and countertransference. Articulation of theoretical orientation in this con-
+text is critical. For example, a critical issue may be determining whether
+the supervisory relationship is conceptualized as a significant agent for change
+(Ronnestad 6k Skovholt, 1993).
+Clearly articulating the evaluation process is a critical component of
+the supervisory contract (Osborne 6k Davis, 1996). Components of the
+evaluation process include amount, type (e.g., formal vs. informal, or written
+vs. verbal), timing, and frequency. In addition, the supervisory contract
+should specify that a "primary role of the supervisor is that of evaluation"
+(Osborne 6k Davis, 1996, p. 129). Also, methods by which information is
+to be recorded (e.g., a formal evaluation format provided by the school or
+by the setting, verbal feedback provided to the school, or a narrative in
+EVALUATION OF THE SUPERVISORY PROCESS 
+209
+
+letter form) should be specified, and the parties who will be receiving parts
+of the evaluation and which parts they will be receiving should be identified
+so that clear limits of confidentiality are established (Osborn & Davis, 1996).
+A prototypical or standard contract with potential for individualization
+provides a structure through which the needs of the trainee and of the
+setting can be met. A program can be designed carefully by drawing on
+areas of strength and areas that need improvement within the structure of
+the clinical services and requirements of the setting. We advocate greater
+rather than lesser specificity in requirements, all of which may be individual-
+ized for the particular program.
+Within the training contract are some quantitative-evaluation compo-
+nents that constitute program requirements (e.g., productivity, number of
+videos made, number of psychodiagnostic batteries completed, client diver-
+sity, diagnoses, and family compositions served). A more qualitative evalua-
+tion is based on aspects of performance (as enumerated by the evaluation
+form).
+Supervision Contract Prototypes
+Osborn and Davis (1996) provided an outline for a supervision con-
+tract, and Sutter, McPherson, and Geeseman (2002) provided a prototype
+of a contract for supervision that includes multiple sections. In Sutter et al.'s
+(2002) prototype, supervisee and supervisor agree to the length and purpose
+of training, payment arrangements, malpractice insurance, and record-
+keeping expectations. Supervisors agree to follow all ethical, legal, and office
+codes and policies; to be available; to identify coverage for absences; to
+document supervision; and to provide evaluation. Supervisees agree to docu-
+ment supervised activities; follow all ethical, legal, and office codes and
+policies; and inform clients of the supervisees' status as an unlicensed super-
+visee under supervision. In contrast, Osborn and Davis (1996) described
+the contract as consisting of purpose, goals, objectives, a context of services,
+evaluation methods, the duties and responsibilities of both supervisor and
+supervisee, procedural considerations (e.g., with respect to notes, taping, and
+conflict resolution), and a definition of the supervisor's scope of competency.
+The Sutter et al. (2002) contract addresses many structural, ethical, and
+procedural aspects, but not the qualitative, individualized, or programmatic
+factors relating to the growth and development of the trainee. Osborne
+and Davis (1996) included more of the latter factors, but did not lay out
+competencies or specific, individualized training goals. Ideally, a contract
+would address all of these aspects. An example of a contract is given in
+Appendix A. This contract is not intended to be exemplary, but simply to
+serve as an example on which one can build.
+210 
+CLINICAL S UPERVISION
+
+The level of specificity of the training contract is a critical area.
+Ronnestad and Skovholt (1993) described the importance of balancing goals
+generally enough to be meaningful, but specifically enough to allow their
+assessment. They also highlighted the dangers of changing goals too fre-
+quently and of maintaining goals too rigidly. In a model of "goal-directed
+supervision plans" (Talen & Schindler, 1993), goals relating to conceptual
+models, therapy skills, diagnosis and treatment planning, and personal and
+professional issues were developed. It was noted that secondary benefit
+of treatment-plan development included enhancement of the supervisory
+relationship and facilitation of evaluation. Under this model, trainees defined
+specific needs or problem areas; then, based on sample models of training
+plans, objectives or goals for supervision were developed and supervisory
+procedures and strategies were identified to assist in accomplishing the goals.
+Some of the suggested supervision strategies included supervisory integration
+of data (assessment and therapy process), expansion of trainees' alternative
+responses, and use of case examples to amplify a particular intervention plan.
+360-DEOREE FEEDBACK
+A conclusion shared by many who have studied evaluation is that it
+is highly desirable to use multiple sources of data (Fuqua, Newman, Scott,
+& Gade, 1986; Lambert & Ogles, 1997). The greater the amount of inference
+required, the lower is interrater reliability (Shaw & Dodson, 1988). At issue
+are the finite quality of the behavior to be measured and determination of
+the specific behaviors that comprise a particular outcome. If information is
+not collected in a systematic way, these uncertainties and unreliabilities are
+incorporated into the evaluation process of the student. Ideally, multiple
+sources of input are used to assess the same dimension, such as the trainee's
+development as a therapist. When looking at client outcomes, Cone (2001)
+advocated measurement of multiple aspects of the client constructs, to gauge
+their relative effectiveness.
+Multirater feedback is commonplace in business, where ratings are
+often obtained from a complete circle (360 degrees) of viewpoints, including
+those of peers, managers, clients, and direct reports (Sala & Dwight, 2002).
+There is evidence that such feedback is important in increasing self-
+awareness of performance (J. R. Williams & Johnson, 2000). Self-monitoring
+and self-rating are of questionable validity, because they have very low
+correlations with others' perceptions. In contrast, peer, direct-report, and
+managerial ratings correlate moderately (Sala & Dwight, 2002). J. R. Wil-
+liams and Johnson (2000) found self-ratings to be higher (i.e., more lenient)
+than ratings by supervisors. However, the high self-ratings in one study
+EVALUATION OF THE SUPERVISORY PROCESS 
+211
+
+were only in the domains of relationships with clients (e.g., understanding,
+communication, and trust) and in problem-solving-oriented behaviors
+(Church, 1997). Clients also rated more highly in these areas. And the
+greater the agreement in these areas for a given observer group, the higher
+were the overall performance ratings of that group, especially with respect
+to creativity (Church, 1997). Researchers concluded that different types of
+competencies might be best analyzed by different types of assessment; thus,
+multirater surveys are most desirable (Church, 1997; Sala &. Dwight, 2002).
+However, there is also evidence that the more individuals seek feed-
+back, through inquiry about their comparative performance, by monitoring
+or covertly comparing their own performance with that of others, and by
+assessing how others respond to them, the more congruent self-ratings are to
+supervisory ratings. Individuals who seek less feedback have less congruence
+between self-ratings and supervisory ratings (J. R. Williams & Johnson,
+2000). In fact, J. R. Williams and Johnson (2000) found monitoring to be
+associated with higher congruence between self-ratings and supervisor rat-
+ings. No such results were found for inquiry, and monitoring occurred more
+frequently than inquiry. An association has been shown between managerial
+self-awareness, vis-a-vis ratings agreement, and enhancement in managerial
+performance (Church, 1997) and between self-monitoring and job-related
+interpersonal effectiveness (Warech, Smither, Reilly, Millsap, & Reilly,
+1998). A high convergence between 360-degree ratings and self-ratings is
+conceptualized as self-awareness (Church, 1997). However, these results are
+from supervisory relationships in business. While they should be considered
+with caution, they provide an interesting entree into training-performance
+analysis. Falender and Shafranske (2004) consider applications of 360-degree
+feedback to psychology training.
+RUBRICS
+As an alternative, and in conjunction with the accreditation standards
+of many programs, Hanna and Smith (1998) proposed development of a
+rubric for performance assessment. A rubric is defined as a quantitative
+method for assessment of students' performance targets in light of agreed-
+on standards. Because of the need to evaluate performance, as well as
+theoretical and technical skills, the rubric allows for assessment with specific
+standards, anchors, and defined levels of performance for various training
+levels. Hanna and Smith (1998) described the need to clearly describe each
+dimension to be evaluated; in addition, a scale and very specific examples
+of achievement at each level must be provided. In a sample scoring rubric,
+they defined the competency of "establishing counseling relationship" and
+assigned the highest rating, 5, to performance described as follows: "At least
+212 
+CLINICAL SUPERVISION
+
+97% of the time, makes a conscious effort to use the core conditions of
+counseling: empathy, unconditional positive regard, genuineness, and
+concreteness/intentionality" (Hanna &. Smith, 1998, p. 276). They assigned
+the lowest rating, 1, to, performance described as, "has significant difficulty
+exhibiting a knowledge of, or a use of (the same previously mentioned)
+core conditions" (Hanna & Smith, 1998, p. 276). Advantages of rubrics are
+that they can be individually tailored to reflect the particular competencies
+of an individual program, can be scaled, and allow evaluation of inter-
+rater reliability.
+EVALUATION, SUPERVISORY RATINGS, AND
+SUPERVISION SATISFACTION
+There is some evidence that supervisees who rate their supervisory
+experiences more highly are evaluated more highly by their supervisor (Ken-
+nard et al., 1987). Factors such as strength of the emotional bond between
+supervisor and supervisee may be indicative of whether supervisees like their
+supervisors, as in Ladany, Ellis, et al.'s (1999) study, in which a relationship
+was found between emotional bond, positive perceptions of supervisors'
+personal qualities, and positive judgment of one's own behavior in supervi-
+sion, all of which were associated with greater comfort in supervision. "Lik-
+ing" one's supervisor may be related to the whole evaluative process and
+may be even stronger if rating scales completed by supervisors are the
+exclusive means of evaluating.
+However, it may be that the most effective supervision is not the most
+satisfying supervision (Ladany, Ellis, et al., 1999). In other words, supervisors
+who give serious feedback may not be among a trainee's favorites, at least
+at the time that the feedback is given. More research is needed on effective
+feedback and how it relates to other variables of client outcome, supervisee
+satisfaction, supervisee developmental level, and supervisee progress.
+POTENTIAL FORMAL MODELS FOR COMPETENCY-BASED
+SUMMATIVE EVALUATION
+Individual, goal-centered evaluations may be developed for use by
+supervisors and trainees in live or videotaped sessions. In a Microcounseling
+paradigm, Daniels, Rigazio-Diglio, and Ivey (1997) outlined a process of
+training that we believe has a built-in evaluation component that results
+from the definition of baseline levels of functioning with predetermined
+criteria levels. Training behaviors are shaped through development of a
+common language and the use of modeling, self-observation, and copious
+EVALUATION OF THE S UPERVISORY PROCESS 
+213
+
+feedback from the supervisor. A hierarchy of skills is a developmental se-
+quence that the counselor needs to accrue, passing from the basic skill of
+attending to the highest skill of individualizing a personal style and theory.
+However, it has been pointed out that use of direct confrontation and self-
+disclosure may be culturally dystonic (M. T. Brown & Landrum-Brown,
+1995), causing discomfort that could be avoided by use of a less confronta-
+tional, less demanding style until rapport is established.
+EVALUATION OR LACK OF SUCH AS AN ETHICAL ISSUE
+Ethical considerations, addressed more fully in chapter 7, this volume,
+are critical for consideration in evaluation. It may be difficult for trainees,
+who are dependent on their supervisors for evaluation, letters of recommen-
+dation to their schools, and future employment, to be honest in feedback
+regarding supervisor weaknesses or deficiencies. Although supervisees per-
+ceive supervisory ethical lapses (Ladany, Lehrman-Waterman, et al., 1999),
+counterproductive events in supervision (Gray et al., 2001), and conflict
+(Moskowitz 6k Rupert, 1983), they may be reluctant to give feedback on
+these issues. When collecting feedback on supervisory performance from
+supervisees, the reports should therefore be viewed tentatively.
+Evaluating supervisees ex post facto in areas not clearly defined from
+the onset violates their due-process and informed-consent rights (Forrest
+et al., 1999). For example, intrapersonal functioning is a frequently cited
+area of supervisee difficulty; however, almost half of the programs in one
+survey did not routinely evaluate in that area (Olkin & Gaughen, 1991),
+nor is it likely that most programs indicate their intention to do so. An
+exception is the Professional Counseling Performance Evaluation, which
+includes such areas as maturity, competence, and integrity and has items
+on self-control, honesty, fairness, and respect (Kerl, Garcia, McCullough,
+& Maxwell, 2002). Effectiveness of an individual in the role of supervisee
+is an area often only implicitly evaluated (Vespia et al., 2002). Supervisees
+are frequently unclear as to whether their supervisors discuss the supervisory
+relationship or simply solicit supervisee feedback (Kurpius et al., 1991).
+McCarthy et al. (1994) found that 48% of their sample said that the
+supervisor—supervisee relationship was rarely discussed; 27% said it was
+never discussed.
+ADMISSION CRITERIA
+Whether there should be requisite fitness or character-trait require-
+ments for admission to psychology training and licensure programs is contro-
+214 
+CLINICAL 
+SUPERVISION
+
+versial. In contrasting psychology's stance with admission to the bar, which
+has requirements of good moral character and fitness, Johnson and Campbell
+(2002) stated that there is no mention of such character or fitness require-
+ment in psychology accreditation guidelines (American Psychological Asso-
+ciation, 2002e), nor do programs interview specifically for those domains.
+They urged that fitness requirements be developed and proposed inclusion
+of psychological stability, integrity, personality adjustment, responsible use
+of substances, prudence, and caring as additional requirements.
+REMEDIATION
+As mentioned at the beginning of this chapter, evaluation may precipi-
+tate a process of remediation; in a very small number of extreme problem
+cases, evaluation precipitates due-process steps leading up to dismissal. Much
+of the literature refers to such students as "impaired." However, it is better
+to use a different identifier, so as to distinguish such supervisees from designa-
+tion in the Americans With Disabilities Act (ADA) categorizations of
+"impairment." ADA impairment refers to "any mental or psychological
+disorder such as mental retardation, organic brain syndrome, emotional or
+mental illness, and specific learning disabilities." Disability is defined as "a
+physical or mental impairment that substantially limits one or more of the
+major life activities of an individual" (Americans With Disabilities Act of
+1990, 42 U.S.C. §12102(2)(A)), has a record of such, or is regarded as
+having such an impairment (U.S. EEOC, 1992, p. 1-3; Bruyere, 2002).
+In this book, we use the designation "trainee with problematic behav-
+ior" to describe trainees who are not meeting set performance criteria. If a
+trainee meets criteria for disability under the ADA, reasonable accommoda-
+tions are required. However, "[e]ven when an applicant/intern/postdoc
+claims he/she is a qualified disabled person, entitled to protection under the
+Rehabilitation Act or ADA, the internship/program site has no obligation
+to do so, unless the applicant/intern/postdoc also shows he/she can perform
+the essential functions of his/her position, with or without reasonable accom-
+modation" (Mitnick, 2002).
+TRAINEE WITH PROBLEMATIC BEHAVIOR
+Identification of problematic qualities is a major training issue. First,
+there is the problem of lack of congruence between a program's established
+evaluation criteria and processes for identifying problematic aspects of stu-
+dents' behavior (Forrest et al., 1999). In addition, definition of "problematic"
+varies from program to program and even within the same setting, depending
+EVALUATION OF THE SUPERVISORY PROCESS 
+215
+
+on the criteria used (Forrest et al., 1999). Harm and Molnar (1991) found
+that "evaluation procedure at 8 of 33 institutions (surveyed) had failed at
+the most gross level—that of distinguishing the unacceptable candidates
+for graduation from the acceptable ones" (p. 415).
+Overholser and Fine (1990) distinguish types of professional incompe-
+tence due to lack of knowledge, inadequate clinical skills, deficient technical
+skills, poor judgment, and disturbing interpersonal attributes.
+Lamb et al. (1991) defined impairment (what we refer to as "problem-
+atic behavior") in a training context as
+[a]n interference in professional functioning that is reflected in one or
+more of the following ways: (a) an inability or unwillingness to acquire
+and integrate professional standards into one's repertoire of professional
+behavior; (b) an inability to acquire professional skills to reach an
+acceptable level of competency; (c) an inability to control personal
+stress, psychological dysfunction and/or excessive emotional reactions
+that may affect professional functioning, (pp. 291-292)
+They defined unethical behavior on the part of supervisees and impairment
+(or a problematic quality) as overlapping concepts: "All unethical behaviors
+are a reflection of impairment, whereas impairment may involve other
+aspects of professional behavior that may or may not eventuate in unethical
+behavior" (p. 292). However, these authors pointed out the importance of
+ensuring that the program itself abides by ethical practices, such as providing
+training on the topics covered on the evaluation, ensuring due process, and
+using timely evaluation procedures (Lamb et al., 1991).
+In the controversy over definitions of incompetent, problematic, and
+unethical, Forrest et al. (1999) concluded that an all-encompassing, broad
+definition of the student with problematic performance is difficult "because
+some unethical and incompetent professional behavior may not be the result
+of diminished professional functioning but rather an inability to reach a
+minimal acceptable standard of professional functioning" (p. 632). Thus,
+they concluded that a subset of individuals considered as problematic may
+never have met acceptable clinical or ethical standards of practice, but this
+condition was not identified during their training.
+Competent and problematic trainees were further differentiated by
+Lamb et al. (1986):
+(a) The [problematic] intern does not acknowledge, understand, or
+address the problem when it is identified, (b) the problem is not merely
+a reflection of a skill deficit that can be rectified by academic or didactic
+training, (c) the quality of services delivered by the intern is consistently
+negatively affected, (d) the problem is not restricted to one area of
+professional functioning, (e) a disproportionate amount of attention by
+training personnel is required, and/or (f) the intern's behavior does not
+216 
+CLINICAL SUPERVISION
+
+change as a function of feedback, remediation efforts, and/or time,
+(p. 599)
+Even with intensive remediation efforts, change is not observed.
+The number of trainees with problematic behavior annually ranges
+from 3.3% (Olkin & Gaughen, 1991; 54% return rate) to 4.2% or 4.8%,
+and 66% of programs reported at least one such intern in the past 5 years
+(Boxley, Drew, & Rangel, 1986 [29% return rate]; Forrest et al, 1999).
+Areas that may lead to remediation include ethical violation, psychopathol-
+ogy, poor academic performance, inadequate therapy (clinical) skills, inade-
+quate assessment skills, poor clinical judgment, poor interpersonal skills,
+problematic response to supervision, poor theoretical skills, and immaturity
+(Biaggio, Gasparikova-Krasnec, & Bauer, 1983; Forrest et al., 1999; Olkin
+& Gaughen, 1991). Procidano et al. (1995) found that 89% of departments
+in graduate programs reported at least one instance of nonacademic, profes-
+sional deficiency in the past 5 years with, the majority of failings being
+limited clinical skills and personality or emotional problems.
+In Mearns and Allen's (1991) investigation of difficulties that graduate
+students experience having to deal with peers' problematic behavior (re-
+sponse rate 30% for students and 18% for faculty), 95% of psychology
+graduate student respondents reported having been aware of some serious
+problematic qualities in a peer that interfered with professional functioning.
+Faculty underestimated how many graduate students confronted their peers
+and the intensity of student emotional response (e.g., worry, sorrow, or
+guilt) and overestimated how many students did nothing about the problems.
+In fact, many problematic trainees come to faculty attention through peer
+report or community field placement or internship-site supervisors, especially
+when the problems are in the area of intra- or interpersonal functioning
+(Olkin & Gaughen, 1991).
+The immediate concerns with trainee problematic behavior are the
+potential for harm to clients (Frame & Stevens-Smith, 1995) and to the
+public and the potential for violation of the ethical standard of nonmaleft-
+cence. There is concern that in states which have abolished their oral exam,
+one level of screening has been removed, placing greater onus on supervisors
+in practicum, internship, and post-doctoral programs to identify trainees
+who exhibit problematic behavior.
+The percentage of practicing psychologists with significant problem-
+atic issues is estimated to be 15 to 27%, with 7-14% not seeking help
+(Wood, Klein, Cross, Lammers, & Elliott, 1985). Problematic behavior
+includes mental illness, sexual misconduct, burnout, substance abuse, and
+offenses resulting in license revocation (Laliotis & Grayson, 1985).
+Personal-relationship problems and work with particularly difficult clients
+may also result in stress and problematic qualities (Sherman & Thelen,
+EVALUATION OF THE SUPERVISORY PROCESS 
+217
+
+1998). Problematic psychologists should be distinguished from incompetent
+(Kutz, 1986) and unethical (Stadler, Willing, Eberhage, & Ward, 1988)
+professionals. Koocher and Keith-Spiegel (1998) estimated that almost half
+of the psychologists who have had complaints filed against them appear to
+have a personal problem that contributed to the alleged ethical violation.
+A very small percentage of Wood et al.'s (1985) sample had reported
+someone they perceived as a problematic colleague to a regulatory agency.
+It is unknown how many individuals approach their colleagues regarding
+perceived areas of distress or problems. It is noteworthy that the new APA
+ethics code (American Psychological Association, 2002a) does not contain
+section 1.13(b) of the 1992 code: "obligation to be alert to signs of, and
+obtain assistance for, their personal problems at an early stage" (Lamb,
+personal communication, 2002). The number of problematic psychologists
+who are supervisors is unknown.
+Dismissal
+The process leading to dismissal is variable. Biaggio et al. (1983) found
+that a large number of programs did not have procedures for dismissing
+clinical students. Boxley et al. (1986) reported that 44% of internship pro-
+grams that responded to their survey (29% response rate) had no formal due-
+process procedures for trainees to be dismissed and no proactive approach.
+Another 10% of the respondents felt no need to establish such procedures.
+Sixty-six percent of the responding internships had no means of ensuring
+due process to the interns who were to be dismissed. However, Procidano
+et al. (1995; 32% return rate) reported that 74% of all graduate programs
+had a policy for responding to students' professional deficiencies. There was
+a relationship between having such a policy and reporting instances of such
+deficiencies, indicating either that the policies arose as a result of the
+deficiencies or that the policy facilitated their identification.
+It is important to caution supervisors to focus solely on specifically
+describing inadequate performance or behavior rather than looking for ex-
+planatory factors. It is also important for supervisors to be aware of legal
+precedent in the dismissal process. Dismissed students may file suits for
+violation of due-process protection under the 14th Amendment of the U.S.
+Constitution or under provisions of other employment laws. Procedures used
+by supervisors may not be arbitrary, capricious, prejudicial, or discriminatory
+(Knoff & Prout, 1985).
+Dismissal rates vary. The percentages of programs reporting at least
+one student being terminated have ranged from 52% (Vacha-Haase, 1995,
+as reported by Forrest et al., 1999) to 86% (Biaggio et al., 1983). Within
+the preceding 3 to 5 years, a mean of one student was reported to have been
+terminated from a selected number of APA-approved counseling-psychology
+218 
+CLINICAL SUPERVISION
+
+programs (Gallessich & Olmstead, 1987, response rate 67%). According to
+a survey by Tedesco (1982), 51 out of 3,325 interns in APA-approved
+programs (63% response rate) failed to complete the training, and 89 others
+were considered for premature termination but did not proceed. Twenty-
+four interns left by their own choice, and 27 were asked to leave. Criteria
+for termination were unsatisfactory academic performance, lack of timely
+progress, failure of a course or practicum, unethical behavior, lack of inter-
+personal maturity, or unsatisfactory clinical performance or judgment
+(Biaggio et al., 1983; Gallessich & Olmstead, 1987). Tedesco's (1982) most
+frequent reasons were emotional instability and manifestation of a personal-
+ity disorder.
+Several judicial precedents provide guidance regarding dismissal crite-
+ria. Professionally related interpersonal skills are viewed to be within the
+academic domain (Greenhill v. Baiky, 1975, cited in Knoff & Prout, 1985),
+and remedial measures are within the domain of a program's faculty if they
+are relevant to identified areas of deficit (Shuffer 
+v. Trustees of California
+State University and Colleges, 1977, cited in Knoff & Prout, 1985). In the
+Supreme Court decision Board of Curators of the University of Missouri v.
+Horowitz (1978), dismissal of a medical student for deficient clinical perfor-
+mance, peer and patient relationships, and personal hygiene was upheld.
+The court ruled that all rights under the 14th Amendment were sufficiently
+protected (Knoff & Prout, 1985). In another case, Alanis v. University of
+Texas Health Sciences Center (1992), unsuitability to practice medicine was
+deemed an academic reason to be dismissed from medical school (Kerl et al.,
+2002). The court appears to defer to schools in academic evaluation, with
+appropriate due process following standard academic norms (Kerl et al.,
+2002).
+Responding to Trainee Problematic Behavior
+Lamb et al. (1991) discussed a four-step model for responding to trainee
+problematic behavior. In Step 1, which occurs early in the evaluation pro-
+cess, supervisors who have identified problematic areas in trainee functioning
+consult to clarify their concerns. Consultations, modifications in the trainee's
+program, and the concerns themselves must be documented in keeping with
+the due-process procedure, giving the trainee ample chance to remediate
+the deficiencies and provide a formal reply.
+If the measures in Step 1 do not result in performance improvement,
+additional documentation and discussion of problematic behaviors ensue,
+constituting Step 2. The training staff implements a full range of interven-
+tions and observes the impact. Modifications are made to the supervision
+procedure itself, and further elements of supervision and other interventions
+are added as deemed necessary. We add the institution of a remediation
+EVALUATION OF THE SUPERVISORY PROCESS 
+219
+
+plan in Step 1 or, at the latest, Step 2, with specific timelines and clearly
+articulated performance expectations. We also advocate notification of the
+trainee's school at this point.
+If further intervention is required, Step 3, or expulsion from the pro-
+gram, is considered. If probation is necessary, the intern is notified in writing.
+This information is shared with the academic institution as well; in general,
+feedback is shared with the institution and the trainee throughout the entire
+process. Due-process steps are followed, including the appeal-process steps
+if the trainee chooses to appeal. Should expulsion occur, the school and
+the trainee are simultaneously notified, and a process and time for departure
+are planned.
+In Step 4, the impact of the probation or expulsion is addressed sensi-
+tively with all the remaining trainees, staff members, the academic program,
+and the trainee him- or herself.
+PROBLEMATIC SUPERVISORS
+Supervisors may also be unable to perform their functions, perhaps
+because of personal or external factors. Like discussion of trainees with
+problematic behavior, discussion of problematic supervisors contains the
+guiding assumption that the individual was previously functioning at a
+higher level of competence, as discussed by Forrest et al. (1999). Muratori
+(2001) proposed a continuum of ineffective supervisors from those who may
+be improved through guided supervision to those who are frankly problematic
+in one of the areas previously articulated for trainees. Muratori (2001)
+suggested that the danger factor is grave for trainees with problematic super-
+visors, because of the power differential and the fact that the supervisees
+may be trapped in the supervisory relationship, with no options. We suggest
+that, because this topic is such a new area of discussion, the supervisee
+working with a problematic supervisor carries a greater burden than the
+supervisor working with a problematic supervisee, as there typically are no
+established procedures or guidelines to follow in the former case and because
+of the power differential.
+PREVENTION OF PROBLEMATIC BEHAVIOR
+Coster and Schwebel (1997) proposed ways for psychologists who
+believe they are experiencing symptoms of difficulty to proceed. These
+methods should also be useful in the longer range prevention of problematic
+symptoms in supervisees and supervisors. The suggested interventions in-
+220 
+CLINICAL SUPERVISION
+
+elude interpersonal support from people such as peers, spouse, companions,
+family, and friends and intrapersonal activities such as self-awareness moni-
+toring. The latter might include reduction of workload, increase of leisure
+activities, increase of sleep, and heightening of awareness of the professional
+life cycle. Other interventions are professional and civic activity and activism
+and self-care, including forms of professional involvement. Coster and
+Schwebel (1997) posed a series of questions for psychologists who have
+identified themselves as being at risk of or on the road to severely problematic
+behavior. These questions elicit responses about the progression from rigor-
+ous self-awareness or metacognitive skills to assistance by peers and consulta-
+tion with a therapist (Coster & Schwebel, 1997). It is essential that supervis-
+ees receive training to ensure proactive awareness, prevention, and self-
+monitoring of dysfunction. Guy and Norcross (1998) provide an excellent
+self-care checklist.
+Lamb (1999) suggested that more effective identification and negotia-
+tion of professional boundary dilemmas in the training setting would serve
+as a preventative strategy in some instances of problematic behavior. These
+approaches would include a comprehensive orientation, with social net-
+working, bonding opportunities, and general provision of a supportive
+environment; distribution of specific written guidelines about performance
+expectations and their relationship to problematic behavior; provision of
+open avenues for challenging evaluations or dealing with boundary issues;
+seminars on self-help and stressors, including means of dealing with the
+stressors; guidelines for addressing boundary dilemmas; and opportunities to
+identify and address boundary issues through role-playing or other means.
+Slimp and Burian (1994) outlined steps that could be taken to prevent
+ethical violations. They suggested that organizations establish an internal
+ethics committee comprising both interns and staff. They also urged either
+having an ethics consultant who is unaffiliated with the program, using the
+local or APA ethics committee, or establishing policies and procedures that
+address how to consult the ethics committee and for what reasons it may
+be consulted, procedures for remediation and sanctions, guidelines that
+address whether recommendations of the committee are binding, and
+methods by which formal actions would follow.
+REMEDIATION
+The Association for Counselor Education and Supervision (1995)
+provided a guideline regarding remediation:
+2.12. Supervisors, through ongoing supervisee assessment and evalua-
+tion, should be aware of any personal or professional limitations of
+supervisees which are likely to impede future professional performance.
+EVALUATION OF THE SUPERVISORY PROCESS 
+221
+
+Supervisors have the responsibility of recommending remedial assistance
+to the supervisee and of screening from the training program, applied
+counseling setting, or state licensure those supervisees who are unable
+to provide competent professional services. These recommendations
+should be clearly and professionally explained in writing to the super-
+visees who are so evaluated.
+Olkin and Gaughen (1991) strongly recommended that reactivity be
+replaced with proactivity in dealing with problem students. Ideally, this task
+includes establishing, at the onset of training, clear contracts with supervisees
+about policies and expectation, articulation and operationalization of ex-
+pected behaviors, and routine evaluation and feedback on the articulated
+requirements.
+It has been suggested that the training years are prime for identification
+and amelioration of problems. Psychologists believe strongly in remediation.
+Behaviors become problematic only when not addressed and when they
+persist in severity (Vasquez, 1988). Through monitoring and evaluation,
+case-load modifications, intensive interventions such as live observation,
+cotherapy with the supervisor, required supplemental courses, and leaves of
+absence (Lamb et al., 1987), some remediation can occur. Goal setting and
+provision of more frequent feedback are steps that could be instituted to
+enhance the working alliance (Lehrman-Waterman & Ladany, 2001). Per-
+sonal therapy and additional clinical field experiences are other options
+(Knoff & Prout, 1985). However, although repeating coursework and per-
+sonal therapy are the frequent forms of remediation, Olkin and Gaughen
+(1991) cautioned that therapy goals and timelines may be unclear or undesig-
+nated, and the program does not set them. Instead, the student and his or
+her therapist do. Furthermore, because of confidentiality, the program will
+not be privy to the trainee's progress or lack of such.
+It is not clear that therapy is the remediation of choice for academic
+or clinical functioning problems (Olkin & Gaughen, 1991). In the case of
+remediating trainee sexual misconduct, Layman and McNamara (1997)
+expressed concern that the low rates of sexually offending trainees preclude
+the real possibility of a significant impact of early identification and interven-
+tion during the training years. Conditions such as alcoholism might be
+more evident during internship, as a retrospective analysis revealed that
+psychologists in recovery reported they had exhibited harmful effects from
+drinking as early as age twenty-four (Skorina, Bissell, & DeSoto, 1990),
+which would in many cases be during graduate training.
+Training programs must establish specific steps to remediate trainee
+problematic functioning. Risk factors are implicit in the internship year
+(Kaslow & Rice, 1985; Lamb et al., 1987; Lipovsky, 1988). Directors and
+222 
+CLINICAL SUPERVISION
+
+supervisors in internship programs know that the cycle of the training year
+is fraught with peril regarding intern stress, potential for burnout or fatigue,
+and general vulnerability (Lamb et al., 1982). Besides the due-process steps
+and action plans with timelines, supportive relationships with training
+staff, and monitoring of progress, a strength-based orientation with an
+emphasis on small increments of improvement is indicated. It is also note-
+worthy that there may be differences in perception between trainees and
+supervisors as far as the degree of supportiveness of the training environment,
+with faculty perceiving the training environment to be highly supportive
+and supervisees feeling unsupported. This possibility warrants further
+exploration.
+Wise, Lowery, and Silverglade (1989) described remediation methods
+that focus on skill development, workshops, supervision groups, consultation,
+and continuing-education experiences. However, if there is still a need to
+deal with specific issues or if skill development is blocked by personal issues,
+they urged suggesting personal counseling. They identified the periods of
+time before seeing clients and when the individual's identity as a therapist
+has been partially established and he or she is gaining greater insight as
+optimal times for referral.
+EVALUATION OF THE SUPERVISOR
+Providing feedback to the supervisor regarding his or her performance
+should be an integral part of the evaluation process. In fact, Sherry (1991)
+proposed that, as part of supervisory competence assessment, all supervisees
+should evaluate their supervision and provide feedback to supervisors, prog-
+ress toward supervisory contract goals should be reviewed regularly, and
+supervision of supervisors should be provided. In addition, supervisors should
+self-assess, taking into account success, failures, and areas in which they
+feel they could improve or grow. However, any type of evaluation of the
+supervisor has been relatively neglected in the literature (Dendinger &
+Kohn, 1989). Logically, it appears that tnultisource evaluations are indicated,
+including self-evaluations and evaluations by the supervisor of the supervisor,
+fellow supervisors, supervisees, and individuals outside the agency who can
+give an expert assessment of the supervisor's skill base (Dendinger & Kohn,
+1989). (It has been suggested that supervisors be evaluated by supervisees
+on relationship, agreement levels, knowledge, and communication and that
+administrators might evaluate productivity, error rate, and complaints [as
+reported by Dendinger & Kohn, 1989]). There are a number of evaluation
+instruments for this purpose, including "Supervision Satisfaction Question-
+naire" (Ladany, Hill, Corbett, & Nutt, 1996), "Supervisee Perceptions of
+EVALUATION OF THE SUPERVISORY PROCESS 
+223
+
+Supervision" (Oik & Friedlander, 1992), and "Supervisee/Trainee Self As-
+sessment of Supervision-Related Knowledge and Skills" (Borders & Leddick,
+1987). The Ladany, Hill, Corbett, and Nutt (1996) form addresses overall
+satisfaction without eliciting specific feedback about areas where less satisfac-
+tion is indicated. The Oik and Friedlander (1992) form found in Appendix H
+combines supervisees' perceptions of supervision with assessments of the
+level of uncertainty elicited. The best form for gathering feedback specific
+to particular tasks is that provided by Borders and Leddick (1987; see
+Appendix G), which breaks down items into teaching, counseling, consulta-
+tion, and research-skills components. Another form, developed by Hall-
+Marley (personal communication; and modified by Falender in Appendix L),
+is linked to overall expectations for supervisee competencies. Another mea-
+sure developed by Hall-Marley (personal communication; see Appendix K)
+gathers supervisor feedback that can be organized to coordinate with program
+goals and the training contract.
+Herrmann (1996) developed a three-part format for evaluation of
+supervisors in medical education. In the first part, a critical-incident ap-
+proach is used to determine the number of hours the supervisee had spent
+per week with the supervisor, the number of live or taped interviews with
+the supervisor in the past six months, and the number of times detailed
+feedback about progress was received. In the second section, residents rate
+supervisors on enthusiasm, organization, clarity, knowledge, clinical supervi-
+sion skills, availability, and modeling ability, with descriptive factors listed
+to guide the rating (e.g., factors on role modeling; regular feedback and
+constructive criticism; and sensitivity to gender, ethical, cultural, and SES
+[socio-economic status] issues). Residents assign an overall rating to the
+supervisor, using a 5-point Likert scale with a range from poor to excellent.
+Finally, in the third part, residents have a chance to provide narrative
+comments on the supervisor's strengths, major weaknesses, and possible
+areas of improvement of supervision quality. Herrmann (1996) found that
+having residents return the forms to the program office, with a cover sheet
+identifying the resident (which was removed and destroyed once the form
+was checked in), as a requirement for completion of the rotation dramatically
+increased the number of evaluations returned. The large size of the training
+program allowed anonymity. Generally, very positive outcomes resulted from
+feedback given to supervisors. In another format adopted by Ramsbottom-
+Lucier, Gillmore, Irby, and Ramsey (1994), residents evaluated their clinical
+supervisors on knowledge and analytic ability, accessibility, establishment
+of rapport, organization and clarity, enthusiasm, involvement of learner,
+feedback and direction, and demonstration of clinical skills, using a 6-point
+Likert scale. Residents also rated their perceived degree of involvement with
+their supervisors on a 4-point scale. Reliability scores were high, especially
+in outpatient settings.
+224 
+CLINICAL SUPERVISION

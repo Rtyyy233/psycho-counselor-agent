@@ -49,16 +49,23 @@ class material_state(TypedDict):
 
 def _build_child_where_clause(flt: material_filter) -> dict:
     """Build Chroma where clause for child collection."""
-    where = {}
+    conditions = []
     if flt.text_type:
-        where["text_type"] = {"$in": flt.text_type}
+        conditions.append({"text_type": {"$in": flt.text_type}})
+    date_cond = {}
     if flt.date_start:
-        where.setdefault("date", {})["$gte"] = flt.date_start
+        date_cond["$gte"] = flt.date_start
     if flt.date_end:
-        where.setdefault("date", {})["$lte"] = flt.date_end
+        date_cond["$lte"] = flt.date_end
+    if date_cond:
+        conditions.append({"date": date_cond})
     if flt.source_file:
-        where["source_file"] = flt.source_file
-    return where
+        conditions.append({"source_file": flt.source_file})
+    if not conditions:
+        return {}
+    if len(conditions) == 1:
+        return conditions[0]
+    return {"$and": conditions}
 
 
 async def semantic_search_children(state: material_state) -> material_state:
@@ -139,7 +146,7 @@ async def parent_lookup_node(state: material_state) -> material_state:
     if step.mode != "parent_lookup":
         return state
 
-    child_ids = state["matched_child_ids"]
+    child_ids = list(dict.fromkeys(state["matched_child_ids"]))
     if not child_ids:
         return state
 
